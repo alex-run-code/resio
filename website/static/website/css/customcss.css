@@ -1,0 +1,8 @@
+.home-header {
+    background-image: linear-gradient(90deg, rgba(9,9,121,0.5) 35%, rgba(0,212,255,0.5) 100%), url(../img/homeheaderblur.jpg);
+    background-position: center;
+}
+
+.feature-icon {
+    width: 100px;
+}

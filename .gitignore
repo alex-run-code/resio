@@ -1,1 +1,4 @@
 env/
+.pyc*
+website/__pycache__/
+website/migrations/__pycache__/
