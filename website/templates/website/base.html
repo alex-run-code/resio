@@ -13,13 +13,13 @@
 
   <!-- fontawesome cdn -->
   <link href="{% static '/website/fontawesome/css/all.css' %} " rel="stylesheet">
-  
+
   <!-- my CSS -->
   <link href="{% static '/website/css/customcss.css' %}" rel="stylesheet">
 
   <!-- Bootstrap core CSS -->
   <link href="{% static '/website/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  
+
 
   <!-- Custom styles for this template -->
   <link href="{% static 'website/css/scrolling-nav.css' %}" rel="stylesheet">
@@ -27,38 +27,41 @@
 </head>
 
 <body id="page-top">
+  <div class='content'>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">ResiO</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#services">Rankings</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#contact">Sign Up</a>
-          </li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class='logo' src='{% static "website/img/resiowhite.png" %}'></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href='/'>Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="ranking">Rankings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Sign Up</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
 
+  </div>
   <!-- Footer -->
-  <footer class="py-5 bg-dark">
+  <footer class="py-5 bg-dark footer">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
     </div>
@@ -74,6 +77,7 @@
 
   <!-- Custom JavaScript for this theme -->
   <script src="{% static 'website/js/scrolling-nav.js' %}"></script>
+
 
 </body>
 
