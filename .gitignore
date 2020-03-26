@@ -1,7 +1,9 @@
 env/
 .pyc*
 website/__pycache__/
+resio/__pycache__/
 website/migrations/__pycache__/
 .vscode/
 candidates.xlsx
 ~$candidates.xlsx
+hospitals.xlsx

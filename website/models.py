@@ -4,7 +4,7 @@ from django.db import models
 
 class Candidate(models.Model):
 
-    SPECIALITY_CHOICES = [
+    SPECIALTY_CHOICES = [
         ('Pediatric', 'Pediatric'),
         ('Generalist', 'Generalist'),
         ('Ophtalmology', 'Ophtalmology'),
@@ -30,9 +30,47 @@ class Candidate(models.Model):
     first_name = models.CharField(max_length=255, default='None')
     family_name = models.CharField(max_length=255, default='None')
     grade = models.FloatField()
-    choice = models.CharField(max_length=255, choices=SPECIALITY_CHOICES)
+    choice = models.CharField(max_length=255, choices=SPECIALTY_CHOICES)
     location = models.CharField(max_length=255, choices=LOCATION_CHOICES)
     year = models.IntegerField(choices=YEAR_CHOICES)
 
     def __str__(self):
         return self.first_name
+
+class Hospital(models.Model):
+    name = models.CharField(max_length=255)
+    city = models.CharField(max_length=255)
+    website = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    about = models.TextField(max_length=2550)
+
+    def __str__(self):
+        return self.name
+    
+
+class Specialty(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+class Paperwork(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+class Service(models.Model):
+    hospital = models.ForeignKey('Hospital', on_delete=models.CASCADE)
+    specialty = models.ForeignKey('Specialty', on_delete=models.CASCADE)
+    chief_name = models.CharField(max_length=255)
+    chief_surname = models.CharField(max_length=255)
+    residanatms_url = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.hospital.name + ', ' + self.specialty.name
+
+class Paperwork_Service(models.Model):
+    paperwork = models.ForeignKey('Paperwork',on_delete=models.CASCADE)
+    service = models.ForeignKey('Service',on_delete=models.CASCADE)
+

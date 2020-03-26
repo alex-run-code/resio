@@ -1,79 +1,55 @@
 {% extends 'website/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 {% block content %}
 
-
-<header class="bg-primary text-white listing-header">
-    <div class="container text-center">
-        <h1 class='display-2'>RANKINGS</h1>
-    </div>
-  </header>
-
 <section>
-    <div class='container'>
-
-        <form class="form-inline mb-5">
-            <!-- <label class='my-3 mr-5 lead' for="choice">Filter</label>
-            <label class='my-3 mr-3' for="choice">Choice</label>
-            <select id='choice' class="custom-select my-3 mr-sm-3">
-              <option selected>Choose...</option>
-              <option value="1">Pediatric</option>
-              <option value="2">Surgery</option>
-              <option value="3">Radiology</option>
-            </select>
-
-            <label class='my-3 mr-3' for="choice">Location</label>
-            <select id='location' class="custom-select my-3 mr-sm-3">
-              <option selected>Choose...</option>
-              <option value="1">Cluj-Napoca</option>
-              <option value="2">Bucharest</option>
-              <option value="3">Alba Iulia</option>
-            </select>
-
-            <label class='my-3 mr-3' for="choice">Year</label>
-            <select id='year' class="custom-select my-3 mr-sm-3">
-              <option selected>Choose...</option>
-              <option value="1">2017</option>
-              <option value="2">2018</option>
-              <option value="3">2019</option>
-            </select> -->
-            
-            {{myFilter.form}}
-        
-            <button id='filterbutton' type="submit" class="btn btn-primary my-1">Submit</button>
-          </form>
-
-        <div class='row'>
-            <table id='mytable' class="table table-hover">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Grade</th>
-                    <th scope="col">Choice</th>
-                    <th scope="col">Location</th>
-                    <th scope="col">Year</th>
-                </tr>
-                </thead>
-                <tbody>
-                    {% for candidate in candidates %}
-                        <tr>
-                            <th scope="row">{{ candidate.id }}</th>
-                            <td>{{ candidate.first_name }}</td>
-                            <td>{{ candidate.family_name }}</td>
-                            <td>{{ candidate.grade }}</td>
-                            <td>{{ candidate.choice }}</td>
-                            <td>{{ candidate.location }}</td>
-                            <td>{{ candidate.year }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+  <div class='container'>
+    <div class="row justify-content-center">
+      <form style='width:80%' class="form-inline mb-5">
+        {% for field in myFilter.form %}
+        <div class='col-3'>
+            <div class='row justify-content-center'>{{field.name|upper}}</div>
+            <div class='row justify-content-center'>{{field}}</div>
         </div>
+        {% endfor %}
+        <button id='filterbutton' type="submit" class="btn btn-primary my-1">Submit</button>
+      </form>
     </div>
+
+    <div class='row'>
+      <table id='mytable' class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Grade</th>
+            <th scope="col">Choice</th>
+            <th scope="col">Location</th>
+            <th scope="col">Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for candidate in candidates %}
+          <tr>
+            <th scope="row">{{ candidate.id }}</th>
+            <td>{{ candidate.first_name }}</td>
+            <td>{{ candidate.family_name }}</td>
+            <td>{{ candidate.grade }}</td>
+            <td>{{ candidate.choice }}</td>
+            <td>{{ candidate.location }}</td>
+            <td>{{ candidate.year }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 
 
-  {% endblock %}
+
+
+{% endblock %}

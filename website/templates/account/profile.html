@@ -1,0 +1,25 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<section id='profile'>
+    <div class='container'>
+        <p> Welcome {{ user.username }} !</p>
+        <p> User name : {{ user.username }} </p>
+        <p> Name : {{ user.first_name }} </p>
+        <p> Surname : {{ user.surname }} </p>
+        <p> Email Adress : {{ user.mail }} </p>
+        <p> Choice : {{ user.choice }} </p>
+        <p> Place : {{ user.choice }} </p>
+        <p> Hospital : {{ user.choice }} </p>
+        <p> Grade : {{ user.grade }} </p>
+    </div>
+    <div class='container'>
+        <a href='paperwork'> My paperwork </p>
+    </div>
+</section>
+{% endblock %}
