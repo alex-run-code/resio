@@ -9,7 +9,18 @@ def index(request):
     return render(request, 'website/index.html')
 
 def profile(request):
-    return render(request, 'account/profile.html')
+    cities = [
+        'Cluj-Napoca',
+        'Alba-Iulia',
+        'Bucharest',
+        'Maramures',
+        'Oas',
+
+        ]
+    context = {
+        'cities':cities
+    }
+    return render(request, 'account/profile.html', context)
 
 def contact(request):
     return render(request, 'website/contact.html')
@@ -23,3 +34,4 @@ def ranking(request):
         'myFilter':myFilter,
     }
     return render(request, 'website/ranking.html', context)
+

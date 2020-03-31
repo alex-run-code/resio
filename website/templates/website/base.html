@@ -27,6 +27,10 @@
   <!-- Nice Select css -->
   <link href="{% static 'website/vendor/nice-select/css/nice-select.css' %}" rel="stylesheet">
 
+
+
+
+
 </head>
 
 <body id="page-top">
@@ -35,7 +39,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top"><strong>RESIO</strong></a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class='feature-icon mb-3 logo'
+            src='{% static "/website/img/caduceus.png" %}'> <strong>RESIO</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -87,15 +92,14 @@
   <!-- Custom JavaScript for this theme -->
   <script src="{% static 'website/js/scrolling-nav.js' %}"></script>
 
-  <!-- Nice Select -->
+  <!-- Nice Select js -->
   <script src="{% static 'website/vendor/nice-select/js/jquery.nice-select.js' %}"></script>
 
-  <script>
-    $(document).ready(function() {
-      $('select').niceSelect();
-    });
-    </script>
+  <!-- autocomplete js -->
+  <script src="{% static 'website/vendor/autocomplete/src/jquery.autocomplete.js' %}"></script>
 
+  <!-- custom js -->
+  <script src="{% static 'website/js/custom.js' %}"></script>
 
 </body>
 

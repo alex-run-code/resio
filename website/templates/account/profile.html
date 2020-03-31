@@ -8,18 +8,41 @@
 {% block content %}
 <section id='profile'>
     <div class='container'>
-        <p> Welcome {{ user.username }} !</p>
-        <p> User name : {{ user.username }} </p>
-        <p> Name : {{ user.first_name }} </p>
-        <p> Surname : {{ user.surname }} </p>
-        <p> Email Adress : {{ user.mail }} </p>
-        <p> Choice : {{ user.choice }} </p>
-        <p> Place : {{ user.choice }} </p>
-        <p> Hospital : {{ user.choice }} </p>
-        <p> Grade : {{ user.grade }} </p>
-    </div>
-    <div class='container'>
-        <a href='paperwork'> My paperwork </p>
+        <div class='row'>
+            <p>Welcome Dr {{ user.username }}</p>
+        </div>
+        <div class='row'>
+            <strong>Choice</strong> 
+            <text id='edit_button'><a href='#' style='margin-left:3px; font-style: italic;' >Edit</a></text>
+        </div>
+        <div class='row'>
+            <form id=choice_form style='display:none'>
+                <input type="text" name="choice" id="autocomplete" />
+                <button type='text' class="btn btn-primary btn-sm" style='vertical-align: top;' id='validation_button'>ok</button>
+            </form>
+            <p id='user_choice'></p>
+        </div>
     </div>
 </section>
+
+
+<script>
+var choice_form = document.getElementById('choice_form');
+var user_choice = document.getElementById('user_choice');
+var edit_button = document.getElementById('edit_button');
+var autocomplete = document.getElementById('autocomplete');
+var validation_button = document.getElementById('validation_button');
+edit_button.addEventListener('click', function() {
+    user_choice.style = 'display:none';
+    choice_form.style = 'display:block';
+});
+
+validation_button.addEventListener('click', function(e) {
+    e.preventDefault();
+    user_choice.textContent = autocomplete.value;
+    choice_form.style = 'display:none';
+    user_choice.style = 'display:block';
+});
+</script>
+
 {% endblock %}
