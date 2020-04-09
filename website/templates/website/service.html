@@ -7,38 +7,9 @@
 
 {% block content %}
 <section id='profile' class='col-8 offset-2 mb-5'>
-    <div class='container'>
-        <div class='col'>
-            <div class='row'>
-                <p>Welcome Dr {{ user.username }}</p>
-            </div>
-            <div class='row'>
-                <strong>Choice</strong>
-                <text id='edit_button'><a href='#' style='margin-left:3px; font-style: italic;'>Edit</a></text>
-            </div>
-            <div class='row'>
-                <form id=choice_form style='display:none'>
-                    <input type="text" name="choice" id="autocomplete" />
-                    <button type='text' class="btn btn-primary btn-sm" style='vertical-align: top;'
-                        id='validation_button'>ok</button>
-                </form>
-                <p id='user_choice'></p>
-            </div>
-            <!-- <div class='row'>
-                <strong>Specialty</strong>
-            </div>
-            <div class='row'>
-                <form id=choice_form style='display:none'>
-                    <select type="text" name="specialty">
-                        <option>Ophtalmology</option>
-                        <option>Generalist</option>
-                    </select>
-                    <button type='text' class="btn btn-primary btn-sm" style='vertical-align: top;'
-                        id='validation_button'>ok</button>
-                </form>
-                <p id='user_choice'></p>
-            </div> -->
-        </div>
+    <div class='container mb-5'>
+            <h1>{{ hospital_name }}, {{ specialty }} </h1>
+            <h3>{{ city }} </h3>
     </div>
 
     <div class='container'>
@@ -60,10 +31,10 @@
                     <tbody>
                         <tr>
                             <td>Identification Document</td>
-                            <td>John Smith</td>
+                            <td>{{chief_name}} {{chief_surname}}</td>
                             <td>01 45 63 22 00</td>
-                            <td>clinicstjoseph.ro</td>
-                            <td>residanat.ro/stjoseph</td>
+                            <td>{{website}}</td>
+                            <td>{{residanatms_url}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -73,15 +44,13 @@
         <div class='row'>
             <div class='col-6'>
                 <strong>Address</strong>
-                <p>{{ hospital_adress }}</p>
+                <p id='hospital_address'>{{ address }}</p>
                 <div id="map"></div>
             </div>
             <div class='col-6'>
                 <strong>Description</strong>
                 <p class="text-justify">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat.
+                    {{description}}
                 </p>
             </div>
         </div>
@@ -98,6 +67,7 @@
     var edit_button = document.getElementById('edit_button');
     var autocomplete = document.getElementById('autocomplete');
     var validation_button = document.getElementById('validation_button');
+    var hospital_address = document.getElementById('hospital_address').textContent;
     edit_button.addEventListener('click', function () {
         user_choice.style = 'display:none';
         choice_form.style = 'display:block';
@@ -123,7 +93,7 @@
         var service = new google.maps.places.PlacesService(map);
 
         var request = {
-            query: 'Zorilor Vest G, Strada Melodiei 1, Cluj-Napoca 400350',
+            query: hospital_address,
             fields: ['name', 'geometry'],
         };
 

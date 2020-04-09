@@ -42,6 +42,7 @@ class Hospital(models.Model):
     city = models.CharField(max_length=255)
     website = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
+    phone = models.IntegerField()
     about = models.TextField(max_length=2550)
 
     def __str__(self):
@@ -49,7 +50,7 @@ class Hospital(models.Model):
     
 
 class Specialty(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
         return self.name

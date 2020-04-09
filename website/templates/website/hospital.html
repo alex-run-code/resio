@@ -1,0 +1,29 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class='container'>
+        <div class='row'>
+            <div class='col'>
+                <h1>{{ hospital_name }}</h1>
+            </div>
+        </div>
+        {% for service in services %}
+        <div class='row mb-2'>
+            <div class='col-4'>
+                <a href='/service/{{ hospital_name }}/{{service.specialty}}/' class="btn btn-primary btn-sm"> {{ service.specialty }} </a>
+            </div> 
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+
+
+{% endblock %}

@@ -7,4 +7,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('accounts/', include('allauth.urls')),
     path('accounts/profile/', views.profile, name='profile'),
+    path('service/<hospital>/<specialty>/', views.service, name='service'),
+    path('research/', views.research, name='research'),
+    path('hospital/<hospital>/', views.hospital, name='hospital'),
 ]
