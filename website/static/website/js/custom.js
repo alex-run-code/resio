@@ -1,6 +1,6 @@
-$(document).ready(function () {
-  $('select').niceSelect();
-});
+// $(document).ready(function () {
+//   $('select').niceSelect();
+// });
 
 var hospitals = [
   { value: 'Regina Maria', data: 'Regina Maria' },

@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from website.models import Candidate, Hospital, Service
 from .filters import RankingFilter
+from django.http import JsonResponse
+import json
 
 # Create your views here.
 
@@ -68,5 +70,10 @@ def hospital(request, hospital):
         'services':services,
     }
     return render(request, 'website/hospital.html', context)
+
+def get_hospital_from_city(request):
+    city = request.POST['city']
+    hospitals_from_city = Hospital.objects.filter(city='city')
+    return hospitals_from_city
 
 

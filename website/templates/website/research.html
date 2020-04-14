@@ -9,9 +9,38 @@
 
 <section>
     <div class='container'>
-        <div class='row'>
+        <div class='row mb-3'>
             <div class='col'>
                 <h1>Research a hospital</h1>
+            </div>
+        </div>
+        <div class='row mb-3'>
+            <div class='col'>
+                <h3>Research</h3>
+                <form class='d-inline-flex' id='myform'>
+
+                    <div class="input-group mb-3 mr-3">
+                        <select class="custom-select" id="select_city" style='width:100px'>
+                            <option selected>City</option>
+                            <option value="Cluj-Napoca">Cluj-Napoca</option>
+                            <option value="Bucharest">Bucharest</option>
+                            <option value="Alba Iulia">Alba Iulia</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3 mr-3">
+                        <select class="custom-select" id='select_hospital' style='width:100px'>
+                            <option selected>Hospital</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mb-3 mr-3">
+                        <select class="custom-select" id='select_specialty' style='width:100px'>
+                            <option selected>Specialty</option>
+                        </select>
+                    </div>
+
+                </form>
             </div>
         </div>
         <div class='row'>
@@ -26,6 +55,49 @@
         </div>
     </div>
 </section>
+
+<script>
+
+var select_city = document.getElementById('select_city');
+var select_hospital = document.getElementById('select_hospital');
+var select_specialty = document.getElementById('select_specialty');
+var hospital_city = {};
+
+
+{% for hospital in hospitals %}
+
+var hospital = '{{ hospital.name }}'.replace(/&quot;/g,'"');
+var city = '{{ hospital.city }}';
+
+hospital_city[hospital] = city;
+
+var option = document.createElement("option");
+option.value = hospital;
+option.textContent = hospital;
+select_hospital.appendChild(option);
+
+{% endfor %}
+
+console.log(hospital_city);
+
+console.log(hospital_city['Spitalul Clinic de Copii']);
+
+select_city.addEventListener('change', function() {
+    var city = select_city.value;
+    var options_hospital = select_hospital.getElementsByTagName("option")
+    for (var i = 0; i < options_hospital.length ; i++) {
+        var hospital = options_hospital[i].value;
+            if (hospital_city[hospital] == city ) { 
+                options_hospital[i].style='display:block';
+                console.log('yes', hospital)
+            } else {
+                options_hospital[i].style='display:none';
+                console.log('no', hospital, hospital_city[hospital], city)
+            }
+    }
+});
+
+</script>
 
 
 
