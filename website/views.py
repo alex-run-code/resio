@@ -75,7 +75,6 @@ def hospital(request, hospital):
     }
     return render(request, 'website/hospital.html', context)
 
-
 def test(request):
     return render(request, 'website/test.html')
 
