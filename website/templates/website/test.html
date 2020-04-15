@@ -1,0 +1,65 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<section>
+    <div class='container'>
+        <select id='select_city' name='select_city' class="custom-select custom-select-lg mb-3">
+            <option selected>Select City</option>
+            <option value="Cluj-Napoca">Cluj-Napoca</option>
+            <option value="Bucharest">Bucharest</option>
+            <option value="Alba Iulia">Alba Iulia</option>
+        </select>
+
+        <select id='select_hospital' class="custom-select custom-select-lg mb-3">
+            <option selected>Select Hospital</option>
+        </select>
+
+        <select id='select_specialty' class="custom-select custom-select-lg mb-3">
+            <option selected>Select Specialty</option>
+        </select>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+    $("#select_city").change(function () {
+      var url = "{% url 'ajax_load_hospitals' %}"  // get the url of the `load_cities` view
+      var select_city = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'city': select_city       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#select_hospital").html(data);
+          console.log('salut')  // replace the contents of the city input with the data that came from the server
+        }
+      });
+    });
+
+    $("#select_hospital").change(function () {
+      var url = "{% url 'ajax_load_specialties' %}"  // get the url of the `load_cities` view
+      var select_hospital = $(this).val();  // get the selected country ID from the HTML input
+
+      $.ajax({                       // initialize an AJAX request
+        url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+        data: {
+          'hospital': select_hospital       // add the country id to the GET parameters
+        },
+        success: function (data) {   // `data` is the return of the `load_cities` view function
+          $("#select_specialty").html(data);
+          console.log('salut')  // replace the contents of the city input with the data that came from the server
+        }
+      });
+    });
+  </script>
+
+
+{% endblock %}

@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from website.models import Candidate, Hospital, Service
+from website.models import Candidate, Hospital, Service, Specialty
 from .filters import RankingFilter
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 import json
+from django.views.generic import ListView, CreateView, UpdateView
+
 
 # Create your views here.
 
@@ -40,8 +42,10 @@ def ranking(request):
 
 def research(request):
     hospitals = Hospital.objects.all()
+    services = Service.objects.all()
     context = {
         'hospitals':hospitals,
+        'services':services,
     }
     return render(request, 'website/research.html', context)
 
@@ -71,9 +75,19 @@ def hospital(request, hospital):
     }
     return render(request, 'website/hospital.html', context)
 
-def get_hospital_from_city(request):
-    city = request.POST['city']
-    hospitals_from_city = Hospital.objects.filter(city='city')
-    return hospitals_from_city
+
+def test(request):
+    return render(request, 'website/test.html')
+
+def load_hospitals(request):
+    city = request.GET.get('city')
+    hospitals = Hospital.objects.filter(city=city).order_by('name')
+    return render(request, 'website/load_hospitals.html', {'hospitals': hospitals})
+
+def load_specialties(request):
+    hospital = request.GET.get('hospital')
+    services = Service.objects.filter(hospital__name=hospital).order_by('specialty')
+    return render(request, 'website/load_specialties.html', {'services': services})
+
 
 
