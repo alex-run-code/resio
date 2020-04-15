@@ -31,12 +31,14 @@ def contact(request):
     return render(request, 'website/contact.html')
 
 def ranking(request):
+    specialties = Specialty.objects.all()
     candidates = Candidate.objects.all()
     myFilter = RankingFilter(request.GET, queryset=candidates)
     candidates = myFilter.qs
     context = {
         'candidates':candidates,
         'myFilter':myFilter,
+        'specialties':specialties,
     }
     return render(request, 'website/ranking.html', context)
 
@@ -88,5 +90,9 @@ def load_specialties(request):
     services = Service.objects.filter(hospital__name=hospital).order_by('specialty')
     return render(request, 'website/load_specialties.html', {'services': services})
 
-
-
+def get_grade(request):
+    city = request.GET.get('city')
+    specialty = request.GET.get('specialty')
+    candidates = Candidate.objects.filter(choice=specialty, location=city).order_by('grade')
+    grade = candidates[0].grade
+    return HttpResponse(grade)

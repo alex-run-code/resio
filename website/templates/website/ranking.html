@@ -5,12 +5,41 @@
 
 <section>
   <div class='container'>
+
+    <h1>Algorithm</h1>
+    <p>I want to work as </p>
+    <form>
+      <select id='select_specialty'>
+        <option>--------------</option>
+        <option>Ophtalmology</option>
+        {% for specialty in specialties %}
+        <option>{{ specialty.name }}</option>
+        {% endfor %}
+      </select>
+      <p>in </p>
+      <select id='select_city'>
+        <option>--------------</option>
+        <option>Cluj-Napoca</option>
+        <option>Bucharest</option>
+        <option>Alba Iulia</option>
+      </select>
+      <button id='getgrade' type='submit'>OK</button>
+    </form>
+    <p>You minimum grade is: <div id='grade'></div>
+    </p>
+
+    <div class="row">
+
+    </div>
+
+    <h1 class='mb-5'>Rankings</h1>
     <div class="row justify-content-center">
+
       <form method='get' style='width:80%' class="form-inline mb-5">
         {% for field in myFilter.form %}
         <div class='col-3'>
-            <div class='row justify-content-center'>{{field.name|upper}}</div>
-            <div class='row justify-content-center'>{{field}}</div>
+          <div class='row justify-content-center'>{{field.name|upper}}</div>
+          <div class='row justify-content-center'>{{field}}</div>
         </div>
         {% endfor %}
         <button id='filterbutton' type="submit" class="btn btn-primary my-1">Submit</button>
@@ -50,6 +79,25 @@
 
 
 
+<script src="{% static 'website/vendor/jquery/jquery.min.js' %}"></script>
+<script>
+  $("#getgrade").click(function (e) {
+    e.preventDefault();
+    var specialty = document.getElementById('select_specialty').value;
+    var city = document.getElementById('select_city').value;
+    $.ajax({
+      url: '{% url "get_grade" %}', // La ressource ciblée
+      data: {
+        'specialty': specialty,
+        'city': city,
+      },
+      success: function (result) {
+        document.getElementById('grade').textContent = result;
+        console.log(result)
+      }
+    });
+  });
 
+</script>
 
 {% endblock %}
