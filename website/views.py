@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from website.models import Candidate, Hospital, Service, Specialty
+from website.models import Candidate, Hospital, Service, Specialty, City
 from .filters import RankingFilter
 from django.http import JsonResponse, HttpResponse
 import json
 from django.views.generic import ListView, CreateView, UpdateView
-
+import names
+import random
 
 # Create your views here.
 
@@ -91,14 +92,14 @@ def load_specialties(request):
     return render(request, 'website/load_specialties.html', {'services': services})
 
 def get_grade(request):
-    city = request.GET.get('city')
-    specialty = request.GET.get('specialty')
+    city = City.objects.filter(name=request.GET.get('city'))[0]
+    specialty = Specialty.objects.filter(name=request.GET.get('specialty'))[0]
     candidates = Candidate.objects.filter(choice=specialty, location=city).order_by('grade')
     grade = candidates[0].grade
     return HttpResponse(grade)
 
 def get_specialty(request):
-    city = request.GET.get('city')
+    city = City.objects.filter(name=request.GET.get('city'))[0]
     grade = request.GET.get('grade')
     candidates = Candidate.objects.filter(grade__lte=grade, location=city)
     specialties = []
@@ -107,10 +108,33 @@ def get_specialty(request):
     return HttpResponse(specialties)
 
 def get_city(request):
-    specialty = request.GET.get('specialty')
+    specialty = Specialty.objects.filter(name=request.GET.get('specialty'))[0]
     grade = request.GET.get('grade')
     candidates = Candidate.objects.filter(grade__lte=grade, choice=specialty)
     cities = []
     for candidate in candidates:
         cities.append(candidate.location)
     return HttpResponse(cities)
+
+def add_10_random_candidates():
+    for i in range(10):
+        specialties = Specialty.objects.all()
+        cities = City.objects.all()
+        random_specialty = random.choice(specialties)
+        random_city = random.choice(cities)
+        first_name = names.get_first_name()
+        family_name = names.get_last_name()
+        grade = random.randrange(0, 20)
+        choice = random.randrange(0, 20)
+        location = random.randrange(0, 8)
+        year = random.randrange(2018, 2020)
+        new_candidate = Candidate(
+            first_name=first_name,
+            family_name=family_name,
+            grade=grade,
+            choice=random_specialty,
+            location=random_city,
+            year=year,
+        )
+        new_candidate.save()
+        print(new_candidate.first_name, ' ', new_candidate.family_name, ' : added')

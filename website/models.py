@@ -17,21 +17,21 @@ class Specialty(models.Model):
 
 class Candidate(models.Model):
 
-    SPECIALTY_CHOICES = [
-        ('Pediatric', 'Pediatric'),
-        ('Generalist', 'Generalist'),
-        ('Ophtalmology', 'Ophtalmology'),
-        ('Surgery', 'Surgery'),
-        ('Cardiology', 'Cardiology'),
-    ]
+    # SPECIALTY_CHOICES = [
+    #     ('Pediatric', 'Pediatric'),
+    #     ('Generalist', 'Generalist'),
+    #     ('Ophtalmology', 'Ophtalmology'),
+    #     ('Surgery', 'Surgery'),
+    #     ('Cardiology', 'Cardiology'),
+    # ]
 
-    LOCATION_CHOICES = [
-        ('Alba Iulia', 'Alba Iulia'),
-        ('Cluj-Napoca', 'Cluj-Napoca'),
-        ('Bucharest', 'Bucharest'),
-        ('Mara Mures', 'Mara Mures'),
-        ('Timisoara', 'Timisoara'),
-    ]
+    # LOCATION_CHOICES = [
+    #     ('Alba Iulia', 'Alba Iulia'),
+    #     ('Cluj-Napoca', 'Cluj-Napoca'),
+    #     ('Bucharest', 'Bucharest'),
+    #     ('Mara Mures', 'Mara Mures'),
+    #     ('Timisoara', 'Timisoara'),
+    # ]
 
     YEAR_CHOICES = [
         (2017, 2017),
