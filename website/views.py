@@ -96,3 +96,21 @@ def get_grade(request):
     candidates = Candidate.objects.filter(choice=specialty, location=city).order_by('grade')
     grade = candidates[0].grade
     return HttpResponse(grade)
+
+def get_specialty(request):
+    city = request.GET.get('city')
+    grade = request.GET.get('grade')
+    candidates = Candidate.objects.filter(grade__lte=grade, location=city)
+    specialties = []
+    for candidate in candidates:
+        specialties.append(candidate.choice)
+    return HttpResponse(specialties)
+
+def get_city(request):
+    specialty = request.GET.get('specialty')
+    grade = request.GET.get('grade')
+    candidates = Candidate.objects.filter(grade__lte=grade, choice=specialty)
+    cities = []
+    for candidate in candidates:
+        cities.append(candidate.location)
+    return HttpResponse(cities)

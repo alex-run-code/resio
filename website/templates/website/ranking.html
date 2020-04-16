@@ -7,6 +7,7 @@
   <div class='container'>
 
     <h1>Algorithm</h1>
+    <h3>I know my city and my specialty</h3>
     <p>I want to work as </p>
     <form>
       <select id='select_specialty'>
@@ -27,6 +28,40 @@
     </form>
     <p>You minimum grade is: <div id='grade'></div>
     </p>
+
+    <h3>I know my city and my grade</h3>
+    <p>I want to work in </p>
+    <form>
+      <select id='select_city2'>
+        <option>--------------</option>
+        <option>Cluj-Napoca</option>
+        <option>Bucharest</option>
+        <option>Alba Iulia</option>
+      </select>
+      <p>and I think my grade will be around</p>
+      <input id='select_grade'></input>
+      <button id='getspecialty' type='submit'>OK</button>
+    </form>
+    <p>You will be able to work as a: <div id='specialty'></div>
+    </p>
+
+    <h3>I know my specialty and my grade</h3>
+    <p>I want to work as a </p>
+    <form>
+      <select id='select_specialty2'>
+        <option>--------------</option>
+        <option>Ophtalmology</option>
+        {% for specialty in specialties %}
+        <option>{{ specialty.name }}</option>
+        {% endfor %}
+      </select>
+      <p>and I think my grade will be around</p>
+      <input id='select_grade2'></input>
+      <button id='getcity' type='submit'>OK</button>
+    </form>
+    <p>You will be able to work in: <div id='city'></div>
+    </p>
+
 
     <div class="row">
 
@@ -94,6 +129,40 @@
       success: function (result) {
         document.getElementById('grade').textContent = result;
         console.log(result)
+      }
+    });
+  });
+
+  $("#getspecialty").click(function (e) {
+    e.preventDefault();
+    var grade = document.getElementById('select_grade').value;
+    var city = document.getElementById('select_city2').value;
+    $.ajax({
+      url: '{% url "get_specialty" %}', // La ressource ciblée
+      data: {
+        'grade': grade,
+        'city': city,
+      },
+      success: function (result) {
+        document.getElementById('specialty').textContent = result;
+        console.log(result);
+      }
+    });
+  });
+
+  $("#getcity").click(function (e) {
+    e.preventDefault();
+    var grade = document.getElementById('select_grade2').value;
+    var specialty = document.getElementById('select_specialty2').value;
+    $.ajax({
+      url: '{% url "get_city" %}', // La ressource ciblée
+      data: {
+        'grade': grade,
+        'specialty': specialty,
+      },
+      success: function (result) {
+        document.getElementById('city').textContent = result;
+        console.log(result);
       }
     });
   });

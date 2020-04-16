@@ -14,4 +14,6 @@ urlpatterns = [
     path('ajax/load_hospitals/', views.load_hospitals, name='ajax_load_hospitals'),
     path('ajax/load_specialties/', views.load_specialties, name='ajax_load_specialties'),  # <-- this one here
     path('get_grade/', views.get_grade, name='get_grade'),
+    path('get_specialty/', views.get_specialty, name='get_specialty'),
+    path('get_city/', views.get_city, name='get_city'),
 ]

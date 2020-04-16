@@ -66,16 +66,8 @@
     var user_choice = document.getElementById('user_choice');
     var edit_button = document.getElementById('edit_button');
     var autocomplete = document.getElementById('autocomplete');
-    var validation_button = document.getElementById('validation_button');
     var hospital_address = document.getElementById('hospital_address').textContent;
 
-
-    validation_button.addEventListener('click', function (e) {
-        // e.preventDefault();
-        user_choice.textContent = autocomplete.value;
-        choice_form.style = 'display:none';
-        user_choice.style = 'display:block';
-    });
 
 
     // Initialize and add the map
