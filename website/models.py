@@ -2,6 +2,19 @@ from django.db import models
 
 # Create your models here.
 
+class City(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+class Specialty(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class Candidate(models.Model):
 
     SPECIALTY_CHOICES = [
@@ -30,8 +43,8 @@ class Candidate(models.Model):
     first_name = models.CharField(max_length=255, default='None')
     family_name = models.CharField(max_length=255, default='None')
     grade = models.FloatField()
-    choice = models.CharField(max_length=255, choices=SPECIALTY_CHOICES)
-    location = models.CharField(max_length=255, choices=LOCATION_CHOICES)
+    choice = models.ForeignKey('Specialty', on_delete=models.CASCADE)
+    location = models.ForeignKey('City', on_delete=models.CASCADE)
     year = models.IntegerField(choices=YEAR_CHOICES)
 
     def __str__(self):
@@ -39,18 +52,11 @@ class Candidate(models.Model):
 
 class Hospital(models.Model):
     name = models.CharField(max_length=255)
-    city = models.CharField(max_length=255)
     website = models.CharField(max_length=255)
+    city = models.ForeignKey('City', on_delete=models.CASCADE)
     address = models.CharField(max_length=255)
     phone = models.IntegerField()
     about = models.TextField(max_length=2550)
-
-    def __str__(self):
-        return self.name
-    
-
-class Specialty(models.Model):
-    name = models.CharField(max_length=255, unique=True)
 
     def __str__(self):
         return self.name
