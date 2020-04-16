@@ -64,3 +64,9 @@ html, body {
 #map {
   height: 300%;
 }
+
+.dropdown-cool:hover {
+  text-decoration: none;
+  background-color: red;
+  cursor: pointer;
+}

@@ -34,12 +34,14 @@ def contact(request):
 def ranking(request):
     specialties = Specialty.objects.all()
     candidates = Candidate.objects.all()
+    cities = City.objects.all()
     myFilter = RankingFilter(request.GET, queryset=candidates)
     candidates = myFilter.qs
     context = {
         'candidates':candidates,
         'myFilter':myFilter,
         'specialties':specialties,
+        'cities':cities,
     }
     return render(request, 'website/ranking.html', context)
 
@@ -83,7 +85,7 @@ def test(request):
 
 def load_hospitals(request):
     city = request.GET.get('city')
-    hospitals = Hospital.objects.filter(city=city).order_by('name')
+    hospitals = Hospital.objects.filter(city__name=city).order_by('name')
     return render(request, 'website/load_hospitals.html', {'hospitals': hospitals})
 
 def load_specialties(request):
@@ -92,14 +94,14 @@ def load_specialties(request):
     return render(request, 'website/load_specialties.html', {'services': services})
 
 def get_grade(request):
-    city = City.objects.filter(name=request.GET.get('city'))[0]
-    specialty = Specialty.objects.filter(name=request.GET.get('specialty'))[0]
+    city = City.objects.filter(name=request.GET.get('city')).first()
+    specialty = Specialty.objects.filter(name=request.GET.get('specialty')).first()
     candidates = Candidate.objects.filter(choice=specialty, location=city).order_by('grade')
     grade = candidates[0].grade
     return HttpResponse(grade)
 
 def get_specialty(request):
-    city = City.objects.filter(name=request.GET.get('city'))[0]
+    city = City.objects.filter(name=request.GET.get('city')).first()
     grade = request.GET.get('grade')
     candidates = Candidate.objects.filter(grade__lte=grade, location=city)
     specialties = []
@@ -108,7 +110,7 @@ def get_specialty(request):
     return HttpResponse(specialties)
 
 def get_city(request):
-    specialty = Specialty.objects.filter(name=request.GET.get('specialty'))[0]
+    specialty = Specialty.objects.filter(name=request.GET.get('specialty')).first()
     grade = request.GET.get('grade')
     candidates = Candidate.objects.filter(grade__lte=grade, choice=specialty)
     cities = []
