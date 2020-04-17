@@ -106,8 +106,9 @@ def get_specialty(request):
     candidates = Candidate.objects.filter(grade__lte=grade, location=city)
     specialties = []
     for candidate in candidates:
-        specialties.append(candidate.choice)
-    return HttpResponse(specialties)
+        specialties.append(candidate.choice.name)
+    json_specialties = json.dumps(list(set(specialties)))
+    return JsonResponse(json_specialties, safe=False)
 
 def get_city(request):
     specialty = Specialty.objects.filter(name=request.GET.get('specialty')).first()
@@ -115,8 +116,9 @@ def get_city(request):
     candidates = Candidate.objects.filter(grade__lte=grade, choice=specialty)
     cities = []
     for candidate in candidates:
-        cities.append(candidate.location)
-    return HttpResponse(cities)
+        cities.append(candidate.location.name)
+    json_cities = json.dumps(list(set(cities)))
+    return JsonResponse(json_cities, safe=False)
 
 def add_10_random_candidates():
     for i in range(10):

@@ -82,7 +82,7 @@
         var select_hospital = $(this).val();
         var gobutton = document.getElementById('gobutton');
         $.ajax({                       // initialize an AJAX request
-            url: url,                    // set the url of the request (= localhost:8000/hr/ajax/load-cities/)
+            url: url,                   // set the url of the request (= localhost:8000/hr/ajax/load-cities/)                    
             data: {
                 'hospital': select_hospital       // add the country id to the GET parameters
             },
