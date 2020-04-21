@@ -88,14 +88,14 @@
                 </select>
 
                 <p style='margin-top:15px'>and I think my grade will be around</p>
-                <input class='ml-3 mr-3' id='select_grade'></input>
+                <input style='width:50px; text-align: center;'class='ml-3 mr-3' id='select_grade'></input>
                 <button class="btn btn-warning mr-2 ml-2" id='getspecialty' type='submit'>OK</button>
               </form>
             </div>
             <div class='row mt-3'>
-              <div class='col-12'><i>Based on the precedent years, you will be able to work with: </i></div>
+              <div class='col-12 mb-2'><i>Based on the precedent years, you will be able to work with: </i></div>
               <div class='col-12'>
-                <ul id='specialty' class='ml-0'></ul>
+                <div id='specialty' class='h5'></div>
               </div>
             </div>
 
@@ -134,14 +134,14 @@
                 </select>
 
                 <p style='margin-top:15px'>and I think my grade will be around</p>
-                <input class='ml-3 mr-3' id='select_grade2'></input>
+                <input style='width:50px; text-align: center;'class='ml-3 mr-3' id='select_grade2'></input>
                 <button class="btn btn-danger mr-2 ml-2" id='getcity' type='submit'>OK</button>
               </form>
             </div>
             <div class='row mt-3'>
-              <div class='col-12'><i>Based on the precedent years, you will be able to work in: </i></div>
+              <div class='col-12 mb-2'><i>Based on the precedent years, you will be able to work in: </i></div>
               <div class='col-12'>
-                <div id='city'></div>
+                <div id='city' class='h5'></div>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@
 
 
 
-
+    <hr class='mt-5'>
 
 
 
@@ -229,6 +229,7 @@
     e.preventDefault();
     var grade = document.getElementById('select_grade').value;
     var city = document.getElementById('select_city2').value;
+    var specialties = document.getElementById('specialty').innerHTML = '';
     $.ajax({
       url: '{% url "get_specialty" %}', // La ressource ciblée
       dataType: 'Json',
@@ -252,6 +253,7 @@
     e.preventDefault();
     var grade = document.getElementById('select_grade2').value;
     var specialty = document.getElementById('select_specialty2').value;
+    var cities = document.getElementById('city').innerHTML = '';
     $.ajax({
       url: '{% url "get_city" %}', // La ressource ciblée
       data: {
