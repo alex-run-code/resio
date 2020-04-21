@@ -69,7 +69,8 @@
                 </div>
                 <div class='col-11'>
                   <h4 style='text-transform: none;'> What specialty will I be able to get ?</h4>
-                  <p style='text-transform: none;'>Select your favorite city and the grade you think you'll have and we will estimate the specialties you'll be able to work with.</p>
+                  <p style='text-transform: none;'>Select your favorite city and the grade you think you'll have and we
+                    will estimate the specialties you'll be able to work with.</p>
                 </div>
               </div>
             </button>
@@ -88,7 +89,7 @@
                 </select>
 
                 <p style='margin-top:15px'>and I think my grade will be around</p>
-                <input style='width:50px; text-align: center;'class='ml-3 mr-3' id='select_grade'></input>
+                <input style='width:50px; text-align: center;' class='ml-3 mr-3' id='select_grade'></input>
                 <button class="btn btn-warning mr-2 ml-2" id='getspecialty' type='submit'>OK</button>
               </form>
             </div>
@@ -115,9 +116,10 @@
                 <div class='col-11'>
                   <h4 style='text-transform: none;'> Where will I be able to work
                     ?</h4>
-                    <p style='text-transform: none;'>Tell us what specialty you want to work with and the grade you think you will have and we will estimate the cities in which you will be able to work.</p>
-              </div>
-              
+                  <p style='text-transform: none;'>Tell us what specialty you want to work with and the grade you think
+                    you will have and we will estimate the cities in which you will be able to work.</p>
+                </div>
+
             </button>
           </h5>
         </div>
@@ -134,7 +136,7 @@
                 </select>
 
                 <p style='margin-top:15px'>and I think my grade will be around</p>
-                <input style='width:50px; text-align: center;'class='ml-3 mr-3' id='select_grade2'></input>
+                <input style='width:50px; text-align: center;' class='ml-3 mr-3' id='select_grade2'></input>
                 <button class="btn btn-danger mr-2 ml-2" id='getcity' type='submit'>OK</button>
               </form>
             </div>
@@ -187,19 +189,39 @@
           </tr>
         </thead>
         <tbody>
-          {% for candidate in candidates %}
-          <tr>
-            <th scope="row">{{ candidate.id }}</th>
-            <td>{{ candidate.first_name }}</td>
-            <td>{{ candidate.family_name }}</td>
-            <td>{{ candidate.grade }}</td>
-            <td>{{ candidate.choice }}</td>
-            <td>{{ candidate.location }}</td>
-            <td>{{ candidate.year }}</td>
-          </tr>
+          {% for candidate in candidates.object_list %}
+              <tr>
+                <th scope="row">{{ candidate.id }}</th>
+                <td>{{ candidate.first_name }}</td>
+                <td>{{ candidate.family_name }}</td>
+                <td>{{ candidate.grade }}</td>
+                <td>{{ candidate.choice }}</td>
+                <td>{{ candidate.location }}</td>
+                <td>{{ candidate.year }}</td>
+              </tr>
           {% endfor %}
         </tbody>
       </table>
+
+      <div class="pagination">
+        <span class="step-links">
+            {% if candidates.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ candidates.previous_page_number }}">previous</a>
+            {% endif %}
+    
+            <span class="current">
+                Page {{ candidates.number }} of {{ candidates.paginator.num_pages }}.
+            </span>
+    
+            {% if candidates.has_next %}
+                <a href="?page={{ candidates.next_page_number }}">next</a>
+                <a href="?page={{ candidates.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+        </span>
+    </div>
+
+
     </div>
   </div>
 </section>

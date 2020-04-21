@@ -6,6 +6,7 @@ import json
 from django.views.generic import ListView, CreateView, UpdateView
 import names
 import random
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -37,8 +38,10 @@ def ranking(request):
     cities = City.objects.all()
     myFilter = RankingFilter(request.GET, queryset=candidates)
     candidates = myFilter.qs
+    p_candidates = Paginator(candidates, 15)
+    page_number = request.GET.get('page')
     context = {
-        'candidates':candidates,
+        'candidates':p_candidates.get_page(page_number),
         'myFilter':myFilter,
         'specialties':specialties,
         'cities':cities,
@@ -142,3 +145,8 @@ def add_10_random_candidates():
         )
         new_candidate.save()
         print(new_candidate.first_name, ' ', new_candidate.family_name, ' : added')
+
+class CandidateView(ListView):
+    model = Candidate
+    paginate_by = 10
+    template_name = 'website/candidates.html'

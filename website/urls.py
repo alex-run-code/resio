@@ -1,6 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from .views import CandidateView
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('ranking/', views.ranking, name='ranking'),
@@ -16,4 +18,5 @@ urlpatterns = [
     path('get_grade/', views.get_grade, name='get_grade'),
     path('get_specialty/', views.get_specialty, name='get_specialty'),
     path('get_city/', views.get_city, name='get_city'),
+    path('candidates/', CandidateView.as_view(), name='candidates'),
 ]
