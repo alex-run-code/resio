@@ -12,16 +12,23 @@
       <div class="card">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">
-            <button class="btn btn-link btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-              aria-controls="collapseOne">
-              <strong><i class="fas fa-graduation-cap fa-2x"></i> - WHAT GRADE WILL I NEED TO GET ?</strong>
+            <button class="btn btn-link collapsed col-12 text-left" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="false" aria-controls="collapseThree">
+              <div class='row'>
+                <div class='col-1'>
+                  <img style='width: 100%;' src='{% static "/website/img/grade.png" %}'>
+                </div>
+                <div class='col-11'>
+                  <h4 style='text-transform: none;'> What grade will I need to get ?</h4>
+                  <p style='text-transform: none;'>Select your favorite city and the specialty you want to work with and
+                    we'll tell you the grade you need to obtain.</p>
+                </div>
+              </div>
             </button>
           </h5>
         </div>
-
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-
             <div class='row ml-0'>
               <form style="display: flex;">
                 <p style='margin-top:15px'>I want to work with</p>
@@ -54,9 +61,17 @@
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
-            <button class="btn btn-link collapsed text-danger" data-toggle="collapse" data-target="#collapseTwo"
-              aria-expanded="false" aria-controls="collapseTwo">
-              <strong><i class="fas fa-stethoscope fa-2x"></i> - WHAT SPECIALTY WILL I BE ABLE TO GET ?</strong>
+            <button class="btn btn-link collapsed col-12 text-left" data-toggle="collapse" data-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseThree">
+              <div class='row'>
+                <div class='col-1'>
+                  <img style='width: 100%;' src='{% static "/website/img/doctor.png" %}'>
+                </div>
+                <div class='col-11'>
+                  <h4 style='text-transform: none;'> What specialty will I be able to get ?</h4>
+                  <p style='text-transform: none;'>Select your favorite city and the grade you think you'll have and we will estimate the specialties you'll be able to work with.</p>
+                </div>
+              </div>
             </button>
           </h5>
         </div>
@@ -74,7 +89,7 @@
 
                 <p style='margin-top:15px'>and I think my grade will be around</p>
                 <input class='ml-3 mr-3' id='select_grade'></input>
-                <button class="btn btn-danger mr-2 ml-2" id='getspecialty' type='submit'>OK</button>
+                <button class="btn btn-warning mr-2 ml-2" id='getspecialty' type='submit'>OK</button>
               </form>
             </div>
             <div class='row mt-3'>
@@ -91,9 +106,18 @@
       <div class="card">
         <div class="card-header" id="headingThree">
           <h5 class="mb-0">
-            <button class="btn btn-link collapsed text-warning" data-toggle="collapse" data-target="#collapseThree"
+            <button class="btn btn-link collapsed col-12 text-left" data-toggle="collapse" data-target="#collapseThree"
               aria-expanded="false" aria-controls="collapseThree">
-              <strong><i class="fas fa-map-marked-alt fa-2x"></i> - WHERE WILL I BE ABLE TO WORK ?</strong>
+              <div class='row'>
+                <div class='col-1'>
+                  <img style='width: 100%;' src='{% static "/website/img/location.png" %}'>
+                </div>
+                <div class='col-11'>
+                  <h4 style='text-transform: none;'> Where will I be able to work
+                    ?</h4>
+                    <p style='text-transform: none;'>Tell us what specialty you want to work with and the grade you think you will have and we will estimate the cities in which you will be able to work.</p>
+              </div>
+              
             </button>
           </h5>
         </div>
@@ -111,7 +135,7 @@
 
                 <p style='margin-top:15px'>and I think my grade will be around</p>
                 <input class='ml-3 mr-3' id='select_grade2'></input>
-                <button class="btn btn-warning mr-2 ml-2" id='getcity' type='submit'>OK</button>
+                <button class="btn btn-danger mr-2 ml-2" id='getcity' type='submit'>OK</button>
               </form>
             </div>
             <div class='row mt-3'>
