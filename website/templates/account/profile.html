@@ -8,14 +8,24 @@
 {% block content %}
 <section id='profile' class='col-8 offset-2 mb-5'>
     <div class='container'>
-        <div class='col'>
+        <div class='section'>
             <div class='row'>
-                <p>Welcome Dr {{ user.username }}</p>
+                <div class='col'>
+                    <h1>Welcome</h1>
+                    <p>Welcome Dr {{ user.username }}</p>
+                    <p>Your favorites are:</p>
+                    <ul>
+                        {% for favorite in favorites %}
+                        <li>{{ favorite.service }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
 
-           
+
 
 {% endblock %}

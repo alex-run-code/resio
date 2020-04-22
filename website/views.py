@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.models import Candidate, Hospital, Service, Specialty, City
+from website.models import Candidate, Hospital, Service, Specialty, City, Favorite
 from .filters import RankingFilter
 from django.http import JsonResponse, HttpResponse
 import json
@@ -16,16 +16,10 @@ def index(request):
     return render(request, 'website/index.html')
 
 def profile(request):
-    cities = [
-        'Cluj-Napoca',
-        'Alba-Iulia',
-        'Bucharest',
-        'Maramures',
-        'Oas',
-
-        ]
+    user = request.user
+    favorites = Favorite.objects.filter(user=user)
     context = {
-        'cities':cities
+        'favorites':favorites,
     }
     return render(request, 'account/profile.html', context)
 
@@ -123,8 +117,8 @@ def get_city(request):
     json_cities = json.dumps(list(set(cities)))
     return JsonResponse(json_cities, safe=False)
 
-def add_10_random_candidates():
-    for i in range(10):
+def add_100_random_candidates():
+    for i in range(100):
         specialties = Specialty.objects.all()
         cities = City.objects.all()
         random_specialty = random.choice(specialties)

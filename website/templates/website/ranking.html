@@ -27,7 +27,7 @@
             </button>
           </h5>
         </div>
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <div class='row ml-0'>
               <form style="display: flex;">
@@ -151,17 +151,12 @@
       </div>
     </div>
 
-
-
-
-
+    <a name='rankings'></a>
 
     <hr class='mt-5'>
 
-
-
-
     <h1 class='mb-5 mt-5'>Rankings</h1>
+    
     <div class="row justify-content-center">
 
       <form method='get' style='width:80%' class="form-inline mb-5">
@@ -206,17 +201,17 @@
       <div class="pagination">
         <span class="step-links">
             {% if candidates.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ candidates.previous_page_number }}">previous</a>
+                <a href="?page=1#rankings"><i class="fas fa-arrow-circle-left"></i> first</a>
+                <a href="?page={{ candidates.previous_page_number }}#rankings">previous</a>
             {% endif %}
     
             <span class="current">
-                Page {{ candidates.number }} of {{ candidates.paginator.num_pages }}.
+                Page {{ candidates.number }} of {{ candidates.paginator.num_pages }}
             </span>
     
             {% if candidates.has_next %}
-                <a href="?page={{ candidates.next_page_number }}">next</a>
-                <a href="?page={{ candidates.paginator.num_pages }}">last &raquo;</a>
+                <a href="?page={{ candidates.next_page_number }}#rankings">next</a>
+                <a href="?page={{ candidates.paginator.num_pages }}#rankings">last <i class="fas fa-arrow-circle-right"></i></a>
             {% endif %}
         </span>
     </div>

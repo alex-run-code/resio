@@ -2,30 +2,35 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 {% load account socialaccount %}
+{% load static %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
 <section id='profile' class='col-8 offset-2 mb-5'>
     <div class='container mb-5'>
-            <h1>{{ hospital_name }}, {{ specialty }} </h1>
-            <h3>{{ city }} </h3>
+        <h1>{{ hospital_name }}</h1>
+        <h5>{{ specialty }} </h5>
+        <h5>{{ city }}</h5>
     </div>
 
+    <hr class='mb-3'>
+
     <div class='container'>
-        <div class='col'>
-            <div class='row'>
-                <strong>General Informations</strong>
+        <div class='col mb-5 mt-5'>
+            <div class='row d-inline'>
+                <img class='service_icon d-inline align-middle mr-2' src='{% static "/website/img/Informations.png" %}'>
+                <h3 class='d-inline align-middle'>General Informations</h3>
             </div>
             <div class='row mt-3'>
                 <table class="table table-hover table-bordered">
-                    <thead>
+                    <thead class='thead-dark'>
                         <tr>
-                            <th scope="col">Paperwork</th>
-                            <th scope="col">Chief</th>
-                            <th scope="col">Human Ressources</th>
-                            <th scope="col">Website</th>
-                            <th scope="col">Residanat.ms</th>
+                            <th class='h5' scope="col"><i class="fas fa-paste mr-2"></i>Paperwork</th>
+                            <th class='h5' scope="col"><i class="fas fa-user-md mr-2"></i>Chief</th>
+                            <th class='h5' scope="col"><i class="fas fa-phone-square mr-2"></i>Human Ressources</th>
+                            <th class='h5' scope="col"><i class="fas fa-globe mr-2"></i>Website</th>
+                            <th class='h5' scope="col"><i class="fas fa-thumbtack mr-2"></i>Residanat.ms</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,8 +38,8 @@
                             <td>Identification Document</td>
                             <td>{{chief_name}} {{chief_surname}}</td>
                             <td>01 45 63 22 00</td>
-                            <td>{{website}}</td>
-                            <td>{{residanatms_url}}</td>
+                            <td><a href='http://{{website}}'>{{website}}</a></td>
+                            <td><a href='{{residanatms_url}}'>{{residanatms_url}}</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -42,13 +47,17 @@
         </div>
 
         <div class='row'>
-            <div class='col-6'>
-                <strong>Address</strong>
+            <div class='col-6' style='margin-bottom: 200px;'>
+                <img class='service_icon d-inline align-middle mr-2 mb-2'
+                    src='{% static "/website/img/location2.png" %}'>
+                <h3 class='d-inline align-middle'>Address</h3>
                 <p id='hospital_address'>{{ address }}</p>
                 <div id="map"></div>
             </div>
             <div class='col-6'>
-                <strong>Description</strong>
+                <img class='service_icon d-inline align-middle mr-2 mb-2'
+                    src='{% static "/website/img/description.png" %}'>
+                <h3 class='d-inline align-middle'>Description</h3>
                 <p class="text-justify">
                     {{description}}
                 </p>
