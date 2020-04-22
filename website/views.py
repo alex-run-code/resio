@@ -55,6 +55,7 @@ def service(request, hospital, specialty):
     service = Service.objects.filter(hospital__name=hospital, specialty__name=specialty)[0]
     hospital_info = Hospital.objects.filter(name=hospital)[0]
     context = {
+        'service':service,
         'hospital_name':str(hospital),
         'city': hospital_info.city,
         'specialty':specialty,
@@ -140,7 +141,11 @@ def add_100_random_candidates():
         new_candidate.save()
         print(new_candidate.first_name, ' ', new_candidate.family_name, ' : added')
 
-class CandidateView(ListView):
-    model = Candidate
-    paginate_by = 10
-    template_name = 'website/candidates.html'
+def add_to_favorites(request):
+    user = request.user
+    service = Service.objects.filter(hospital__name=request.GET.get('hospital'), specialty__name=request.GET.get('specialty')).first()
+    new_favorite = Favorite(user=user, service=service)
+    new_favorite.save()
+    return HttpResponse('added')
+
+

@@ -12,6 +12,7 @@
         <h1>{{ hospital_name }}</h1>
         <h5>{{ specialty }} </h5>
         <h5>{{ city }}</h5>
+        <div id='add_to_fav' class='btn btn-primary btn-sm'>Add to favorites</div>
     </div>
 
     <hr class='mb-3'>
@@ -66,11 +67,41 @@
     </div>
 </section>
 
+<div style='display:block' id='service_hospital'>{{ service.hospital.name }}</div>
+<div style='display:block' id='service_specialty'>{{ service.specialty.name }}</div>
+
 <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwSA_ULYZAWaKIITocO960qLrNzuA0l_g&libraries=places"></script>
 
-
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
+
+    $("#add_to_fav").click(function () {
+        var url = "{% url 'add_to_favorites' %}"; // get the url of the `load_cities` view
+        var hospital = $("#service_hospital").text() ;
+        var specialty = $("#service_specialty").text() ;
+        if ($("#add_to_fav").text() == 'Added') {
+            return false;
+        } else {
+            $.ajax({                       // initialize an AJAX request
+                url: url,                   // set the url of the request (= localhost:8000/hr/ajax/load-cities/)                    
+                data: {
+                    'hospital': hospital,
+                    'specialty':specialty,     // add the country id to the GET parameters
+                },
+                success: function () {   // `data` is the return of the `load_cities` view function
+                    $("#add_to_fav").text('Added');
+                    $("#add_to_fav").removeClass('btn-primary');
+                    $("#add_to_fav").addClass('btn-warning');
+                    $('#add_to_fav').off('click');
+                    console.log('success');
+                    $('#add_to_fav').off('click');
+                    // replace the contents of the city input with the data that came from the server
+                }
+            });
+        }
+    });
+
     var choice_form = document.getElementById('choice_form');
     var user_choice = document.getElementById('user_choice');
     var edit_button = document.getElementById('edit_button');
