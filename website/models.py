@@ -92,3 +92,6 @@ class Paperwork_Service(models.Model):
     paperwork = models.ForeignKey('Paperwork',on_delete=models.CASCADE)
     service = models.ForeignKey('Service',on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.paperwork.name + ' | ' + self.service.hospital.name + ' | ' + self.service.specialty.name
+

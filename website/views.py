@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.models import Candidate, Hospital, Service, Specialty, City, Favorite
+from website.models import Candidate, Hospital, Service, Specialty, City, Favorite, Paperwork_Service
 from .filters import RankingFilter
 from django.http import JsonResponse, HttpResponse
 import json
@@ -52,8 +52,11 @@ def research(request):
     return render(request, 'website/research.html', context)
 
 def service(request, hospital, specialty):
-    service = Service.objects.filter(hospital__name=hospital, specialty__name=specialty)[0]
-    hospital_info = Hospital.objects.filter(name=hospital)[0]
+    service = Service.objects.filter(hospital__name=hospital, specialty__name=specialty).first()
+    hospital_info = Hospital.objects.filter(name=hospital).first()
+    this_favorite = Favorite.objects.filter(service=service).first()
+    user_favorites = Favorite.objects.filter(user=request.user)
+    documents = Paperwork_Service.objects.filter(service=service)
     context = {
         'service':service,
         'hospital_name':str(hospital),
@@ -64,7 +67,10 @@ def service(request, hospital, specialty):
         'residanatms_url':service.residanatms_url,
         'website':hospital_info.website,
         'address':hospital_info.address,
-        'description': hospital_info.about
+        'description': hospital_info.about,
+        'this_favorite':this_favorite,
+        'user_favorites':user_favorites,
+        'documents':documents,
     }
     return render(request, 'website/service.html', context)
 

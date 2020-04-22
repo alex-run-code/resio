@@ -12,7 +12,12 @@
         <h1>{{ hospital_name }}</h1>
         <h5>{{ specialty }} </h5>
         <h5>{{ city }}</h5>
+        {% if this_favorite in user_favorites %}
+        <i>Already in your favorites</i>
+        {% else %}
         <div id='add_to_fav' class='btn btn-primary btn-sm'>Add to favorites</div>
+        {% endif %}
+
     </div>
 
     <hr class='mb-3'>
@@ -36,7 +41,30 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Identification Document</td>
+                            <td>
+                                <div id='paperwork_check'>
+                                    {% for document in documents %}
+                                    {% if user.is_authenticated %}
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input type="checkbox" class="custom-control-input pw_check"
+                                            id="{{ document.paperwork.name }}">
+                                        <label class="custom-control-label"
+                                            for="{{ document.paperwork.name }}">{{ document.paperwork.name }}</label>
+                                    </div>
+                                    {% else %}
+                                    {{ document.paperwork.name }}
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+
+                                {% if user.is_authenticated %}
+                                <div class="progress mt-2">
+                                    <div id='my_progress_bar'
+                                        class="progress-bar progress-bar-striped progress-bar-animated"
+                                        role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                {% endif %}
+                            </td>
                             <td>{{chief_name}} {{chief_surname}}</td>
                             <td>01 45 63 22 00</td>
                             <td><a href='http://{{website}}'>{{website}}</a></td>
@@ -67,8 +95,9 @@
     </div>
 </section>
 
-<div style='display:block' id='service_hospital'>{{ service.hospital.name }}</div>
-<div style='display:block' id='service_specialty'>{{ service.specialty.name }}</div>
+<div style='display:none' id='service_hospital'>{{ service.hospital.name }}</div>
+<div style='display:none' id='service_specialty'>{{ service.specialty.name }}</div>
+<div class='btn' id='testbutton'>Test</div>
 
 <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwSA_ULYZAWaKIITocO960qLrNzuA0l_g&libraries=places"></script>
@@ -76,10 +105,37 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 
+    var paperwork_check = document.getElementsByClassName('pw_check');
+
+    function progress_pw() {
+        var progress = 0;
+        for (i = 0; i < paperwork_check.length; i++) {
+            if (paperwork_check[i].checked) {
+                progress += 25;
+            };
+        };
+        return progress;
+    };
+
+    function move_progress_bar() {
+        var progress = progress_pw().toString()
+        document.getElementById('my_progress_bar').setAttribute('aria-valuenow', progress);
+        document.getElementById('my_progress_bar').style.width = progress + '%';
+        progress_pw();
+    };
+
+    move_progress_bar()
+
+    for (i = 0; i < paperwork_check.length; i++) {
+        paperwork_check[i].addEventListener('change', function () {
+            move_progress_bar();
+        });
+    };
+
     $("#add_to_fav").click(function () {
         var url = "{% url 'add_to_favorites' %}"; // get the url of the `load_cities` view
-        var hospital = $("#service_hospital").text() ;
-        var specialty = $("#service_specialty").text() ;
+        var hospital = $("#service_hospital").text();
+        var specialty = $("#service_specialty").text();
         if ($("#add_to_fav").text() == 'Added') {
             return false;
         } else {
@@ -87,14 +143,13 @@
                 url: url,                   // set the url of the request (= localhost:8000/hr/ajax/load-cities/)                    
                 data: {
                     'hospital': hospital,
-                    'specialty':specialty,     // add the country id to the GET parameters
+                    'specialty': specialty,     // add the country id to the GET parameters
                 },
                 success: function () {   // `data` is the return of the `load_cities` view function
                     $("#add_to_fav").text('Added');
                     $("#add_to_fav").removeClass('btn-primary');
                     $("#add_to_fav").addClass('btn-warning');
                     $('#add_to_fav').off('click');
-                    console.log('success');
                     $('#add_to_fav').off('click');
                     // replace the contents of the city input with the data that came from the server
                 }
