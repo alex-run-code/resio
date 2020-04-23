@@ -95,3 +95,11 @@ class Paperwork_Service(models.Model):
     def __str__(self):
         return self.paperwork.name + ' | ' + self.service.hospital.name + ' | ' + self.service.specialty.name
 
+class Paperwork_Service_User(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    pw_service = models.ForeignKey('Paperwork_Service',on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.pw_service.paperwork.name + ' | ' + self.user.username + ' | ' + str(self.pw_service.service.id)
+
+

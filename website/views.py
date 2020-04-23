@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from website.models import Candidate, Hospital, Service, Specialty, City, Favorite, Paperwork_Service
+from website.models import Paperwork_Service_User
 from .filters import RankingFilter
 from django.http import JsonResponse, HttpResponse
 import json
@@ -57,6 +58,7 @@ def service(request, hospital, specialty):
     this_favorite = Favorite.objects.filter(service=service).first()
     user_favorites = Favorite.objects.filter(user=request.user)
     documents = Paperwork_Service.objects.filter(service=service)
+    user_documents = Paperwork_Service_User(user=request.user)
     context = {
         'service':service,
         'hospital_name':str(hospital),
@@ -71,6 +73,7 @@ def service(request, hospital, specialty):
         'this_favorite':this_favorite,
         'user_favorites':user_favorites,
         'documents':documents,
+        'user_documents': user_documents,
     }
     return render(request, 'website/service.html', context)
 
@@ -153,5 +156,16 @@ def add_to_favorites(request):
     new_favorite = Favorite(user=user, service=service)
     new_favorite.save()
     return HttpResponse('added')
+
+def get_list_of_paperwork(request):
+    user = request.user
+    sevice_id = request.GET.get('service_id')
+    user_documents = Paperwork_Service_User.objects.filter(user=user, pw_service__service=sevice_id)
+    user_documents_list = []
+    for document in user_documents:
+        user_documents_list.append(document.pw_service.paperwork.name)
+    user_documents_json = json.dumps(user_documents_list)
+    print(user_documents_list)
+    return JsonResponse(user_documents_json, safe=False)
 
 

@@ -19,4 +19,5 @@ urlpatterns = [
     path('get_specialty/', views.get_specialty, name='get_specialty'),
     path('get_city/', views.get_city, name='get_city'),
     path('add_to_favorites/', views.add_to_favorites, name='add_to_favorites'),
+    path('get_list_of_paperwork/', views.get_list_of_paperwork, name='get_list_of_paperwork'),
 ]

@@ -47,7 +47,7 @@
                                     {% if user.is_authenticated %}
                                     <div class="custom-control custom-checkbox mr-sm-2">
                                         <input type="checkbox" class="custom-control-input pw_check"
-                                            id="{{ document.paperwork.name }}">
+                                            id="{{ document.paperwork.name }}" value="{{ document.paperwork.name }}">
                                         <label class="custom-control-label"
                                             for="{{ document.paperwork.name }}">{{ document.paperwork.name }}</label>
                                     </div>
@@ -97,6 +97,7 @@
 
 <div style='display:none' id='service_hospital'>{{ service.hospital.name }}</div>
 <div style='display:none' id='service_specialty'>{{ service.specialty.name }}</div>
+<div style='display:none' id='service_id'>{{ service.id }}</div>
 <div class='btn' id='testbutton'>Test</div>
 
 <script type="text/javascript"
@@ -106,6 +107,7 @@
 <script>
 
     var paperwork_check = document.getElementsByClassName('pw_check');
+    var list_of_paperwork = []
 
     function progress_pw() {
         var progress = 0;
@@ -125,6 +127,38 @@
     };
 
     move_progress_bar()
+
+    function check_collected_paperwork() {
+        for (i = 0; i < paperwork_check.length; i++) {
+            if (list_of_paperwork.includes(paperwork_check[i].value)) {
+                console.log('success');
+                console.log(paperwork_check[i]);
+                paperwork_check[i].checked = true;
+            } else {
+                console.log('failure');
+                console.log(paperwork_check[i]);
+            }
+        };
+    };
+
+    function get_list_of_paperwork() {
+        var paperwork = {};
+        var service_id = $("#service_id").text();
+        var url = '{% url "get_list_of_paperwork" %}'
+        $.ajax({                     // initialize an AJAX request
+            url: url,                   // set the url of the request                    
+            data: {
+                'service_id': service_id,
+            },
+            success: function (response) {
+                list_of_paperwork.push(JSON.parse(response)[0]);
+                check_collected_paperwork();
+            }
+        });
+        console.log(list_of_paperwork);
+    };
+
+    get_list_of_paperwork()
 
     for (i = 0; i < paperwork_check.length; i++) {
         paperwork_check[i].addEventListener('change', function () {
