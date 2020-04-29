@@ -12,7 +12,7 @@
         <h1>{{ hospital_name }}</h1>
         <h5>{{ specialty }} </h5>
         <h5>{{ city }}</h5>
-        {% if this_favorite in user_favorites %}
+        {% if favorite %}
         <i>Already in your favorites</i>
         {% else %}
         <div id='add_to_fav' class='btn btn-primary btn-sm'>Add to favorites</div>
@@ -126,17 +126,10 @@
         progress_pw();
     };
 
-    move_progress_bar()
-
     function check_collected_paperwork() {
         for (i = 0; i < paperwork_check.length; i++) {
             if (list_of_paperwork.includes(paperwork_check[i].value)) {
-                console.log('success');
-                console.log(paperwork_check[i]);
                 paperwork_check[i].checked = true;
-            } else {
-                console.log('failure');
-                console.log(paperwork_check[i]);
             }
         };
     };
@@ -151,14 +144,53 @@
                 'service_id': service_id,
             },
             success: function (response) {
-                list_of_paperwork.push(JSON.parse(response)[0]);
+                list_of_paperwork.push.apply(list_of_paperwork, JSON.parse(response));
+                console.log(list_of_paperwork);
                 check_collected_paperwork();
+                move_progress_bar();
             }
         });
-        console.log(list_of_paperwork);
     };
 
     get_list_of_paperwork()
+
+    function add_to_paperworks(paperwork) {
+        var service_id = $("#service_id").text();
+        $.ajax({                     // initialize an AJAX request
+            url: '{% url "add_to_paperworks" %}',
+            data: {
+                'paperwork': paperwork,
+                'service_id': service_id,
+            },
+            success: function (response) {
+                console.log('added from documents');
+            }
+        });
+    };
+
+    function remove_to_paperworks(paperwork) {
+        var service_id = $("#service_id").text();
+        $.ajax({                     // initialize an AJAX request
+            url: '{% url "remove_to_paperworks" %}',
+            data: {
+                'paperwork': paperwork,
+                'service_id': service_id,
+            },
+            success: function (response) {
+                console.log('removed from documents');
+            }
+        });
+    };
+
+    for (i = 0; i < paperwork_check.length; i++) {
+        paperwork_check[i].addEventListener('change', function () {
+            if (this.checked == true) {
+                add_to_paperworks(this.value);
+            } else {
+                remove_to_paperworks(this.value);
+            }
+        });
+    };
 
     for (i = 0; i < paperwork_check.length; i++) {
         paperwork_check[i].addEventListener('change', function () {

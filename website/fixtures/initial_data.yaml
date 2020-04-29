@@ -1,0 +1,3288 @@
+- model: website.city
+  pk: 1
+  fields:
+    name: Cluj-Napoca
+- model: website.city
+  pk: 2
+  fields:
+    name: Bucharest
+- model: website.city
+  pk: 3
+  fields:
+    name: "Timi\u0219oara"
+- model: website.city
+  pk: 4
+  fields:
+    name: "Ia\u0219i"
+- model: website.city
+  pk: 5
+  fields:
+    name: "Constan\u021Ba"
+- model: website.city
+  pk: 6
+  fields:
+    name: Craiova
+- model: website.city
+  pk: 7
+  fields:
+    name: "Bra\u0219ov"
+- model: website.city
+  pk: 8
+  fields:
+    name: "Gala\u021Bi"
+- model: website.city
+  pk: 9
+  fields:
+    name: "Ploie\u0219ti"
+- model: website.city
+  pk: 10
+  fields:
+    name: Oradea
+- model: website.city
+  pk: 11
+  fields:
+    name: "Br\u0103ila"
+- model: website.city
+  pk: 12
+  fields:
+    name: Arad
+- model: website.city
+  pk: 13
+  fields:
+    name: "Pite\u0219ti"
+- model: website.city
+  pk: 14
+  fields:
+    name: Sibiu
+- model: website.city
+  pk: 15
+  fields:
+    name: "Bac\u0103u"
+- model: website.city
+  pk: 16
+  fields:
+    name: "T\xE2rgu Mure\u0219"
+- model: website.city
+  pk: 17
+  fields:
+    name: Baia Mare
+- model: website.specialty
+  pk: 7
+  fields:
+    name: "Alergologie \u015Fi Imunologie Clinic\u0103"
+- model: website.specialty
+  pk: 8
+  fields:
+    name: "Anatomie Patologic\u0103"
+- model: website.specialty
+  pk: 9
+  fields:
+    name: "Anestezie \u015Fi Terapie Intensiv\u0103"
+- model: website.specialty
+  pk: 10
+  fields:
+    name: "Boli Infec\u0163ioase"
+- model: website.specialty
+  pk: 11
+  fields:
+    name: Cardiologie
+- model: website.specialty
+  pk: 12
+  fields:
+    name: "Chirurgie Cardio-Vascular\u0103"
+- model: website.specialty
+  pk: 13
+  fields:
+    name: "Chirurgie General\u0103"
+- model: website.specialty
+  pk: 14
+  fields:
+    name: "Chirurgie Oral\u0103 \u015Fi Maxilo-Facial\u0103"
+- model: website.specialty
+  pk: 15
+  fields:
+    name: "Chirurgie Pediatric\u0103"
+- model: website.specialty
+  pk: 16
+  fields:
+    name: "Chirurgie plastic\u0103, estetic\u0103 \u015Fi microchirurgie reconstructiv\u0103"
+- model: website.specialty
+  pk: 17
+  fields:
+    name: "Chirurgie stomatologic\u0103 \u0219i maxilofacial\u0103"
+- model: website.specialty
+  pk: 18
+  fields:
+    name: "Chirurgie toracic\u0103"
+- model: website.specialty
+  pk: 19
+  fields:
+    name: "Chirurgie Vascular\u0103"
+- model: website.specialty
+  pk: 20
+  fields:
+    name: Dermato-Venerologie
+- model: website.specialty
+  pk: 21
+  fields:
+    name: "Diabet Zaharat, Nutri\u0163ie \u015Fi Boli Metabolice"
+- model: website.specialty
+  pk: 22
+  fields:
+    name: Endocrinologie
+- model: website.specialty
+  pk: 23
+  fields:
+    name: "Endodon\u0163ie"
+- model: website.specialty
+  pk: 24
+  fields:
+    name: "Farmacie Clinic\u0103"
+- model: website.specialty
+  pk: 25
+  fields:
+    name: Epidemiologie
+- model: website.specialty
+  pk: 26
+  fields:
+    name: "Farmacie general\u0103"
+- model: website.specialty
+  pk: 27
+  fields:
+    name: "Farmacologie Clinic\u0103"
+- model: website.specialty
+  pk: 28
+  fields:
+    name: Gastroenterologie
+- model: website.specialty
+  pk: 29
+  fields:
+    name: "Gastroenterologie pediatric\u0103"
+- model: website.specialty
+  pk: 30
+  fields:
+    name: "Genetic\u0103 Medical\u0103"
+- model: website.specialty
+  pk: 31
+  fields:
+    name: "Geriatrie \u015Fi Gerontologie"
+- model: website.specialty
+  pk: 32
+  fields:
+    name: Hematologie
+- model: website.specialty
+  pk: 33
+  fields:
+    name: "Igien\u0103"
+- model: website.specialty
+  pk: 34
+  fields:
+    name: "Industrie farmaceutic\u0103 \u0219i cosmetic\u0103"
+- model: website.specialty
+  pk: 35
+  fields:
+    name: Laborator Farmaceutic
+- model: website.specialty
+  pk: 36
+  fields:
+    name: "Medicin\u0103 de Familie"
+- model: website.specialty
+  pk: 37
+  fields:
+    name: "Medicin\u0103 de Laborator"
+- model: website.specialty
+  pk: 38
+  fields:
+    name: "Medicin\u0103 de Urgen\u0163\u0103"
+- model: website.specialty
+  pk: 39
+  fields:
+    name: "Medicin\u0103 intern\u0103"
+- model: website.specialty
+  pk: 40
+  fields:
+    name: "Medicin\u0103 fizic\u0103 \u0219i de reabilitare"
+- model: website.specialty
+  pk: 41
+  fields:
+    name: "Medicin\u0103 Legal\u0103"
+- model: website.specialty
+  pk: 42
+  fields:
+    name: Medicina Muncii
+- model: website.specialty
+  pk: 43
+  fields:
+    name: "Medicin\u0103 Nuclear\u0103"
+- model: website.specialty
+  pk: 44
+  fields:
+    name: "Microbiologie medical\u0103"
+- model: website.specialty
+  pk: 45
+  fields:
+    name: Nefrologie
+- model: website.specialty
+  pk: 46
+  fields:
+    name: "Nefrologie pediatric\u0103"
+- model: website.specialty
+  pk: 47
+  fields:
+    name: Neonatologie
+- model: website.specialty
+  pk: 48
+  fields:
+    name: Neurochirurgie
+- model: website.specialty
+  pk: 49
+  fields:
+    name: Neurologie
+- model: website.specialty
+  pk: 50
+  fields:
+    name: "Neurologie Pediatric\u0103"
+- model: website.specialty
+  pk: 51
+  fields:
+    name: ORL
+- model: website.specialty
+  pk: 52
+  fields:
+    name: "Obstetric\u0103-Ginecologie"
+- model: website.specialty
+  pk: 53
+  fields:
+    name: Oftalmologie
+- model: website.specialty
+  pk: 54
+  fields:
+    name: "Oncologie Medical\u0103"
+- model: website.specialty
+  pk: 55
+  fields:
+    name: "Oncologie \u0219i hematologie pediatric\u0103"
+- model: website.specialty
+  pk: 56
+  fields:
+    name: "Ortodon\u0163ie \u015Fi Ortopedie Dento-Facial\u0103"
+- model: website.specialty
+  pk: 57
+  fields:
+    name: "Ortopedie Pediatric\u0103"
+- model: website.specialty
+  pk: 58
+  fields:
+    name: "Ortopedie \u0219i traumatologie"
+- model: website.specialty
+  pk: 59
+  fields:
+    name: Parodontologie
+- model: website.specialty
+  pk: 60
+  fields:
+    name: Pediatrie
+- model: website.specialty
+  pk: 61
+  fields:
+    name: "Pedodon\u021Bie"
+- model: website.specialty
+  pk: 62
+  fields:
+    name: Pneumologie
+- model: website.specialty
+  pk: 63
+  fields:
+    name: "Protetic\u0103 dentar\u0103"
+- model: website.specialty
+  pk: 64
+  fields:
+    name: Psihiatrie
+- model: website.specialty
+  pk: 65
+  fields:
+    name: "Psihiatrie Pediatric\u0103"
+- model: website.specialty
+  pk: 66
+  fields:
+    name: "Radiologie - imagistic\u0103 medicala"
+- model: website.specialty
+  pk: 67
+  fields:
+    name: Radioterapie
+- model: website.specialty
+  pk: 68
+  fields:
+    name: Reumatologie
+- model: website.specialty
+  pk: 69
+  fields:
+    name: "S\u0103nat\u0103te Public\u0103 si Management"
+- model: website.specialty
+  pk: 70
+  fields:
+    name: Urologie
+- model: website.specialty
+  pk: 71
+  fields:
+    name: "Chirurgie Dento-Alveolar\u0103"
+- model: website.candidate
+  pk: 1
+  fields:
+    first_name: Seth
+    family_name: Westgate
+    grade: 10.0
+    choice: 9
+    location: 1
+    year: 2018
+- model: website.candidate
+  pk: 2
+  fields:
+    first_name: Craig
+    family_name: Sharkey
+    grade: 15.0
+    choice: 18
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 3
+  fields:
+    first_name: William
+    family_name: Ellis
+    grade: 2.0
+    choice: 48
+    location: 6
+    year: 2018
+- model: website.candidate
+  pk: 4
+  fields:
+    first_name: Dominica
+    family_name: Hart
+    grade: 9.0
+    choice: 64
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 5
+  fields:
+    first_name: Kacy
+    family_name: Donaldson
+    grade: 6.0
+    choice: 64
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 6
+  fields:
+    first_name: James
+    family_name: Meeks
+    grade: 17.0
+    choice: 53
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 7
+  fields:
+    first_name: Leroy
+    family_name: Utz
+    grade: 18.0
+    choice: 52
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 8
+  fields:
+    first_name: Doug
+    family_name: Ellis
+    grade: 11.0
+    choice: 63
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 9
+  fields:
+    first_name: Calandra
+    family_name: Weiner
+    grade: 19.0
+    choice: 29
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 10
+  fields:
+    first_name: Kathy
+    family_name: Silas
+    grade: 18.0
+    choice: 48
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 11
+  fields:
+    first_name: Mary
+    family_name: Joshua
+    grade: 2.0
+    choice: 44
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 12
+  fields:
+    first_name: Martin
+    family_name: Rosario
+    grade: 8.0
+    choice: 38
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 13
+  fields:
+    first_name: Mitchell
+    family_name: Taylor
+    grade: 17.0
+    choice: 12
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 14
+  fields:
+    first_name: Edward
+    family_name: Geer
+    grade: 3.0
+    choice: 61
+    location: 5
+    year: 2018
+- model: website.candidate
+  pk: 15
+  fields:
+    first_name: William
+    family_name: Herrera
+    grade: 7.0
+    choice: 14
+    location: 8
+    year: 2018
+- model: website.candidate
+  pk: 16
+  fields:
+    first_name: Marlene
+    family_name: Water
+    grade: 16.0
+    choice: 56
+    location: 13
+    year: 2019
+- model: website.candidate
+  pk: 17
+  fields:
+    first_name: Nathaniel
+    family_name: Furman
+    grade: 2.0
+    choice: 27
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 18
+  fields:
+    first_name: Sean
+    family_name: Wight
+    grade: 5.0
+    choice: 15
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 19
+  fields:
+    first_name: Mike
+    family_name: Davis
+    grade: 15.0
+    choice: 9
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 20
+  fields:
+    first_name: Arthur
+    family_name: Kennedy
+    grade: 6.0
+    choice: 51
+    location: 13
+    year: 2018
+- model: website.candidate
+  pk: 21
+  fields:
+    first_name: Earl
+    family_name: Nichols
+    grade: 8.0
+    choice: 14
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 22
+  fields:
+    first_name: Diane
+    family_name: Lewis
+    grade: 15.0
+    choice: 37
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 23
+  fields:
+    first_name: Melvin
+    family_name: Valentine
+    grade: 16.0
+    choice: 42
+    location: 9
+    year: 2018
+- model: website.candidate
+  pk: 24
+  fields:
+    first_name: Wm
+    family_name: Leung
+    grade: 1.0
+    choice: 59
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 25
+  fields:
+    first_name: Steven
+    family_name: Berger
+    grade: 17.0
+    choice: 37
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 26
+  fields:
+    first_name: James
+    family_name: Smith
+    grade: 7.0
+    choice: 56
+    location: 13
+    year: 2019
+- model: website.candidate
+  pk: 27
+  fields:
+    first_name: Christopher
+    family_name: Dugger
+    grade: 1.0
+    choice: 12
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 28
+  fields:
+    first_name: William
+    family_name: Webb
+    grade: 7.0
+    choice: 63
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 29
+  fields:
+    first_name: Joyce
+    family_name: Obermeyer
+    grade: 7.0
+    choice: 58
+    location: 6
+    year: 2018
+- model: website.candidate
+  pk: 30
+  fields:
+    first_name: Jean
+    family_name: Ratcliff
+    grade: 6.0
+    choice: 67
+    location: 13
+    year: 2018
+- model: website.candidate
+  pk: 31
+  fields:
+    first_name: Jack
+    family_name: Brooks
+    grade: 12.0
+    choice: 48
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 32
+  fields:
+    first_name: Tonya
+    family_name: Banks
+    grade: 11.0
+    choice: 47
+    location: 8
+    year: 2018
+- model: website.candidate
+  pk: 33
+  fields:
+    first_name: Jonathan
+    family_name: Neville
+    grade: 13.0
+    choice: 40
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 34
+  fields:
+    first_name: Jeffrey
+    family_name: Vanduyne
+    grade: 15.0
+    choice: 11
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 35
+  fields:
+    first_name: Bradley
+    family_name: Jendras
+    grade: 3.0
+    choice: 39
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 36
+  fields:
+    first_name: Brenda
+    family_name: Tuthill
+    grade: 6.0
+    choice: 45
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 37
+  fields:
+    first_name: Sheldon
+    family_name: Menchaca
+    grade: 14.0
+    choice: 29
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 38
+  fields:
+    first_name: Virginia
+    family_name: Burton
+    grade: 11.0
+    choice: 46
+    location: 14
+    year: 2019
+- model: website.candidate
+  pk: 39
+  fields:
+    first_name: Fermina
+    family_name: Butler
+    grade: 3.0
+    choice: 11
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 40
+  fields:
+    first_name: Travis
+    family_name: Mcclain
+    grade: 10.0
+    choice: 20
+    location: 8
+    year: 2018
+- model: website.candidate
+  pk: 41
+  fields:
+    first_name: Joseph
+    family_name: Chavez
+    grade: 9.0
+    choice: 31
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 42
+  fields:
+    first_name: Tyler
+    family_name: Hadaway
+    grade: 3.0
+    choice: 8
+    location: 6
+    year: 2018
+- model: website.candidate
+  pk: 43
+  fields:
+    first_name: Corey
+    family_name: Wong
+    grade: 11.0
+    choice: 49
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 44
+  fields:
+    first_name: John
+    family_name: Anderson
+    grade: 8.0
+    choice: 40
+    location: 14
+    year: 2018
+- model: website.candidate
+  pk: 45
+  fields:
+    first_name: Luis
+    family_name: Maynes
+    grade: 12.0
+    choice: 56
+    location: 13
+    year: 2019
+- model: website.candidate
+  pk: 46
+  fields:
+    first_name: Robert
+    family_name: Thomas
+    grade: 3.0
+    choice: 45
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 47
+  fields:
+    first_name: Jerry
+    family_name: Pellowski
+    grade: 6.0
+    choice: 39
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 48
+  fields:
+    first_name: Robert
+    family_name: Covington
+    grade: 18.0
+    choice: 67
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 49
+  fields:
+    first_name: Steven
+    family_name: Menke
+    grade: 13.0
+    choice: 10
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 50
+  fields:
+    first_name: Maurice
+    family_name: Thomas
+    grade: 16.0
+    choice: 20
+    location: 9
+    year: 2018
+- model: website.candidate
+  pk: 51
+  fields:
+    first_name: Charles
+    family_name: Stlaurent
+    grade: 5.0
+    choice: 69
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 52
+  fields:
+    first_name: Joyce
+    family_name: Belcher
+    grade: 9.0
+    choice: 61
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 53
+  fields:
+    first_name: Bessie
+    family_name: Dillon
+    grade: 0.0
+    choice: 8
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 54
+  fields:
+    first_name: Charlotte
+    family_name: Manship
+    grade: 15.0
+    choice: 64
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 55
+  fields:
+    first_name: Mildred
+    family_name: Peter
+    grade: 1.0
+    choice: 34
+    location: 15
+    year: 2018
+- model: website.candidate
+  pk: 56
+  fields:
+    first_name: Donald
+    family_name: Reed
+    grade: 16.0
+    choice: 49
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 57
+  fields:
+    first_name: William
+    family_name: Parker
+    grade: 5.0
+    choice: 42
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 58
+  fields:
+    first_name: Jimmy
+    family_name: Slaughenhoupt
+    grade: 9.0
+    choice: 11
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 59
+  fields:
+    first_name: Juliette
+    family_name: Dibble
+    grade: 4.0
+    choice: 21
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 60
+  fields:
+    first_name: Ana
+    family_name: Jones
+    grade: 7.0
+    choice: 23
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 61
+  fields:
+    first_name: Peggy
+    family_name: Mendez
+    grade: 16.0
+    choice: 54
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 62
+  fields:
+    first_name: Ashley
+    family_name: King
+    grade: 11.0
+    choice: 21
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 63
+  fields:
+    first_name: Diana
+    family_name: Vogel
+    grade: 11.0
+    choice: 59
+    location: 9
+    year: 2018
+- model: website.candidate
+  pk: 64
+  fields:
+    first_name: Michael
+    family_name: Wahlstrom
+    grade: 1.0
+    choice: 18
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 65
+  fields:
+    first_name: Ralph
+    family_name: Roche
+    grade: 17.0
+    choice: 16
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 66
+  fields:
+    first_name: Francis
+    family_name: Turner
+    grade: 1.0
+    choice: 41
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 67
+  fields:
+    first_name: Joseph
+    family_name: Plackett
+    grade: 13.0
+    choice: 23
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 68
+  fields:
+    first_name: Sean
+    family_name: Pearson
+    grade: 1.0
+    choice: 17
+    location: 8
+    year: 2018
+- model: website.candidate
+  pk: 69
+  fields:
+    first_name: John
+    family_name: Lewis
+    grade: 19.0
+    choice: 37
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 70
+  fields:
+    first_name: Judy
+    family_name: Jennings
+    grade: 0.0
+    choice: 9
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 71
+  fields:
+    first_name: James
+    family_name: Payne
+    grade: 1.0
+    choice: 26
+    location: 9
+    year: 2019
+- model: website.candidate
+  pk: 72
+  fields:
+    first_name: Barbara
+    family_name: Sanderson
+    grade: 3.0
+    choice: 26
+    location: 5
+    year: 2018
+- model: website.candidate
+  pk: 73
+  fields:
+    first_name: Philip
+    family_name: Munos
+    grade: 15.0
+    choice: 60
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 74
+  fields:
+    first_name: Loren
+    family_name: Cone
+    grade: 6.0
+    choice: 28
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 75
+  fields:
+    first_name: Ronald
+    family_name: Goddard
+    grade: 10.0
+    choice: 22
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 76
+  fields:
+    first_name: Violet
+    family_name: Gallagher
+    grade: 7.0
+    choice: 9
+    location: 5
+    year: 2018
+- model: website.candidate
+  pk: 77
+  fields:
+    first_name: David
+    family_name: Harwell
+    grade: 14.0
+    choice: 65
+    location: 8
+    year: 2018
+- model: website.candidate
+  pk: 78
+  fields:
+    first_name: Yvonne
+    family_name: Tannenbaum
+    grade: 2.0
+    choice: 28
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 79
+  fields:
+    first_name: Steve
+    family_name: Ruano
+    grade: 18.0
+    choice: 63
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 80
+  fields:
+    first_name: Raymond
+    family_name: Atkinson
+    grade: 9.0
+    choice: 44
+    location: 1
+    year: 2018
+- model: website.candidate
+  pk: 81
+  fields:
+    first_name: Olive
+    family_name: Gary
+    grade: 1.0
+    choice: 13
+    location: 6
+    year: 2018
+- model: website.candidate
+  pk: 82
+  fields:
+    first_name: Harry
+    family_name: Taylor
+    grade: 9.0
+    choice: 43
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 83
+  fields:
+    first_name: Gene
+    family_name: Crosby
+    grade: 6.0
+    choice: 29
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 84
+  fields:
+    first_name: Alice
+    family_name: Oh
+    grade: 0.0
+    choice: 23
+    location: 15
+    year: 2018
+- model: website.candidate
+  pk: 85
+  fields:
+    first_name: Gerry
+    family_name: Reed
+    grade: 1.0
+    choice: 18
+    location: 13
+    year: 2018
+- model: website.candidate
+  pk: 86
+  fields:
+    first_name: Larry
+    family_name: Cantu
+    grade: 18.0
+    choice: 65
+    location: 14
+    year: 2018
+- model: website.candidate
+  pk: 87
+  fields:
+    first_name: Linda
+    family_name: Roszel
+    grade: 4.0
+    choice: 16
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 88
+  fields:
+    first_name: Dawn
+    family_name: Haynes
+    grade: 1.0
+    choice: 45
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 89
+  fields:
+    first_name: Kasey
+    family_name: Dunham
+    grade: 7.0
+    choice: 68
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 90
+  fields:
+    first_name: Georgette
+    family_name: Christian
+    grade: 10.0
+    choice: 69
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 91
+  fields:
+    first_name: Bradley
+    family_name: Ray
+    grade: 12.0
+    choice: 40
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 92
+  fields:
+    first_name: Jose
+    family_name: Montgomery
+    grade: 12.0
+    choice: 16
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 93
+  fields:
+    first_name: Linda
+    family_name: Vaughn
+    grade: 16.0
+    choice: 34
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 94
+  fields:
+    first_name: Melissa
+    family_name: Warner
+    grade: 8.0
+    choice: 49
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 95
+  fields:
+    first_name: Norberto
+    family_name: Stultz
+    grade: 13.0
+    choice: 23
+    location: 13
+    year: 2018
+- model: website.candidate
+  pk: 96
+  fields:
+    first_name: Randall
+    family_name: Levine
+    grade: 15.0
+    choice: 44
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 97
+  fields:
+    first_name: Catherine
+    family_name: Ator
+    grade: 14.0
+    choice: 16
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 98
+  fields:
+    first_name: Michele
+    family_name: Salamanca
+    grade: 0.0
+    choice: 45
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 99
+  fields:
+    first_name: Stephanie
+    family_name: Gabriel
+    grade: 14.0
+    choice: 56
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 100
+  fields:
+    first_name: Danny
+    family_name: Gatewood
+    grade: 7.0
+    choice: 64
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 101
+  fields:
+    first_name: Mark
+    family_name: Austin
+    grade: 3.0
+    choice: 7
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 102
+  fields:
+    first_name: Gabriella
+    family_name: Greer
+    grade: 6.0
+    choice: 53
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 103
+  fields:
+    first_name: Michael
+    family_name: Smith
+    grade: 10.0
+    choice: 50
+    location: 5
+    year: 2018
+- model: website.candidate
+  pk: 104
+  fields:
+    first_name: William
+    family_name: Chung
+    grade: 14.0
+    choice: 49
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 105
+  fields:
+    first_name: Myrna
+    family_name: Hale
+    grade: 14.0
+    choice: 67
+    location: 9
+    year: 2018
+- model: website.candidate
+  pk: 106
+  fields:
+    first_name: Susana
+    family_name: Smith
+    grade: 9.0
+    choice: 40
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 107
+  fields:
+    first_name: Janice
+    family_name: Brown
+    grade: 5.0
+    choice: 55
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 108
+  fields:
+    first_name: Nydia
+    family_name: Obleton
+    grade: 14.0
+    choice: 46
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 109
+  fields:
+    first_name: Kenneth
+    family_name: Rocchio
+    grade: 9.0
+    choice: 43
+    location: 11
+    year: 2019
+- model: website.candidate
+  pk: 110
+  fields:
+    first_name: Brandon
+    family_name: Bateman
+    grade: 4.0
+    choice: 70
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 111
+  fields:
+    first_name: Holly
+    family_name: Reed
+    grade: 12.0
+    choice: 27
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 112
+  fields:
+    first_name: Vanessa
+    family_name: Marsh
+    grade: 18.0
+    choice: 26
+    location: 9
+    year: 2018
+- model: website.candidate
+  pk: 113
+  fields:
+    first_name: Helen
+    family_name: Kozan
+    grade: 12.0
+    choice: 39
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 114
+  fields:
+    first_name: Joe
+    family_name: Fry
+    grade: 11.0
+    choice: 15
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 115
+  fields:
+    first_name: Raymond
+    family_name: Saari
+    grade: 2.0
+    choice: 24
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 116
+  fields:
+    first_name: Kenneth
+    family_name: Bentley
+    grade: 7.0
+    choice: 56
+    location: 14
+    year: 2019
+- model: website.candidate
+  pk: 117
+  fields:
+    first_name: Heather
+    family_name: Hockenberry
+    grade: 5.0
+    choice: 13
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 118
+  fields:
+    first_name: Ronald
+    family_name: Moore
+    grade: 15.0
+    choice: 24
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 119
+  fields:
+    first_name: Wilmer
+    family_name: Hartman
+    grade: 0.0
+    choice: 47
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 120
+  fields:
+    first_name: Ashley
+    family_name: Blanchard
+    grade: 18.0
+    choice: 40
+    location: 9
+    year: 2018
+- model: website.candidate
+  pk: 121
+  fields:
+    first_name: Ashley
+    family_name: Stough
+    grade: 16.0
+    choice: 42
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 122
+  fields:
+    first_name: Ronald
+    family_name: Valverde
+    grade: 8.0
+    choice: 43
+    location: 14
+    year: 2019
+- model: website.candidate
+  pk: 123
+  fields:
+    first_name: Crystal
+    family_name: Young
+    grade: 13.0
+    choice: 24
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 124
+  fields:
+    first_name: Brent
+    family_name: Mccullough
+    grade: 9.0
+    choice: 67
+    location: 1
+    year: 2018
+- model: website.candidate
+  pk: 125
+  fields:
+    first_name: Jeannie
+    family_name: Doyle
+    grade: 4.0
+    choice: 8
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 126
+  fields:
+    first_name: Gregory
+    family_name: Mcgowan
+    grade: 1.0
+    choice: 49
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 127
+  fields:
+    first_name: Marguerite
+    family_name: Page
+    grade: 9.0
+    choice: 23
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 128
+  fields:
+    first_name: Diane
+    family_name: Johnson
+    grade: 7.0
+    choice: 70
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 129
+  fields:
+    first_name: Daniel
+    family_name: Tanner
+    grade: 11.0
+    choice: 17
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 130
+  fields:
+    first_name: Monty
+    family_name: Vanderford
+    grade: 8.0
+    choice: 12
+    location: 5
+    year: 2018
+- model: website.candidate
+  pk: 131
+  fields:
+    first_name: Richard
+    family_name: Tambe
+    grade: 6.0
+    choice: 45
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 132
+  fields:
+    first_name: Leila
+    family_name: Muniz
+    grade: 6.0
+    choice: 26
+    location: 14
+    year: 2019
+- model: website.candidate
+  pk: 133
+  fields:
+    first_name: Gabriel
+    family_name: Morgan
+    grade: 8.0
+    choice: 57
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 134
+  fields:
+    first_name: Jessie
+    family_name: Lindon
+    grade: 17.0
+    choice: 39
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 135
+  fields:
+    first_name: Kevin
+    family_name: Jessen
+    grade: 5.0
+    choice: 50
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 136
+  fields:
+    first_name: Andrea
+    family_name: Tolman
+    grade: 13.0
+    choice: 59
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 137
+  fields:
+    first_name: Rebecca
+    family_name: Joiner
+    grade: 4.0
+    choice: 50
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 138
+  fields:
+    first_name: Eugene
+    family_name: Spiva
+    grade: 3.0
+    choice: 65
+    location: 11
+    year: 2019
+- model: website.candidate
+  pk: 139
+  fields:
+    first_name: Laura
+    family_name: Barhorst
+    grade: 13.0
+    choice: 62
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 140
+  fields:
+    first_name: Joseph
+    family_name: Mcafee
+    grade: 0.0
+    choice: 53
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 141
+  fields:
+    first_name: Daniel
+    family_name: Fish
+    grade: 15.0
+    choice: 64
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 142
+  fields:
+    first_name: Abe
+    family_name: Ochoa
+    grade: 2.0
+    choice: 31
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 143
+  fields:
+    first_name: Scott
+    family_name: Albers
+    grade: 12.0
+    choice: 14
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 144
+  fields:
+    first_name: Willis
+    family_name: Reiff
+    grade: 11.0
+    choice: 54
+    location: 11
+    year: 2018
+- model: website.candidate
+  pk: 145
+  fields:
+    first_name: Pamela
+    family_name: Medrano
+    grade: 12.0
+    choice: 33
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 146
+  fields:
+    first_name: Jeremy
+    family_name: Shaw
+    grade: 9.0
+    choice: 18
+    location: 11
+    year: 2019
+- model: website.candidate
+  pk: 147
+  fields:
+    first_name: Timothy
+    family_name: Parnell
+    grade: 16.0
+    choice: 26
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 148
+  fields:
+    first_name: Maryann
+    family_name: Dow
+    grade: 2.0
+    choice: 37
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 149
+  fields:
+    first_name: Bethany
+    family_name: Martinez
+    grade: 1.0
+    choice: 10
+    location: 11
+    year: 2018
+- model: website.candidate
+  pk: 150
+  fields:
+    first_name: Ray
+    family_name: Erdmann
+    grade: 1.0
+    choice: 36
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 151
+  fields:
+    first_name: Michael
+    family_name: Neace
+    grade: 12.0
+    choice: 40
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 152
+  fields:
+    first_name: Robert
+    family_name: Lemke
+    grade: 7.0
+    choice: 49
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 153
+  fields:
+    first_name: William
+    family_name: Nicley
+    grade: 9.0
+    choice: 28
+    location: 13
+    year: 2019
+- model: website.candidate
+  pk: 154
+  fields:
+    first_name: James
+    family_name: Larose
+    grade: 0.0
+    choice: 28
+    location: 14
+    year: 2018
+- model: website.candidate
+  pk: 155
+  fields:
+    first_name: Bobbie
+    family_name: Grant
+    grade: 3.0
+    choice: 42
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 156
+  fields:
+    first_name: Guillermina
+    family_name: Warner
+    grade: 15.0
+    choice: 8
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 157
+  fields:
+    first_name: Jeremy
+    family_name: Anderson
+    grade: 5.0
+    choice: 49
+    location: 6
+    year: 2018
+- model: website.candidate
+  pk: 158
+  fields:
+    first_name: Oliver
+    family_name: Pishko
+    grade: 10.0
+    choice: 69
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 159
+  fields:
+    first_name: Harold
+    family_name: Proctor
+    grade: 1.0
+    choice: 48
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 160
+  fields:
+    first_name: David
+    family_name: Griggs
+    grade: 2.0
+    choice: 45
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 161
+  fields:
+    first_name: Charlotte
+    family_name: Neeley
+    grade: 15.0
+    choice: 42
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 162
+  fields:
+    first_name: Margaret
+    family_name: Harris
+    grade: 17.0
+    choice: 52
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 163
+  fields:
+    first_name: Ken
+    family_name: Bachman
+    grade: 6.0
+    choice: 48
+    location: 9
+    year: 2019
+- model: website.candidate
+  pk: 164
+  fields:
+    first_name: Debra
+    family_name: Walker
+    grade: 19.0
+    choice: 39
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 165
+  fields:
+    first_name: Ronnie
+    family_name: Rowe
+    grade: 3.0
+    choice: 61
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 166
+  fields:
+    first_name: Margaret
+    family_name: Hill
+    grade: 14.0
+    choice: 15
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 167
+  fields:
+    first_name: Jamie
+    family_name: Craft
+    grade: 6.0
+    choice: 51
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 168
+  fields:
+    first_name: Larry
+    family_name: Cassiano
+    grade: 0.0
+    choice: 52
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 169
+  fields:
+    first_name: Colleen
+    family_name: Figueroa
+    grade: 2.0
+    choice: 16
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 170
+  fields:
+    first_name: Stanley
+    family_name: Kernan
+    grade: 13.0
+    choice: 21
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 171
+  fields:
+    first_name: Michael
+    family_name: Phelps
+    grade: 14.0
+    choice: 55
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 172
+  fields:
+    first_name: Vincent
+    family_name: Blevins
+    grade: 17.0
+    choice: 13
+    location: 11
+    year: 2018
+- model: website.candidate
+  pk: 173
+  fields:
+    first_name: Milton
+    family_name: Shea
+    grade: 18.0
+    choice: 14
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 174
+  fields:
+    first_name: Lauren
+    family_name: Jones
+    grade: 6.0
+    choice: 8
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 175
+  fields:
+    first_name: Robert
+    family_name: Bowers
+    grade: 10.0
+    choice: 45
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 176
+  fields:
+    first_name: Bobby
+    family_name: Nolasco
+    grade: 5.0
+    choice: 38
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 177
+  fields:
+    first_name: Kevin
+    family_name: Perkins
+    grade: 8.0
+    choice: 15
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 178
+  fields:
+    first_name: Margie
+    family_name: Allen
+    grade: 4.0
+    choice: 14
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 179
+  fields:
+    first_name: Marla
+    family_name: Phelps
+    grade: 14.0
+    choice: 66
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 180
+  fields:
+    first_name: Kirsten
+    family_name: Hartung
+    grade: 15.0
+    choice: 66
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 181
+  fields:
+    first_name: Donald
+    family_name: Jordan
+    grade: 17.0
+    choice: 44
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 182
+  fields:
+    first_name: James
+    family_name: Garrett
+    grade: 16.0
+    choice: 43
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 183
+  fields:
+    first_name: Michael
+    family_name: Mahaffy
+    grade: 8.0
+    choice: 70
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 184
+  fields:
+    first_name: Jerry
+    family_name: Lane
+    grade: 7.0
+    choice: 32
+    location: 14
+    year: 2019
+- model: website.candidate
+  pk: 185
+  fields:
+    first_name: Jacqueline
+    family_name: Hemingway
+    grade: 6.0
+    choice: 21
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 186
+  fields:
+    first_name: Bruce
+    family_name: Tara
+    grade: 12.0
+    choice: 26
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 187
+  fields:
+    first_name: James
+    family_name: Clinton
+    grade: 2.0
+    choice: 71
+    location: 15
+    year: 2018
+- model: website.candidate
+  pk: 188
+  fields:
+    first_name: Ruth
+    family_name: Strate
+    grade: 5.0
+    choice: 58
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 189
+  fields:
+    first_name: Sean
+    family_name: Robinson
+    grade: 3.0
+    choice: 59
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 190
+  fields:
+    first_name: Catherine
+    family_name: Kimble
+    grade: 17.0
+    choice: 42
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 191
+  fields:
+    first_name: Meghan
+    family_name: Kennedy
+    grade: 13.0
+    choice: 49
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 192
+  fields:
+    first_name: Albert
+    family_name: Felix
+    grade: 13.0
+    choice: 62
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 193
+  fields:
+    first_name: Barbara
+    family_name: Jones
+    grade: 8.0
+    choice: 61
+    location: 14
+    year: 2018
+- model: website.candidate
+  pk: 194
+  fields:
+    first_name: Gary
+    family_name: Gant
+    grade: 7.0
+    choice: 49
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 195
+  fields:
+    first_name: Michael
+    family_name: Alvarez
+    grade: 0.0
+    choice: 68
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 196
+  fields:
+    first_name: Jose
+    family_name: Sammon
+    grade: 12.0
+    choice: 71
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 197
+  fields:
+    first_name: Deanna
+    family_name: Hilchey
+    grade: 8.0
+    choice: 33
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 198
+  fields:
+    first_name: Joel
+    family_name: Paik
+    grade: 6.0
+    choice: 67
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 199
+  fields:
+    first_name: Michael
+    family_name: Webster
+    grade: 13.0
+    choice: 66
+    location: 11
+    year: 2019
+- model: website.candidate
+  pk: 200
+  fields:
+    first_name: Barbara
+    family_name: Jeffries
+    grade: 7.0
+    choice: 24
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 201
+  fields:
+    first_name: Geoffrey
+    family_name: Garza
+    grade: 0.0
+    choice: 12
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 202
+  fields:
+    first_name: Mike
+    family_name: Woodward
+    grade: 0.0
+    choice: 67
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 203
+  fields:
+    first_name: Elisabeth
+    family_name: Wyatt
+    grade: 1.0
+    choice: 17
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 204
+  fields:
+    first_name: Christopher
+    family_name: Kunde
+    grade: 2.0
+    choice: 36
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 205
+  fields:
+    first_name: Fabiola
+    family_name: Allen
+    grade: 14.0
+    choice: 8
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 206
+  fields:
+    first_name: Leigh
+    family_name: Sanchez
+    grade: 9.0
+    choice: 7
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 207
+  fields:
+    first_name: Walter
+    family_name: Arena
+    grade: 8.0
+    choice: 49
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 208
+  fields:
+    first_name: Ruth
+    family_name: Berry
+    grade: 1.0
+    choice: 44
+    location: 14
+    year: 2018
+- model: website.candidate
+  pk: 209
+  fields:
+    first_name: Matthew
+    family_name: Gilliam
+    grade: 5.0
+    choice: 61
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 210
+  fields:
+    first_name: Craig
+    family_name: Rodriguez
+    grade: 9.0
+    choice: 19
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 211
+  fields:
+    first_name: Bessie
+    family_name: Highfill
+    grade: 0.0
+    choice: 59
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 212
+  fields:
+    first_name: Sandy
+    family_name: Wood
+    grade: 16.0
+    choice: 67
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 213
+  fields:
+    first_name: Naomi
+    family_name: Dacosta
+    grade: 3.0
+    choice: 13
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 214
+  fields:
+    first_name: Rodney
+    family_name: Morris
+    grade: 8.0
+    choice: 44
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 215
+  fields:
+    first_name: Leon
+    family_name: Bonar
+    grade: 15.0
+    choice: 31
+    location: 8
+    year: 2018
+- model: website.candidate
+  pk: 216
+  fields:
+    first_name: Deana
+    family_name: Elwood
+    grade: 16.0
+    choice: 66
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 217
+  fields:
+    first_name: Homer
+    family_name: Schroeder
+    grade: 1.0
+    choice: 26
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 218
+  fields:
+    first_name: Nathan
+    family_name: Dawson
+    grade: 17.0
+    choice: 18
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 219
+  fields:
+    first_name: Patricia
+    family_name: Marsh
+    grade: 14.0
+    choice: 17
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 220
+  fields:
+    first_name: Jeffrey
+    family_name: Jahn
+    grade: 4.0
+    choice: 40
+    location: 14
+    year: 2018
+- model: website.candidate
+  pk: 221
+  fields:
+    first_name: Jennifer
+    family_name: Mimes
+    grade: 11.0
+    choice: 52
+    location: 6
+    year: 2018
+- model: website.candidate
+  pk: 222
+  fields:
+    first_name: Harry
+    family_name: Trudel
+    grade: 12.0
+    choice: 67
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 223
+  fields:
+    first_name: James
+    family_name: Cogar
+    grade: 9.0
+    choice: 11
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 224
+  fields:
+    first_name: Joseph
+    family_name: Avila
+    grade: 19.0
+    choice: 42
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 225
+  fields:
+    first_name: Cedric
+    family_name: Lord
+    grade: 15.0
+    choice: 54
+    location: 13
+    year: 2018
+- model: website.candidate
+  pk: 226
+  fields:
+    first_name: Linda
+    family_name: Stewart
+    grade: 17.0
+    choice: 24
+    location: 13
+    year: 2018
+- model: website.candidate
+  pk: 227
+  fields:
+    first_name: Marjory
+    family_name: Isaac
+    grade: 11.0
+    choice: 56
+    location: 15
+    year: 2018
+- model: website.candidate
+  pk: 228
+  fields:
+    first_name: Joan
+    family_name: Komar
+    grade: 19.0
+    choice: 26
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 229
+  fields:
+    first_name: James
+    family_name: Chantler
+    grade: 13.0
+    choice: 10
+    location: 1
+    year: 2019
+- model: website.candidate
+  pk: 230
+  fields:
+    first_name: Hilda
+    family_name: Watts
+    grade: 4.0
+    choice: 54
+    location: 15
+    year: 2019
+- model: website.candidate
+  pk: 231
+  fields:
+    first_name: Jamie
+    family_name: Rodriguez
+    grade: 11.0
+    choice: 9
+    location: 2
+    year: 2019
+- model: website.candidate
+  pk: 232
+  fields:
+    first_name: Megan
+    family_name: Barkley
+    grade: 10.0
+    choice: 29
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 233
+  fields:
+    first_name: Tony
+    family_name: Walton
+    grade: 10.0
+    choice: 11
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 234
+  fields:
+    first_name: Keith
+    family_name: Brown
+    grade: 16.0
+    choice: 40
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 235
+  fields:
+    first_name: Richard
+    family_name: Black
+    grade: 3.0
+    choice: 40
+    location: 4
+    year: 2019
+- model: website.candidate
+  pk: 236
+  fields:
+    first_name: Keith
+    family_name: Walker
+    grade: 13.0
+    choice: 40
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 237
+  fields:
+    first_name: Tracy
+    family_name: Struck
+    grade: 14.0
+    choice: 10
+    location: 17
+    year: 2019
+- model: website.candidate
+  pk: 238
+  fields:
+    first_name: Florencio
+    family_name: Thompson
+    grade: 7.0
+    choice: 61
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 239
+  fields:
+    first_name: James
+    family_name: Alexander
+    grade: 12.0
+    choice: 31
+    location: 11
+    year: 2018
+- model: website.candidate
+  pk: 240
+  fields:
+    first_name: James
+    family_name: Montilla
+    grade: 1.0
+    choice: 41
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 241
+  fields:
+    first_name: Joseph
+    family_name: Wilson
+    grade: 19.0
+    choice: 62
+    location: 12
+    year: 2018
+- model: website.candidate
+  pk: 242
+  fields:
+    first_name: James
+    family_name: Farry
+    grade: 13.0
+    choice: 7
+    location: 11
+    year: 2018
+- model: website.candidate
+  pk: 243
+  fields:
+    first_name: Elsie
+    family_name: Buckner
+    grade: 10.0
+    choice: 7
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 244
+  fields:
+    first_name: Stephen
+    family_name: Ayers
+    grade: 17.0
+    choice: 47
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 245
+  fields:
+    first_name: Susan
+    family_name: Dempsey
+    grade: 19.0
+    choice: 27
+    location: 4
+    year: 2018
+- model: website.candidate
+  pk: 246
+  fields:
+    first_name: Mana
+    family_name: Turrubiates
+    grade: 16.0
+    choice: 26
+    location: 14
+    year: 2018
+- model: website.candidate
+  pk: 247
+  fields:
+    first_name: Jeramy
+    family_name: Remington
+    grade: 1.0
+    choice: 21
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 248
+  fields:
+    first_name: Charlene
+    family_name: Rinehart
+    grade: 8.0
+    choice: 14
+    location: 1
+    year: 2018
+- model: website.candidate
+  pk: 249
+  fields:
+    first_name: Rory
+    family_name: Madhavan
+    grade: 14.0
+    choice: 17
+    location: 15
+    year: 2018
+- model: website.candidate
+  pk: 250
+  fields:
+    first_name: Ruby
+    family_name: Burkins
+    grade: 10.0
+    choice: 35
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 251
+  fields:
+    first_name: Daniel
+    family_name: Calzada
+    grade: 7.0
+    choice: 28
+    location: 7
+    year: 2019
+- model: website.candidate
+  pk: 252
+  fields:
+    first_name: Mary
+    family_name: Boyce
+    grade: 1.0
+    choice: 34
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 253
+  fields:
+    first_name: James
+    family_name: Lewis
+    grade: 9.0
+    choice: 52
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 254
+  fields:
+    first_name: Candace
+    family_name: Leutwiler
+    grade: 13.0
+    choice: 62
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 255
+  fields:
+    first_name: Wendy
+    family_name: Allen
+    grade: 3.0
+    choice: 44
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 256
+  fields:
+    first_name: Gary
+    family_name: Godfrey
+    grade: 4.0
+    choice: 61
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 257
+  fields:
+    first_name: James
+    family_name: Nicholson
+    grade: 5.0
+    choice: 69
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 258
+  fields:
+    first_name: Mathew
+    family_name: Massey
+    grade: 0.0
+    choice: 51
+    location: 13
+    year: 2019
+- model: website.candidate
+  pk: 259
+  fields:
+    first_name: Jennifer
+    family_name: Greiner
+    grade: 9.0
+    choice: 48
+    location: 9
+    year: 2018
+- model: website.candidate
+  pk: 260
+  fields:
+    first_name: Anthony
+    family_name: Enderle
+    grade: 17.0
+    choice: 35
+    location: 3
+    year: 2018
+- model: website.candidate
+  pk: 261
+  fields:
+    first_name: Martin
+    family_name: Martinez
+    grade: 18.0
+    choice: 68
+    location: 16
+    year: 2019
+- model: website.candidate
+  pk: 262
+  fields:
+    first_name: Scott
+    family_name: Hennen
+    grade: 7.0
+    choice: 26
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 263
+  fields:
+    first_name: Jason
+    family_name: Peters
+    grade: 5.0
+    choice: 16
+    location: 5
+    year: 2019
+- model: website.candidate
+  pk: 264
+  fields:
+    first_name: Regina
+    family_name: Griffith
+    grade: 0.0
+    choice: 23
+    location: 10
+    year: 2019
+- model: website.candidate
+  pk: 265
+  fields:
+    first_name: Susanne
+    family_name: Lindgren
+    grade: 16.0
+    choice: 60
+    location: 7
+    year: 2018
+- model: website.candidate
+  pk: 266
+  fields:
+    first_name: Beau
+    family_name: Jemmott
+    grade: 14.0
+    choice: 15
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 267
+  fields:
+    first_name: Aaron
+    family_name: Woods
+    grade: 17.0
+    choice: 17
+    location: 5
+    year: 2018
+- model: website.candidate
+  pk: 268
+  fields:
+    first_name: Ada
+    family_name: Chambers
+    grade: 15.0
+    choice: 45
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 269
+  fields:
+    first_name: Samuel
+    family_name: Mueller
+    grade: 3.0
+    choice: 52
+    location: 8
+    year: 2019
+- model: website.candidate
+  pk: 270
+  fields:
+    first_name: Judith
+    family_name: Matson
+    grade: 9.0
+    choice: 25
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 271
+  fields:
+    first_name: Randy
+    family_name: Seaton
+    grade: 6.0
+    choice: 62
+    location: 9
+    year: 2019
+- model: website.candidate
+  pk: 272
+  fields:
+    first_name: Ronnie
+    family_name: Golden
+    grade: 11.0
+    choice: 27
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 273
+  fields:
+    first_name: Steve
+    family_name: Nquyen
+    grade: 1.0
+    choice: 39
+    location: 10
+    year: 2018
+- model: website.candidate
+  pk: 274
+  fields:
+    first_name: William
+    family_name: Robertson
+    grade: 2.0
+    choice: 42
+    location: 17
+    year: 2018
+- model: website.candidate
+  pk: 275
+  fields:
+    first_name: Dennis
+    family_name: Wilson
+    grade: 10.0
+    choice: 45
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 276
+  fields:
+    first_name: James
+    family_name: Rice
+    grade: 19.0
+    choice: 33
+    location: 6
+    year: 2019
+- model: website.candidate
+  pk: 277
+  fields:
+    first_name: Katherine
+    family_name: Finch
+    grade: 11.0
+    choice: 34
+    location: 12
+    year: 2019
+- model: website.candidate
+  pk: 278
+  fields:
+    first_name: Wendy
+    family_name: Hong
+    grade: 4.0
+    choice: 16
+    location: 2
+    year: 2018
+- model: website.candidate
+  pk: 279
+  fields:
+    first_name: Flora
+    family_name: Waiters
+    grade: 13.0
+    choice: 28
+    location: 3
+    year: 2019
+- model: website.candidate
+  pk: 280
+  fields:
+    first_name: Patricia
+    family_name: Hlavac
+    grade: 12.0
+    choice: 30
+    location: 16
+    year: 2018
+- model: website.candidate
+  pk: 281
+  fields:
+    first_name: Mary
+    family_name: Harris
+    grade: 10.0
+    choice: 70
+    location: 5
+    year: 2019
+- model: website.hospital
+  pk: 7
+  fields:
+    name: "Institutul Regional de Gastroenterologie \u015Fi Hepatologie \"Prof. Dr.
+      Octavian Fodor\""
+    website: irgh.ro
+    city: 1
+    address: Strada Croitorilor 19, Cluj-Napoca 400000
+    phone: 264596414
+    about: "Institutul Regional de Gastroenterologie \u0219i Hepatologie Prof. Dr.
+      Octavian Fodor"
+- model: website.hospital
+  pk: 8
+  fields:
+    name: "Spitalul Clinic Jude\u0163ean de Urgen\u0163\u0103"
+    website: scjucluj.ro
+    city: 1
+    address: Strada Clinicilor 3-5, Cluj-Napoca 400000
+    phone: 264597852
+    about: "Spitalul Clinic Jude\u021Bean de Urgen\u021B\u0103 Cluj"
+- model: website.hospital
+  pk: 9
+  fields:
+    name: Spitalul Clinic Municipal
+    website: spitalclujana.ro
+    city: 1
+    address: "Strada T\u0103b\u0103carilor 11, Cluj-Napoca 400139"
+    phone: 735406258
+    about: Spitalul Clinic Municipal Cluj-Napoca
+- model: website.hospital
+  pk: 10
+  fields:
+    name: "Spitalul Clinic de Boli Infec\u0163ioase"
+    website: infectioasecluj.ro
+    city: 1
+    address: Strada Iuliu Moldovan 23, Cluj-Napoca
+    phone: 364131238
+    about: "Spitalul Clinic de Boli Infec\u021Bioase"
+- model: website.hospital
+  pk: 11
+  fields:
+    name: "Institutul Inimii \"Prof. Dr. N. St\u0103ncioiu\""
+    website: institutulinimii.ro
+    city: 1
+    address: "Calea Mo\u021Bilor 19-21, Cluj-Napoca 400001"
+    phone: 264591941
+    about: "Institutul Inimii \"Prof. Dr. N. St\u0103ncioiu\""
+- model: website.hospital
+  pk: 12
+  fields:
+    name: Spitalul Clinic de Recuperare
+    website: recuperarecluj.ro
+    city: 1
+    address: Strada Viilor 46-50, Cluj-Napoca 400066
+    phone: 264207021
+    about: Spitalul Clinic de Recuperare
+- model: website.hospital
+  pk: 14
+  fields:
+    name: Spitalul Clinic CFR
+    website: spitalulcliniccfcluj.ro
+    city: 1
+    address: "Strada C\xE2mpeni 3D, Cluj-Napoca 400500"
+    phone: 264530964
+    about: Spitalul Clinic CFR
+- model: website.hospital
+  pk: 15
+  fields:
+    name: "Institutul Oncologic \"Prof. Dr. I. Chiricu\u021B\u0103\""
+    website: iocn.ro
+    city: 1
+    address: Strada Republicii 34-36, Cluj-Napoca 400015
+    phone: 264598362
+    about: "Institutul Oncologic \"Prof. Dr. Ion Chiricu\u0163\u0103\" Cluj-Napoca"
+- model: website.hospital
+  pk: 16
+  fields:
+    name: "UMF \"Iuliu Ha\u0163ieganu\""
+    website: umfcluj.ro
+    city: 1
+    address: "Strada Victor Babe\u0219 8, Cluj-Napoca 400000"
+    phone: 264597256
+    about: "Universitatea de Medicin\u0103 \u0219i Farmacie \u201EIuliu Ha\u021Bieganu\u201D
+      din Cluj-Napoca"
+- model: website.hospital
+  pk: 17
+  fields:
+    name: Ambulatorul integrat al SCBI
+    website: infectioasecluj.ro
+    city: 1
+    address: "Calea Mo\u021Bilor 19, Cluj-Napoca 400001"
+    phone: 264594655
+    about: Ambulatorul integrat al SCBI
+- model: website.hospital
+  pk: 18
+  fields:
+    name: Laborator UPU
+    website: None
+    city: 1
+    address: None
+    phone: 0
+    about: None
+- model: website.hospital
+  pk: 19
+  fields:
+    name: "Institutul de Medicin\u0103 Legal\u0103"
+    website: legmed.ro
+    city: 1
+    address: Strada Clinicilor 3-5, Cluj-Napoca 400006
+    phone: 264596882
+    about: "Institutul de Medicin\u0103 Legal\u0103"
+- model: website.hospital
+  pk: 20
+  fields:
+    name: Spitalul Clinic de Urgenta pentru Copii/ Pediatrie II
+    website: pedicluj.ro
+    city: 1
+    address: "Strada Cri\u0219an 3-5, Cluj-Napoca 400124"
+    phone: 264532216
+    about: Spitalul Clinic de Urgenta pentru Copii/ Pediatrie II
+- model: website.hospital
+  pk: 21
+  fields:
+    name: Spitalul Clinic de Copii
+    website: spitcocluj.ro
+    city: 1
+    address: "Calea Mo\u021Bilor 68, Cluj-Napoca 400000"
+    phone: 264597706
+    about: "Spitalul Clinic de Urgen\u0163\u0103 pentru Copii"
+- model: website.hospital
+  pk: 22
+  fields:
+    name: Spitalul Clinic de Pneumologie "Leon Daniello"
+    website: pneumocluj.ro
+    city: 1
+    address: Strada Bogdan Petriceicu Hasdeu 6, Cluj-Napoca 400332
+    phone: 264597453
+    about: Spitalul Clinic de Pneumologie "Leon Daniello"
+- model: website.hospital
+  pk: 23
+  fields:
+    name: Spitalul Clinic de Urgenta pentru Copii/ Pediatrie I
+    website: spitcocluj.ro
+    city: 1
+    address: "Calea Mo\u021Bilor 68, Cluj-Napoca 400000"
+    phone: 264597706
+    about: spitcocluj.ro
+- model: website.paperwork
+  pk: 1
+  fields:
+    name: Identification Document
+- model: website.paperwork
+  pk: 2
+  fields:
+    name: Diploma
+- model: website.paperwork
+  pk: 3
+  fields:
+    name: Certificate of scholarship
+- model: website.paperwork
+  pk: 4
+  fields:
+    name: Certificate of orientation
+- model: website.service
+  pk: 5
+  fields:
+    hospital: 7
+    specialty: 7
+    chief_name: Deleanu
+    chief_surname: Diana
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 6
+  fields:
+    hospital: 8
+    specialty: 8
+    chief_name: "Cri\u015Fan"
+    chief_surname: "Doini\u0163a"
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 7
+  fields:
+    hospital: 7
+    specialty: 9
+    chief_name: Ionescu
+    chief_surname: Daniela
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 8
+  fields:
+    hospital: 9
+    specialty: 9
+    chief_name: Bodolea
+    chief_surname: Constantin
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 9
+  fields:
+    hospital: 10
+    specialty: 10
+    chief_name: "Lup\u015Fe"
+    chief_surname: Mihaela
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 10
+  fields:
+    hospital: 11
+    specialty: 11
+    chief_name: Iancu
+    chief_surname: Adrian
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 11
+  fields:
+    hospital: 11
+    specialty: 12
+    chief_name: Molnar
+    chief_surname: Arian
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 12
+  fields:
+    hospital: 8
+    specialty: 71
+    chief_name: Bran
+    chief_surname: Simion
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 13
+  fields:
+    hospital: 8
+    specialty: 13
+    chief_name: Muntean
+    chief_surname: Valentin
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 14
+  fields:
+    hospital: 8
+    specialty: 13
+    chief_name: Dindelegan
+    chief_surname: George
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 15
+  fields:
+    hospital: 7
+    specialty: 13
+    chief_name: Nadim
+    chief_surname: Al Hajjar
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 16
+  fields:
+    hospital: 14
+    specialty: 13
+    chief_name: Barbu
+    chief_surname: Sorin
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 17
+  fields:
+    hospital: 9
+    specialty: 13
+    chief_name: Ionescu
+    chief_surname: "C\u0103lin"
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 18
+  fields:
+    hospital: 15
+    specialty: 13
+    chief_name: Irimie
+    chief_surname: Alexandru
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 19
+  fields:
+    hospital: 8
+    specialty: 14
+    chief_name: Rotar
+    chief_surname: "Hora\u021Biu Alexandru"
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 20
+  fields:
+    hospital: 21
+    specialty: 15
+    chief_name: Gocan
+    chief_surname: "Hora\u0163iu"
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 21
+  fields:
+    hospital: 12
+    specialty: 16
+    chief_name: Matei
+    chief_surname: Ileana Rodica
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 22
+  fields:
+    hospital: 8
+    specialty: 17
+    chief_name: "B\u0103ciu\u021B"
+    chief_surname: Mihaela
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 23
+  fields:
+    hospital: 22
+    specialty: 18
+    chief_name: Palade
+    chief_surname: Emanuel
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 24
+  fields:
+    hospital: 8
+    specialty: 19
+    chief_name: Andercou
+    chief_surname: Octavian
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 25
+  fields:
+    hospital: 8
+    specialty: 20
+    chief_name: "T\u0103taru"
+    chief_surname: Alexandru
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 26
+  fields:
+    hospital: 8
+    specialty: 21
+    chief_name: Roman
+    chief_surname: Gabriela
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 27
+  fields:
+    hospital: 8
+    specialty: 22
+    chief_name: Georgescu
+    chief_surname: Carmen
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 28
+  fields:
+    hospital: 8
+    specialty: 23
+    chief_name: Cimpean
+    chief_surname: Sanda
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 29
+  fields:
+    hospital: 10
+    specialty: 25
+    chief_name: "R\u0103dulescu"
+    chief_surname: Amanda
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 30
+  fields:
+    hospital: 16
+    specialty: 24
+    chief_name: Popa
+    chief_surname: Adina
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 31
+  fields:
+    hospital: 16
+    specialty: 26
+    chief_name: Palage
+    chief_surname: Mariana
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 32
+  fields:
+    hospital: 21
+    specialty: 27
+    chief_name: Buzoianu
+    chief_surname: Anca
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 33
+  fields:
+    hospital: 7
+    specialty: 28
+    chief_name: Marcel
+    chief_surname: "Tan\u0163\u0103u"
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 34
+  fields:
+    hospital: 20
+    specialty: 29
+    chief_name: "\u0218erban"
+    chief_surname: Daniela
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.service
+  pk: 35
+  fields:
+    hospital: 23
+    specialty: 30
+    chief_name: Al-Khzouz
+    chief_surname: Camelia
+    residanatms_url: http://www.umfcluj.ro/doauaspec-2
+- model: website.paperwork_service
+  pk: 1
+  fields:
+    paperwork: 1
+    service: 5
+- model: website.paperwork_service
+  pk: 2
+  fields:
+    paperwork: 2
+    service: 5
+- model: website.paperwork_service
+  pk: 3
+  fields:
+    paperwork: 3
+    service: 5
+- model: website.paperwork_service
+  pk: 4
+  fields:
+    paperwork: 4
+    service: 5

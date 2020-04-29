@@ -54,11 +54,10 @@ def research(request):
 
 def service(request, hospital, specialty):
     service = Service.objects.filter(hospital__name=hospital, specialty__name=specialty).first()
-    hospital_info = Hospital.objects.filter(name=hospital).first()
-    this_favorite = Favorite.objects.filter(service=service).first()
-    user_favorites = Favorite.objects.filter(user=request.user)
+ #  hospital_info = Hospital.objects.filter(name=hospital).first()
+    hospital_info = service.hospital
+    favorite = Favorite.objects.filter(service=service, user=request.user).first()
     documents = Paperwork_Service.objects.filter(service=service)
-    user_documents = Paperwork_Service_User(user=request.user)
     context = {
         'service':service,
         'hospital_name':str(hospital),
@@ -70,15 +69,20 @@ def service(request, hospital, specialty):
         'website':hospital_info.website,
         'address':hospital_info.address,
         'description': hospital_info.about,
-        'this_favorite':this_favorite,
-        'user_favorites':user_favorites,
+        'favorite':favorite,
         'documents':documents,
-        'user_documents': user_documents,
     }
     return render(request, 'website/service.html', context)
 
 def hospital(request, hospital):
-    hospital_info = Hospital.objects.filter(name=hospital)[0]
+    # ajouter un truc qui fait que si on ne trouve pas lhopital il y a une erreur genre 'pas dhopital trouve'
+    hospital_info = Hospital.objects.filter(name=hospital).first()
+    if not hospital_info:
+        context = {
+            'title':'Unknown hospital',
+            'message':'We didnt find this hospital',
+        }
+        return render(request, 'website/error.html', context)
     services = Service.objects.filter(hospital__name=hospital)
     context = {
         'hospital_name':str(hospital),
@@ -127,6 +131,7 @@ def get_city(request):
     json_cities = json.dumps(list(set(cities)))
     return JsonResponse(json_cities, safe=False)
 
+# a mettre dans une commande
 def add_100_random_candidates():
     for i in range(100):
         specialties = Specialty.objects.all()
@@ -159,13 +164,30 @@ def add_to_favorites(request):
 
 def get_list_of_paperwork(request):
     user = request.user
-    sevice_id = request.GET.get('service_id')
-    user_documents = Paperwork_Service_User.objects.filter(user=user, pw_service__service=sevice_id)
+    service_id = request.GET.get('service_id')
+    user_documents = Paperwork_Service_User.objects.filter(user=user, pw_service__service=service_id)
     user_documents_list = []
     for document in user_documents:
         user_documents_list.append(document.pw_service.paperwork.name)
     user_documents_json = json.dumps(user_documents_list)
-    print(user_documents_list)
     return JsonResponse(user_documents_json, safe=False)
 
+def add_to_paperworks(request):
+    user = request.user
+    paperwork_name = request.GET.get('paperwork')
+    service_id = request.GET.get('service_id')
+    pw_service = Paperwork_Service.objects.filter(service=service_id, paperwork__name=paperwork_name).first()
+    new_paperwork = Paperwork_Service_User(user=user, pw_service=pw_service)
+    new_paperwork.save()
+    return HttpResponse('Document added')
+
+
+def remove_to_paperworks(request):
+    user = request.user
+    paperwork_name = request.GET.get('paperwork')
+    service_id = request.GET.get('service_id')
+    pw_service = Paperwork_Service.objects.filter(service=service_id, paperwork__name=paperwork_name).first()
+    document = Paperwork_Service_User.objects.filter(user=user, pw_service=pw_service).first()
+    document.delete()
+    return HttpResponse('Document deleted')
 

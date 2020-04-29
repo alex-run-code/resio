@@ -28,22 +28,6 @@ class Specialty(models.Model):
 
 class Candidate(models.Model):
 
-    # SPECIALTY_CHOICES = [
-    #     ('Pediatric', 'Pediatric'),
-    #     ('Generalist', 'Generalist'),
-    #     ('Ophtalmology', 'Ophtalmology'),
-    #     ('Surgery', 'Surgery'),
-    #     ('Cardiology', 'Cardiology'),
-    # ]
-
-    # LOCATION_CHOICES = [
-    #     ('Alba Iulia', 'Alba Iulia'),
-    #     ('Cluj-Napoca', 'Cluj-Napoca'),
-    #     ('Bucharest', 'Bucharest'),
-    #     ('Mara Mures', 'Mara Mures'),
-    #     ('Timisoara', 'Timisoara'),
-    # ]
-
     YEAR_CHOICES = [
         (2017, 2017),
         (2018, 2018),
@@ -51,8 +35,8 @@ class Candidate(models.Model):
         (2020, 2020)
     ]
 
-    first_name = models.CharField(max_length=255, default='None')
-    family_name = models.CharField(max_length=255, default='None')
+    first_name = models.CharField(max_length=255, default=' - ') # to migrate
+    family_name = models.CharField(max_length=255, default=' - ') # to migrate
     grade = models.FloatField()
     choice = models.ForeignKey('Specialty', on_delete=models.CASCADE)
     location = models.ForeignKey('City', on_delete=models.CASCADE)

@@ -1,0 +1,24 @@
+{% extends "account/base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{{ title }}{% endblock %}
+
+{% block content %}
+<section class='col-8 offset-2 mb-5'>
+    <div class='container'>
+        <div class='section'>
+            <div class='row'>
+                <div class='col'>
+                    <h1> {{ message }} </h1>
+                </div>
+            </div>
+            <!--  rajouter lien windows.history.back() en js -->
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
