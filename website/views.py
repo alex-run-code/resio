@@ -8,6 +8,9 @@ from django.views.generic import ListView, CreateView, UpdateView
 import names
 import random
 from django.core.paginator import Paginator
+from django.contrib.auth.models import User
+
+
 
 # Create your views here.
 
@@ -18,9 +21,27 @@ def index(request):
 
 def profile(request):
     user = request.user
+    # user = User.objects.filter(email='cambefort.alex@gmail.com').first()
     favorites = Favorite.objects.filter(user=user)
+    all_user_documents = Paperwork_Service_User.objects.filter(user=user)
+    user_documents_for_each_favorites = {}
+    all_document_for_each_favorites = {}
+    for favorite in favorites:
+        documents_list = []
+        for document in all_user_documents:
+            if document.pw_service.service == favorite.service:
+                documents_list.append(document)
+        user_documents_for_each_favorites[favorite] = documents_list
+    for favorite in favorites:
+        documents_list = []
+        for document in Paperwork_Service.objects.filter(service=favorite.service):
+            documents_list.append(document)
+        all_document_for_each_favorites[favorite] = documents_list
     context = {
-        'favorites':favorites,
+        'favorites': favorites,
+        'all_user_documents': all_user_documents,
+        'user_documents_for_each_favorites': user_documents_for_each_favorites,
+        'all_document_for_each_favorites': all_document_for_each_favorites,
     }
     return render(request, 'account/profile.html', context)
 

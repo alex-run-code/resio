@@ -15,8 +15,20 @@
                     <p>Welcome Dr {{ user.username }}</p>
                     <p>Your favorites are:</p>
                     <ul>
-                        {% for favorite in favorites %}
-                        <li>{{ favorite.service }}</li>
+                        {% for favorite, user_documents in user_documents_for_each_favorites.items %}
+                            <li>
+                                <p> Favorite : {{ favorite.service }} 
+                                    {% if user_documents|length is not 0 %}
+                                </p>
+                                <p> Documents collected : 
+                                        {% for document in user_documents %}
+                                            {{ document.pw_service.paperwork.name }},
+                                        {% endfor %}
+                                    {% else %}
+                                <p><i> You didn't collect any document for this one </i></p>
+                                    {% endif %}
+                                </p>
+                            </li>
                         {% endfor %}
                     </ul>
                 </div>
