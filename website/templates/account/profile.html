@@ -14,29 +14,62 @@
                     <h1>Welcome</h1>
                     <p>Welcome Dr {{ user.username }}</p>
                     <p>Your favorites are:</p>
-                    <ul>
-                        {% for favorite, user_documents in user_documents_for_each_favorites.items %}
-                            <li>
-                                <p> Favorite : {{ favorite.service }} 
-                                    {% if user_documents|length is not 0 %}
-                                </p>
-                                <p> Documents collected : 
-                                        {% for document in user_documents %}
-                                            {{ document.pw_service.paperwork.name }},
-                                        {% endfor %}
-                                    {% else %}
-                                <p><i> You didn't collect any document for this one </i></p>
-                                    {% endif %}
-                                </p>
-                            </li>
+                    <ul class="list-group">
+                        {% for favorite in favorites %}
+                        <li class="list-group-item">
+                            <div class='row'>
+                                <div class='text-left col-8'>
+                                    <a
+                                        href='/service/{{favorite.service.hospital.name}}/{{favorite.service.specialty.name}}'>
+                                        {{favorite.service}}
+                                        <i class=" ml-2 fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                                <div id='{{favorite.id}}' class='text-right col-4 delete_button'
+                                    onClick="refreshPage()">
+                                    <div class='btn btn-sm'><i class="fas fa-trash"></i></div>
+                                </div>
+                            </div>
+
+                        </li>
                         {% endfor %}
+
                     </ul>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+
+    var delete_buttons = document.getElementsByClassName('delete_button')
+
+    function refreshPage() {
+        window.location.reload();
+    }
+
+    function remove_from_fav(favorite_id) {
+        var url = "{% url 'remove_from_fav' %}"
+        $.ajax({                     // initialize an AJAX request
+            url: url,                   // set the url of the request                    
+            data: {
+                'favorite_id': favorite_id,
+            },
+            success: function () {
+                console.log('this item has been removed from your favorites');
+            }
+        });
+    };
+
+    for (i = 0; i < delete_buttons.length; i++) {
+        // delete_buttons[i].setAttribute('onClick', window.location.reload())
+        delete_buttons[i].addEventListener('click', function () {
+            remove_from_fav(this.id);
+        })
+    }
+</script>
 
 
 

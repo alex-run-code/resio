@@ -9,6 +9,7 @@ import names
 import random
 from django.core.paginator import Paginator
 from django.contrib.auth.models import User
+from django.db.utils import IntegrityError
 
 
 
@@ -23,25 +24,8 @@ def profile(request):
     user = request.user
     # user = User.objects.filter(email='cambefort.alex@gmail.com').first()
     favorites = Favorite.objects.filter(user=user)
-    all_user_documents = Paperwork_Service_User.objects.filter(user=user)
-    user_documents_for_each_favorites = {}
-    all_document_for_each_favorites = {}
-    for favorite in favorites:
-        documents_list = []
-        for document in all_user_documents:
-            if document.pw_service.service == favorite.service:
-                documents_list.append(document)
-        user_documents_for_each_favorites[favorite] = documents_list
-    for favorite in favorites:
-        documents_list = []
-        for document in Paperwork_Service.objects.filter(service=favorite.service):
-            documents_list.append(document)
-        all_document_for_each_favorites[favorite] = documents_list
     context = {
         'favorites': favorites,
-        'all_user_documents': all_user_documents,
-        'user_documents_for_each_favorites': user_documents_for_each_favorites,
-        'all_document_for_each_favorites': all_document_for_each_favorites,
     }
     return render(request, 'account/profile.html', context)
 
@@ -177,11 +161,20 @@ def add_100_random_candidates():
         print(new_candidate.first_name, ' ', new_candidate.family_name, ' : added')
 
 def add_to_favorites(request):
+    if request.method != 'POST': # Warning : ajax is using GET method. 
+        return HttpResponse(status=500)
     user = request.user
-    service = Service.objects.filter(hospital__name=request.GET.get('hospital'), specialty__name=request.GET.get('specialty')).first()
-    new_favorite = Favorite(user=user, service=service)
-    new_favorite.save()
-    return HttpResponse('added')
+    try:
+        service = Service.objects.filter(hospital__name=request.POST.get('hospital'), specialty__name=request.POST.get('specialty')).first()
+        new_favorite = Favorite(user=user, service=service)
+        new_favorite.save()
+        return HttpResponse('added')
+    except IntegrityError:
+        return HttpResponse(status=500)
+    except ValueError:
+        return HttpResponse(status=500)
+
+    
 
 def get_list_of_paperwork(request):
     user = request.user
@@ -212,3 +205,9 @@ def remove_to_paperworks(request):
     document.delete()
     return HttpResponse('Document deleted')
 
+def remove_from_fav(request):
+    print(request.GET.get('favorite_id'))
+    favorite = Favorite.objects.filter(id=request.GET.get('favorite_id')).first()
+    print(favorite)
+    favorite.delete()
+    return HttpResponse('Favorite deleted')

@@ -1,0 +1,8 @@
+- model: auth.user
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$180000$oVe7Msps9Obd$dc+W85sTOhwORnTPLWMS10wpdop+pDi0h6b/WAjzLrs=
+    username: testuser@mail.com
+    first_name: 'Test'
+    last_name: 'User'
+    email: testuser@mail.com

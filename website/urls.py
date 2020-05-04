@@ -22,5 +22,5 @@ urlpatterns = [
     path('get_list_of_paperwork/', views.get_list_of_paperwork, name='get_list_of_paperwork'),
     path('add_to_paperworks/', views.add_to_paperworks, name='add_to_paperworks'),
     path('remove_to_paperworks/', views.remove_to_paperworks, name='remove_to_paperworks'),
-    
+    path('remove_from_fav/', views.remove_from_fav, name='remove_from_fav'),
 ]
