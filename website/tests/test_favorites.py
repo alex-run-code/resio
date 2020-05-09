@@ -45,3 +45,12 @@ class FavoriteTest(TestCase):
         response = self.client.post(reverse('add_to_favorites'), {'hospital': hospital.name, 'specialty':specialty.name})
         added_favorite = Favorite.objects.filter(user=user, service__hospital=hospital, service__specialty=specialty).first()
         self.assertEqual(added_favorite in favorites, True)
+
+class RemoveFromFavoriteTest(TestCase):
+    fixtures = ["test_data", 'initial_data']
+
+    def test_bad_service_gives_error(self):
+        pass
+
+    def test_bad_service_gives_error(self):
+        pass

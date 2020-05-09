@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 {% load account socialaccount %}
+{% load static %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -9,46 +10,70 @@
 
 <section>
     <div class='container'>
-        <div class='row mb-3'>
+        <div class='row mb-5'>
             <div class='col'>
-                <h1>Research a hospital</h1>
+                <div class='row d-inline'>
+                    <img class='service_icon mr-2 d-inline align-middle'
+                        src='{% static "/website/img/edit-tools.png" %}'>
+                    <h1 class='d-inline align-middle mb-3'>Research a hospital</h1>
+                </div>
             </div>
         </div>
-        <div class='row mb-3'>
-            <div class='col'>
-                <h3>Research</h3>
-                <form class='d-inline-flex' id='myform'>
 
-                    <div style='width:200px' class="mb-3 mr-3">
-                        <select id='select_city' name='select_city' class="custom-select custom-select-lg mb-3">
-                            <option selected>Select City</option>
-                            <option value="Cluj-Napoca">Cluj-Napoca</option>
-                            <option value="Bucharest">Bucharest</option>
-                            <option value="Alba Iulia">Alba Iulia</option>
-                        </select>
+        <h3>Research by filter</h3>
+        <hr>
+        <div class="card mt-3 mb-5" style="width: 48rem;">
+            <div class="card-body">
+
+
+                <div class='row'>
+                    <div class='col'>
+
+                        <form class='d-inline-flex' id='myform'>
+
+                            <div style='width:200px' class=" mr-3">
+                                <select id='select_city' name='select_city' class="custom-select custom-select-lg mb-3">
+                                    <option selected>Select City</option>
+                                    <option value="Cluj-Napoca">Cluj-Napoca</option>
+                                    <option value="Bucharest">Bucharest</option>
+                                    <option value="Alba Iulia">Alba Iulia</option>
+                                </select>
+                            </div>
+
+                            <div style='width:200px' class=" mr-3">
+                                <select id='select_hospital' class="custom-select custom-select-lg mb-3">
+                                    <option selected>Select Hospital</option>
+                                </select>
+                            </div>
+
+                            <div style='width:200px' class=" mr-3">
+                                <select id='select_specialty' class="custom-select custom-select-lg mb-3">
+                                    <option selected>Select Specialty</option>
+                                </select>
+                            </div>
+
+                            <div style='width:200px' class="mt-2 mr-3">
+                                <a id='gobutton' href='#' type="submit" class="btn btn-primary">GO</a>
+                            </div>
+                        </form>
                     </div>
-
-                    <div style='width:200px' class="mb-3 mr-3">
-                        <select id='select_hospital' class="custom-select custom-select-lg mb-3">
-                            <option selected>Select Hospital</option>
-                        </select>
-                    </div>
-
-                    <div style='width:200px' class="mb-3 mr-3">
-                        <select id='select_specialty' class="custom-select custom-select-lg mb-3">
-                            <option selected>Select Specialty</option>
-                        </select>
-                    </div>
-
-                    <div style='width:200px' class="mt-2 mb-3 mr-3">
-                    <a id='gobutton' href='#' type="submit" class="btn btn-primary">GO</a>
                 </div>
-                </form>
+
+
+
+            </div>
+        </div>
+
+
+        <div class='row mb-3 mt-3'>
+            <div class='col'>
+                <h3>Research by City</h3>
+                <hr>
             </div>
         </div>
         <div class='row'>
             <div class='col-4'>
-                <h3>Cluj-Napoca</h3>
+                <h3 class='text-secondary'>Cluj-Napoca</h3>
                 {% for hospital in hospitals %}
                 {% if hospital.city.name == 'Cluj-Napoca' %}
                 <a href='/hospital/{{hospital.name}}/'>{{hospital.name}}</a> <br>
@@ -88,7 +113,7 @@
             },
             success: function (data) {   // `data` is the return of the `load_cities` view function
                 $("#select_specialty").html(data);
-                  // replace the contents of the city input with the data that came from the server
+                // replace the contents of the city input with the data that came from the server
             }
         });
     });
@@ -100,7 +125,7 @@
         url_service = '/service/' + select_hospital + '/' + select_specialty;
         console.log(url_service);
         gobutton.setAttribute('href', url_service)
-            // replace the contents of the city input with the data that came from the server
+        // replace the contents of the city input with the data that came from the server
     });
 
 </script>
