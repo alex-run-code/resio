@@ -61,5 +61,6 @@ class RemoveFromFavoriteTest(TestCase):
         new_fav = Favorite(user=user, service=service)
         new_fav.save()
         favorite_id = new_fav.id
-        self.client.get(reverse('remove_from_fav'), {'favorite_id': favorite_id})
+        response = self.client.get(reverse('remove_from_fav'), {'favorite_id': favorite_id})
         self.assertEqual(len(Favorite.objects.filter(id=favorite_id)), 0)
+        self.assertEqual(response.content.decode('utf-8'), 'Favorite deleted')

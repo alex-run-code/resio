@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from website.models import Candidate, Hospital, Service, Specialty, City, Favorite, Paperwork_Service
+from website.models import Candidate, Hospital, Service, Specialty, City, Favorite, Paperwork_Service, Paperwork
 from website.models import Paperwork_Service_User
 from .filters import RankingFilter
 from django.http import JsonResponse, HttpResponse
@@ -25,10 +25,11 @@ def contact(request): # pragma: no cover
 
 def profile(request): # pragma: no cover
     user = request.user
-    # user = User.objects.filter(email='cambefort.alex@gmail.com').first()
+    paperwork_collected = Paperwork_Service_User.objects.filter(user=user)
     favorites = Favorite.objects.filter(user=user)
     context = {
         'favorites': favorites,
+        'paperwork_collected': paperwork_collected,
     }
     return render(request, 'account/profile.html', context)
 
@@ -62,7 +63,6 @@ def research(request): # pragma: no cover
 
 def service(request, hospital, specialty): # pragma: no cover
     service = Service.objects.filter(hospital__name=hospital, specialty__name=specialty).first()
- #  hospital_info = Hospital.objects.filter(name=hospital).first()
     hospital_info = service.hospital
     favorite = Favorite.objects.filter(service=service, user=request.user).first()
     documents = Paperwork_Service.objects.filter(service=service)
@@ -136,30 +136,6 @@ def get_city(request):
     json_cities = list(set(cities))
     return JsonResponse(json_cities, safe=False)
 
-# a mettre dans une commande
-def add_100_random_candidates(): # pragma: no cover
-    for i in range(100):
-        specialties = Specialty.objects.all()
-        cities = City.objects.all()
-        random_specialty = random.choice(specialties)
-        random_city = random.choice(cities)
-        first_name = names.get_first_name()
-        family_name = names.get_last_name()
-        grade = random.randrange(0, 20)
-        choice = random.randrange(0, 20)
-        location = random.randrange(0, 8)
-        year = random.randrange(2018, 2020)
-        new_candidate = Candidate(
-            first_name=first_name,
-            family_name=family_name,
-            grade=grade,
-            choice=random_specialty,
-            location=random_city,
-            year=year,
-        )
-        new_candidate.save()
-        print(new_candidate.first_name, ' ', new_candidate.family_name, ' : added')
-
 def add_to_favorites(request):
     if request.method != 'POST': # Warning : ajax is using GET method. 
         return HttpResponse(status=500)
@@ -208,3 +184,37 @@ def remove_from_fav(request):
     favorite = Favorite.objects.filter(id=request.GET.get('favorite_id')).first()
     favorite.delete()
     return HttpResponse('Favorite deleted')
+
+# a mettre dans une commande
+def add_100_random_candidates(): # pragma: no cover
+    for i in range(100):
+        specialties = Specialty.objects.all()
+        cities = City.objects.all()
+        random_specialty = random.choice(specialties)
+        random_city = random.choice(cities)
+        first_name = names.get_first_name()
+        family_name = names.get_last_name()
+        grade = random.randrange(0, 20)
+        choice = random.randrange(0, 20)
+        location = random.randrange(0, 8)
+        year = random.randrange(2018, 2020)
+        new_candidate = Candidate(
+            first_name=first_name,
+            family_name=family_name,
+            grade=grade,
+            choice=random_specialty,
+            location=random_city,
+            year=year,
+        )
+        new_candidate.save()
+        print(new_candidate.first_name, ' ', new_candidate.family_name, ' : added')
+
+def add_paperwork_for_each_service():
+    services = Service.objects.all()
+    paperworks = Paperwork.objects.all()
+    for service in services:
+        for paperwork in paperworks:
+            new_paperwork_service = Paperwork_Service(paperwork=paperwork, service=service)
+            new_paperwork_service.save()
+            print(paperwork.name, ' added for ', service.hospital.name)
+    

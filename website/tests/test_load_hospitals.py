@@ -8,7 +8,8 @@ class LoadHospitalTest(TestCase):
     fixtures = ["test_data", 'initial_data']
 
     def test_loading_hospital_with_fake_city_return_nothing(self):
-        response = self.client.get(reverse('ajax_load_hospitals'), {'city': 'xxx'})
+        city = 'xxx'
+        response = self.client.get(reverse('ajax_load_hospitals'), {'city': city})
         soup = BeautifulSoup(response.content.decode('utf-8'), 'html.parser')
         options = soup.find_all('option')
         hospital_list = []
@@ -19,7 +20,8 @@ class LoadHospitalTest(TestCase):
         
 
     def test_hospital_returned_are_in_right_city(self):
-        response = self.client.get(reverse('ajax_load_hospitals'), {'city': 'Cluj-Napoca'})
+        city = 'Cluj-Napoca'
+        response = self.client.get(reverse('ajax_load_hospitals'), {'city': city})
         soup = BeautifulSoup(response.content.decode('utf-8'), 'html.parser')
         options = soup.find_all('option')
         hospital_list = []

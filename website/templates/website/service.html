@@ -154,7 +154,7 @@
                 'service_id': service_id,
             },
             success: function (response) {
-                list_of_paperwork.push.apply(list_of_paperwork, JSON.parse(response));
+                list_of_paperwork.push.apply(list_of_paperwork, response);
                 console.log(list_of_paperwork);
                 check_collected_paperwork();
                 move_progress_bar();

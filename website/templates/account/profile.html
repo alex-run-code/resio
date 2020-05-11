@@ -36,6 +36,17 @@
                                     <div class='btn btn-sm'><i class="fas fa-trash"></i></div>
                                 </div>
                             </div>
+                            <div class='row'>
+                                <div class='col'>
+                                    <p>Collected: 
+                                    {% for item in paperwork_collected %}
+                                        {% if item.pw_service.service == favorite.service %}
+                                            <strong>{{ item.pw_service.paperwork }}, </strong>
+                                        {% endif %}
+                                    {% endfor %}
+                                </p> 
+                                </div>
+                            </div>
 
                         </li>
                         {% endfor %}
