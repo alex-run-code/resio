@@ -1,5 +1,5 @@
 import django_filters
-from .models import *
+from .models import Candidate
 
 
 class RankingFilter(django_filters.FilterSet):

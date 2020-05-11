@@ -1,29 +1,25 @@
 from django.shortcuts import render
-from website.models import Candidate, Hospital, Service, Specialty, City, Favorite, Paperwork_Service, Paperwork
+from website.models import Candidate, Hospital, Service, Specialty
+from website.models import City, Favorite, Paperwork_Service, Paperwork
 from website.models import Paperwork_Service_User
 from .filters import RankingFilter
 from django.http import JsonResponse, HttpResponse
 import json
-from django.views.generic import ListView, CreateView, UpdateView
 import names
 import random
 from django.core.paginator import Paginator
-from django.contrib.auth.models import User
 from django.db.utils import IntegrityError
 
 
-
-# Create your views here.
-
-
-
-def index(request): # pragma: no cover
+def index(request):  # pragma: no cover
     return render(request, 'website/index.html')
 
-def contact(request): # pragma: no cover
+
+def contact(request):  # pragma: no cover
     return render(request, 'website/contact.html')
 
-def profile(request): # pragma: no cover
+
+def profile(request):  # pragma: no cover
     user = request.user
     paperwork_collected = Paperwork_Service_User.objects.filter(user=user)
     favorites = Favorite.objects.filter(user=user)
@@ -33,10 +29,8 @@ def profile(request): # pragma: no cover
     }
     return render(request, 'account/profile.html', context)
 
-def contact(request): # pragma: no cover
-    return render(request, 'website/contact.html')
 
-def ranking(request): # pragma: no cover
+def ranking(request):  # pragma: no cover
     specialties = Specialty.objects.all()
     candidates = Candidate.objects.all()
     cities = City.objects.all()
@@ -45,76 +39,96 @@ def ranking(request): # pragma: no cover
     p_candidates = Paginator(candidates, 15)
     page_number = request.GET.get('page')
     context = {
-        'candidates':p_candidates.get_page(page_number),
-        'myFilter':myFilter,
-        'specialties':specialties,
-        'cities':cities,
+        'candidates': p_candidates.get_page(page_number),
+        'myFilter': myFilter,
+        'specialties': specialties,
+        'cities': cities,
     }
     return render(request, 'website/ranking.html', context)
 
-def research(request): # pragma: no cover
+
+def research(request):  # pragma: no cover
     hospitals = Hospital.objects.all()
     services = Service.objects.all()
     context = {
-        'hospitals':hospitals,
-        'services':services,
+        'hospitals': hospitals,
+        'services': services,
     }
     return render(request, 'website/research.html', context)
 
-def service(request, hospital, specialty): # pragma: no cover
-    service = Service.objects.filter(hospital__name=hospital, specialty__name=specialty).first()
+
+def service(request, hospital, specialty):  # pragma: no cover
+    service = Service.objects.filter(
+        hospital__name=hospital,
+        specialty__name=specialty).first()
     hospital_info = service.hospital
-    favorite = Favorite.objects.filter(service=service, user=request.user).first()
+    favorite = Favorite.objects.filter(
+        service=service,
+        user=request.user).first()
     documents = Paperwork_Service.objects.filter(service=service)
     context = {
-        'service':service,
-        'hospital_name':str(hospital),
+        'service': service,
+        'hospital_name': str(hospital),
         'city': hospital_info.city,
-        'specialty':specialty,
-        'chief_name':service.chief_name,
-        'chief_surname':service.chief_surname,
-        'residanatms_url':service.residanatms_url,
-        'website':hospital_info.website,
-        'address':hospital_info.address,
+        'specialty': specialty,
+        'chief_name': service.chief_name,
+        'chief_surname': service.chief_surname,
+        'residanatms_url': service.residanatms_url,
+        'website': hospital_info.website,
+        'address': hospital_info.address,
         'description': hospital_info.about,
-        'favorite':favorite,
-        'documents':documents,
+        'favorite': favorite,
+        'documents': documents,
     }
     return render(request, 'website/service.html', context)
 
-def hospital(request, hospital): # pragma: no cover
-    # ajouter un truc qui fait que si on ne trouve pas lhopital il y a une erreur genre 'pas dhopital trouve'
+
+def hospital(request, hospital):  # pragma: no cover
+    # ajouter un truc qui fait que si on ne trouve pas lhopital
+    # il y a une erreur genre 'pas dhopital trouve'
     hospital_info = Hospital.objects.filter(name=hospital).first()
     if not hospital_info:
         context = {
-            'title':'Unknown hospital',
-            'message':'We didnt find this hospital',
+            'title': 'Unknown hospital',
+            'message': 'We didnt find this hospital',
         }
         return render(request, 'website/error.html', context)
     services = Service.objects.filter(hospital__name=hospital)
     context = {
-        'hospital_name':str(hospital),
+        'hospital_name': str(hospital),
         'city': hospital_info.city,
-        'services':services,
+        'services': services,
     }
     return render(request, 'website/hospital.html', context)
 
+
 def load_hospitals(request):
     city = request.GET.get('city')
-    hospitals = Hospital.objects.filter(city__name=city).order_by('name')
-    return render(request, 'website/load_hospitals.html', {'hospitals': hospitals})
+    hospitals = Hospital.objects.filter(
+        city__name=city).order_by('name')
+    return render(
+        request,
+        'website/load_hospitals.html',
+        {'hospitals': hospitals})
+
 
 def load_specialties(request):
     hospital = request.GET.get('hospital')
-    services = Service.objects.filter(hospital__name=hospital).order_by('specialty')
-    return render(request, 'website/load_specialties.html', {'services': services})
+    services = Service.objects.filter(
+        hospital__name=hospital).order_by('specialty')
+    return render(request, 'website/load_specialties.html', {
+        'services': services})
+
 
 def get_grade(request):
     city = City.objects.filter(name=request.GET.get('city')).first()
-    specialty = Specialty.objects.filter(name=request.GET.get('specialty')).first()
-    candidates = Candidate.objects.filter(choice=specialty, location=city).order_by('grade')
+    specialty = Specialty.objects.filter(
+        name=request.GET.get('specialty')).first()
+    candidates = Candidate.objects.filter(
+        choice=specialty, location=city).order_by('grade')
     grade = candidates[0].grade
     return HttpResponse(grade)
+
 
 def get_specialty(request):
     city = City.objects.filter(name=request.GET.get('city')).first()
@@ -126,8 +140,10 @@ def get_specialty(request):
     json_specialties = json.dumps(list(set(specialties)))
     return JsonResponse(json_specialties, safe=False)
 
+
 def get_city(request):
-    specialty = Specialty.objects.filter(name=request.GET.get('specialty')).first()
+    specialty = Specialty.objects.filter(
+        name=request.GET.get('specialty')).first()
     grade = request.GET.get('grade')
     candidates = Candidate.objects.filter(grade__lte=grade, choice=specialty)
     cities = []
@@ -136,12 +152,15 @@ def get_city(request):
     json_cities = list(set(cities))
     return JsonResponse(json_cities, safe=False)
 
+
 def add_to_favorites(request):
-    if request.method != 'POST': # Warning : ajax is using GET method. 
+    if request.method != 'POST':  # Warning : ajax is using GET method. 
         return HttpResponse(status=500)
     user = request.user
     try:
-        service = Service.objects.filter(hospital__name=request.POST.get('hospital'), specialty__name=request.POST.get('specialty')).first()
+        service = Service.objects.filter(
+            hospital__name=request.POST.get('hospital'),
+            specialty__name=request.POST.get('specialty')).first()
         new_favorite = Favorite(user=user, service=service)
         new_favorite.save()
         return HttpResponse('added')
@@ -150,22 +169,24 @@ def add_to_favorites(request):
     except ValueError:
         return HttpResponse(status=500)
 
-    
 
 def get_list_of_paperwork(request):
     user = request.user
     service_id = request.GET.get('service_id')
-    user_documents = Paperwork_Service_User.objects.filter(user=user, pw_service__service=service_id)
+    user_documents = Paperwork_Service_User.objects.filter(
+        user=user, pw_service__service=service_id)
     user_documents_list = []
     for document in user_documents:
         user_documents_list.append(document.pw_service.paperwork.name)
     return JsonResponse(user_documents_list, safe=False)
 
+
 def add_to_paperworks(request):
     user = request.user
     paperwork_name = request.GET.get('paperwork')
     service_id = request.GET.get('service_id')
-    pw_service = Paperwork_Service.objects.filter(service=service_id, paperwork__name=paperwork_name).first()
+    pw_service = Paperwork_Service.objects.filter(
+        service=service_id, paperwork__name=paperwork_name).first()
     new_paperwork = Paperwork_Service_User(user=user, pw_service=pw_service)
     new_paperwork.save()
     return HttpResponse('Document added')
@@ -175,18 +196,23 @@ def remove_to_paperworks(request):
     user = request.user
     paperwork_name = request.GET.get('paperwork')
     service_id = request.GET.get('service_id')
-    pw_service = Paperwork_Service.objects.filter(service=service_id, paperwork__name=paperwork_name).first()
-    document = Paperwork_Service_User.objects.filter(user=user, pw_service=pw_service).first()
+    pw_service = Paperwork_Service.objects.filter(
+        service=service_id, paperwork__name=paperwork_name).first()
+    document = Paperwork_Service_User.objects.filter(
+        user=user, pw_service=pw_service).first()
     document.delete()
     return HttpResponse('Document deleted')
 
+
 def remove_from_fav(request):
-    favorite = Favorite.objects.filter(id=request.GET.get('favorite_id')).first()
+    favorite = Favorite.objects.filter(
+        id=request.GET.get('favorite_id')).first()
     favorite.delete()
     return HttpResponse('Favorite deleted')
 
+
 # a mettre dans une commande
-def add_100_random_candidates(): # pragma: no cover
+def add_100_random_candidates():  # pragma: no cover
     for i in range(100):
         specialties = Specialty.objects.all()
         cities = City.objects.all()
@@ -207,14 +233,18 @@ def add_100_random_candidates(): # pragma: no cover
             year=year,
         )
         new_candidate.save()
-        print(new_candidate.first_name, ' ', new_candidate.family_name, ' : added')
+        print(
+            new_candidate.first_name,
+            ' ',
+            new_candidate.family_name, ' : added')
+
 
 def add_paperwork_for_each_service():
     services = Service.objects.all()
     paperworks = Paperwork.objects.all()
     for service in services:
         for paperwork in paperworks:
-            new_paperwork_service = Paperwork_Service(paperwork=paperwork, service=service)
+            new_paperwork_service = Paperwork_Service(
+                paperwork=paperwork, service=service)
             new_paperwork_service.save()
             print(paperwork.name, ' added for ', service.hospital.name)
-    

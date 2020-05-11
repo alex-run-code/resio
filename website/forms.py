@@ -1,5 +1,6 @@
 from django import forms
-from .models import Hospital, Specialty, Service
+from .models import Hospital
+
 
 class HospitalForm(forms.ModelForm):
     class Meta:
