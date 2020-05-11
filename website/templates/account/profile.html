@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 {% load i18n %}
 {% load account socialaccount %}
+{% load static %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
@@ -10,8 +11,13 @@
     <div class='container'>
         <div class='section'>
             <div class='row'>
+                <div class='col mb-3'>
+                    <img class='service_icon d-inline align-bottom mr-2' src='{% static "/website/img/doctor_2.png" %}'>
+                    <h1 class='d-inline align-bottom'> Hey !</h1>
+                </div>
+            </div>
+            <div class='row'>
                 <div class='col'>
-                    <h1>Welcome</h1>
                     <p>Welcome Dr {{ user.username }}</p>
                     <p>Your favorites are:</p>
                     <ul class="list-group">

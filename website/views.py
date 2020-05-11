@@ -20,6 +20,9 @@ from django.db.utils import IntegrityError
 def index(request):
     return render(request, 'website/index.html')
 
+def contact(request):
+    return render(request, 'website/contact.html')
+
 def profile(request):
     user = request.user
     # user = User.objects.filter(email='cambefort.alex@gmail.com').first()
@@ -96,9 +99,6 @@ def hospital(request, hospital):
     }
     return render(request, 'website/hospital.html', context)
 
-def test(request):
-    return render(request, 'website/test.html')
-
 def load_hospitals(request):
     city = request.GET.get('city')
     hospitals = Hospital.objects.filter(city__name=city).order_by('name')
@@ -133,7 +133,7 @@ def get_city(request):
     cities = []
     for candidate in candidates:
         cities.append(candidate.location.name)
-    json_cities = json.dumps(list(set(cities)))
+    json_cities = list(set(cities))
     return JsonResponse(json_cities, safe=False)
 
 # a mettre dans une commande
@@ -183,8 +183,7 @@ def get_list_of_paperwork(request):
     user_documents_list = []
     for document in user_documents:
         user_documents_list.append(document.pw_service.paperwork.name)
-    user_documents_json = json.dumps(user_documents_list)
-    return JsonResponse(user_documents_json, safe=False)
+    return JsonResponse(user_documents_list, safe=False)
 
 def add_to_paperworks(request):
     user = request.user

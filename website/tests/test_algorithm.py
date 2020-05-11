@@ -52,7 +52,7 @@ class GetCityTest(TestCase):
     def test_using_fake_specialty_return_empty_list(self):
         response = self.client.get(reverse('get_city'), {'specialty': 'qdzqdsdqzdq', 'grade':'10'})
         list_of_cities = json.loads(response.content.decode('utf-8'))
-        self.assertEqual(list_of_cities, '[]')
+        self.assertEqual(len(list_of_cities), 0)
 
     def test_using_fake_grade_return_empty_error(self):
         with self.assertRaises(ValueError): 
@@ -66,7 +66,8 @@ class GetCityTest(TestCase):
         cities = []
         for candidate in candidates:
             cities.append(candidate.location.name)
-        # self.assertEqual(cities, json.loads(response.content.decode('utf-8'))) 
+        print(response.content)
+        self.assertCountEqual(cities, json.loads(response.content.decode('utf-8')))
         # This one fail
 
 

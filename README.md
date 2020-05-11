@@ -7,6 +7,7 @@ Facilitating orientation and relocalisation of medical students in Romania.
 ```bash
 py manage.py migrate
 py manage.py loaddata initial_data
+py manage.py runserver
 ```
 
 
@@ -16,3 +17,8 @@ py manage.py loaddata initial_data
 py manage.py dumpdata website.City website.Specialty website.Candidate website.Hospital website.Paperwork website.Service website.Paperwork_Service --format yaml > website/fixtures/initial_data.yaml
 ```
 
+## Testing 
+
+## How to start website
+
+## Heroku
