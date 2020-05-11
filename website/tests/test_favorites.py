@@ -1,15 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.urls import reverse
-from website.models import Candidate, Hospital, Service, Specialty, City, Favorite, Paperwork_Service
-
-
-
-# Create your tests here.
-# test unitaires = n'impliquant pas l'utilisateur
-# les fonctionnalités impliquants l'utilisateur = test fonctionnels 
-
-
+from website.models import Hospital, Service, Specialty, Favorite
 
 
 class FavoriteTest(TestCase):
