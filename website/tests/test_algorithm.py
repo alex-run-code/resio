@@ -66,9 +66,8 @@ class GetCityTest(TestCase):
         cities = []
         for candidate in candidates:
             cities.append(candidate.location.name)
-        print(response.content)
         self.assertCountEqual(cities, json.loads(response.content.decode('utf-8')))
-        # This one fail
+
 
 
 

@@ -205,8 +205,6 @@ def remove_to_paperworks(request):
     return HttpResponse('Document deleted')
 
 def remove_from_fav(request):
-    print(request.GET.get('favorite_id'))
     favorite = Favorite.objects.filter(id=request.GET.get('favorite_id')).first()
-    print(favorite)
     favorite.delete()
     return HttpResponse('Favorite deleted')

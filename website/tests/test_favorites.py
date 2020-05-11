@@ -49,8 +49,17 @@ class FavoriteTest(TestCase):
 class RemoveFromFavoriteTest(TestCase):
     fixtures = ["test_data", 'initial_data']
 
-    def test_bad_service_gives_error(self):
-        pass
+    def test_bad_favorite_gives_error(self):
+        favorite_id = 999
+        with self.assertRaises(AttributeError):
+            self.client.post(reverse('remove_from_fav'), {'favorite_id': favorite_id})
+        
 
-    def test_bad_service_gives_error(self):
-        pass
+    def test_favorite_is_removed_with_success(self):
+        user = User.objects.get(username='testuser@mail.com')
+        service = Service.objects.all().first()
+        new_fav = Favorite(user=user, service=service)
+        new_fav.save()
+        favorite_id = new_fav.id
+        self.client.get(reverse('remove_from_fav'), {'favorite_id': favorite_id})
+        self.assertEqual(len(Favorite.objects.filter(id=favorite_id)), 0)
