@@ -140,5 +140,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-ALLOWED_HOSTS = 'resio-ro.herokuapp.com'
+ALLOWED_HOSTS = ['resio-ro.herokuapp.com', '127.0.0.1:8000']
