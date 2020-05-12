@@ -1,1 +1,1 @@
-web: gunicorn resio.wsgi --log-files -
+web: gunicorn resio.wsgi
