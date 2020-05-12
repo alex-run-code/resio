@@ -25,8 +25,6 @@ SECRET_KEY = '!@+k$6fb$g!p3%kh#-i3z5z^zoq&ouck+k-b*vv8hecy%ycs$f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -145,4 +143,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-ALLOWED_HOSTS = ['resio-ro.herokuapp.com', '127.0.0.1:8000']
+ALLOWED_HOSTS = ['resio-ro.herokuapp.com', '127.0.0.1']
+
+ACCOUNT_EMAIL_VERIFICATION = "none"

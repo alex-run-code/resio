@@ -12,14 +12,17 @@ from django.db.utils import IntegrityError
 
 
 def index(request):  # pragma: no cover
+    ''' Homepage, contains a presenation of the site. '''
     return render(request, 'website/index.html')
 
 
 def contact(request):  # pragma: no cover
+    ''' Contact page, contains a way to contact us. '''
     return render(request, 'website/contact.html')
 
 
 def profile(request):  # pragma: no cover
+    ''' Profile page, contains the favorite of the user. '''
     user = request.user
     paperwork_collected = Paperwork_Service_User.objects.filter(user=user)
     favorites = Favorite.objects.filter(user=user)
@@ -31,6 +34,11 @@ def profile(request):  # pragma: no cover
 
 
 def ranking(request):  # pragma: no cover
+    '''
+    The ranking page contains the algorithm allowing the student
+    to get their grade, their city and their specialty, and the
+    rankings of the precedent years.
+    '''
     specialties = Specialty.objects.all()
     candidates = Candidate.objects.all()
     cities = City.objects.all()
@@ -48,6 +56,7 @@ def ranking(request):  # pragma: no cover
 
 
 def research(request):  # pragma: no cover
+    ''' Allow the user to research a hospital and a specialty. '''
     hospitals = Hospital.objects.all()
     services = Service.objects.all()
     context = {
@@ -58,6 +67,10 @@ def research(request):  # pragma: no cover
 
 
 def service(request, hospital, specialty):  # pragma: no cover
+    '''
+    The page of a selected service (hospital+specialty), containing
+    informations about the hospital, the paperwork, the key people, etc.
+    '''
     service = Service.objects.filter(
         hospital__name=hospital,
         specialty__name=specialty).first()
@@ -84,8 +97,10 @@ def service(request, hospital, specialty):  # pragma: no cover
 
 
 def hospital(request, hospital):  # pragma: no cover
-    # ajouter un truc qui fait que si on ne trouve pas lhopital
-    # il y a une erreur genre 'pas dhopital trouve'
+    '''
+    Hospital's page, allow the user to chose
+    a specialty from selected hospital.
+    '''
     hospital_info = Hospital.objects.filter(name=hospital).first()
     if not hospital_info:
         context = {
@@ -103,6 +118,10 @@ def hospital(request, hospital):  # pragma: no cover
 
 
 def load_hospitals(request):
+    '''
+    Load the hospitals and display them in a select button
+    used in the research page.
+    '''
     city = request.GET.get('city')
     hospitals = Hospital.objects.filter(
         city__name=city).order_by('name')
@@ -113,6 +132,10 @@ def load_hospitals(request):
 
 
 def load_specialties(request):
+    '''
+    Load the specialties and display them in a select button
+    used in the research page.
+    '''
     hospital = request.GET.get('hospital')
     services = Service.objects.filter(
         hospital__name=hospital).order_by('specialty')
@@ -121,6 +144,11 @@ def load_specialties(request):
 
 
 def get_grade(request):
+    '''
+    Receive a city and a specialty, then return the lowest grade
+    obtained by a student who chose said specialty in said city
+    in the precedent years.
+    '''
     city = City.objects.filter(name=request.GET.get('city')).first()
     specialty = Specialty.objects.filter(
         name=request.GET.get('specialty')).first()
@@ -131,6 +159,11 @@ def get_grade(request):
 
 
 def get_specialty(request):
+    '''
+    Receive a grade and a city, then return the list of specialties
+    selected by students who chose said city and obtained a grade
+    equal or inferior to the inputed grade, during precedent years.
+    '''
     city = City.objects.filter(name=request.GET.get('city')).first()
     grade = request.GET.get('grade')
     candidates = Candidate.objects.filter(grade__lte=grade, location=city)
@@ -142,6 +175,11 @@ def get_specialty(request):
 
 
 def get_city(request):
+    '''
+    Receive a specialty and a grade, then return the list of cities
+    selected by students who chose said specialty and obtained a grade
+    equal or inferior to the inputed grade, during precedent years.
+    '''
     specialty = Specialty.objects.filter(
         name=request.GET.get('specialty')).first()
     grade = request.GET.get('grade')
@@ -154,7 +192,8 @@ def get_city(request):
 
 
 def add_to_favorites(request):
-    if request.method != 'POST':  # Warning : ajax is using GET method. 
+    ''' Add to the user's favorite the selected service. '''
+    if request.method != 'POST':  # Warning : ajax is using GET method.
         return HttpResponse(status=500)
     user = request.user
     try:
@@ -171,6 +210,7 @@ def add_to_favorites(request):
 
 
 def get_list_of_paperwork(request):
+    ''' Add to the user's favorite the selected service. '''
     user = request.user
     service_id = request.GET.get('service_id')
     user_documents = Paperwork_Service_User.objects.filter(
@@ -182,6 +222,10 @@ def get_list_of_paperwork(request):
 
 
 def add_to_paperworks(request):
+    '''
+    Add to the user's collected paperwork
+    the selected document, for a specific service.
+    '''
     user = request.user
     paperwork_name = request.GET.get('paperwork')
     service_id = request.GET.get('service_id')
@@ -193,6 +237,10 @@ def add_to_paperworks(request):
 
 
 def remove_to_paperworks(request):
+    '''
+    Remove from the user's collected paperwork
+    the selected document, for a specific service.
+    '''
     user = request.user
     paperwork_name = request.GET.get('paperwork')
     service_id = request.GET.get('service_id')
@@ -205,14 +253,18 @@ def remove_to_paperworks(request):
 
 
 def remove_from_fav(request):
+    ''' Remove from the user's favorite the selected service. '''
     favorite = Favorite.objects.filter(
         id=request.GET.get('favorite_id')).first()
     favorite.delete()
     return HttpResponse('Favorite deleted')
 
 
-# a mettre dans une commande
 def add_100_random_candidates():  # pragma: no cover
+    '''
+    For testing only. Add 100 fake candidates to the database with random name,
+    surname, city, specialty, grade and year.
+    '''
     for i in range(100):
         specialties = Specialty.objects.all()
         cities = City.objects.all()
@@ -240,6 +292,7 @@ def add_100_random_candidates():  # pragma: no cover
 
 
 def add_paperwork_for_each_service():
+    '''For testing only. Add 5 generic document to each service.'''
     services = Service.objects.all()
     paperworks = Paperwork.objects.all()
     for service in services:

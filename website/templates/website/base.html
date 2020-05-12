@@ -9,7 +9,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Scrolling Nav - Start Bootstrap Template</title>
+  <title>RESIO</title>
+
+   <!-- favicon -->
+  <link rel='shortcut icon' type='image/x-icon' href="{% static '/website/img/caduceus.png' %}">
 
   <!-- fontawesome cdn -->
   <link href="{% static '/website/fontawesome/css/all.css' %} " rel="stylesheet">
@@ -51,7 +54,7 @@
               <a class="nav-link js-scroll-trigger" href='/'>HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="{% url 'ranking' %}">RANKINGS</a>
+              <a class="nav-link js-scroll-trigger" href="{% url 'ranking' %}">RANKINGS & ALGO</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="{% url 'research' %}">HOSPITALS</a>
@@ -62,6 +65,12 @@
             {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="/accounts/signup/">MY PROFILE</a>
+            </li>
+            <li class="nav-item">
+              <form method="post" action="/accounts/logout/">
+                {% csrf_token %}
+                <button style='-webkit-box-shadow:none; box-shadow:none' class='nav-link btn' type="submit" title="log out"><i class="fas fa-sign-out-alt"></i></button>
+              </form>
             </li>
             {% else %}
             <li class="nav-item">

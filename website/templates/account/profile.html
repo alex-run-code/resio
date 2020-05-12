@@ -19,39 +19,48 @@
             <div class='row'>
                 <div class='col'>
                     <p>Welcome Dr {{ user.username }}</p>
-                    <p>Your favorites are:</p>
-                    <ul class="list-group">
-                        {% for favorite in favorites %}
-                        <li class="list-group-item">
-                            <div class='row'>
-                                <div class='text-left col-8'>
-                                    <a
-                                        href='/service/{{favorite.service.hospital.name}}/{{favorite.service.specialty.name}}'>
-                                        {{favorite.service}}
-                                        <i class=" ml-2 fas fa-external-link-alt"></i>
-                                    </a>
+                    {% if favorites|length > 0 %}
+                        <p>Your favorites are:</p>
+                        <ul class="list-group">
+                            {% for favorite in favorites %}
+                            <li class="list-group-item">
+                                <div class='row'>
+                                    <div class='text-left col-8'>
+                                        <a
+                                            href='/service/{{favorite.service.hospital.name}}/{{favorite.service.specialty.name}}'>
+                                            {{favorite.service}}
+                                            <i class=" ml-2 fas fa-external-link-alt"></i>
+                                        </a>
+                                    </div>
+                                    <div id='{{favorite.id}}' class='text-right col-4 delete_button'
+                                        onClick="refreshPage()">
+                                        <div class='btn btn-sm'><i class="fas fa-trash"></i></div>
+                                    </div>
                                 </div>
-                                <div id='{{favorite.id}}' class='text-right col-4 delete_button'
-                                    onClick="refreshPage()">
-                                    <div class='btn btn-sm'><i class="fas fa-trash"></i></div>
-                                </div>
-                            </div>
-                            <div class='row'>
-                                <div class='col'>
-                                    <p>Collected: 
-                                    {% for item in paperwork_collected %}
-                                        {% if item.pw_service.service == favorite.service %}
-                                            <strong>{{ item.pw_service.paperwork }}, </strong>
+                                <div class='row'>
+                                    <div class='col'>
+                                        {% if paperwork_collected|length > 0 %}
+                                            <p>Collected: 
+                                                {% for item in paperwork_collected %}
+                                                    {% if item.pw_service.service == favorite.service %}
+                                                        <strong>{{ item.pw_service.paperwork }}, </strong>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            </p> 
+                                        {% else %}
+                                            <i>You didn't collect any paperwork for this service.</i>
                                         {% endif %}
-                                    {% endfor %}
-                                </p> 
+                                    </div>
                                 </div>
-                            </div>
 
-                        </li>
-                        {% endfor %}
+                            </li>
+                            {% endfor %}
 
-                    </ul>
+                        </ul>
+                    {% else %}
+                    <i>You don't have any favorites yet.</i>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
