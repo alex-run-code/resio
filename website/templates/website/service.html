@@ -14,12 +14,12 @@
         <h5>{{ city }}</h5>
         {% if user.is_authenticated %}
             {% if favorite %}
-                <i>Already in your favorites</i>
+                <i>Already in <a href='{% url "profile" %}'>your favorites</a>.</i>
             {% else %}
                 <div id='add_to_fav' class='btn btn-primary btn-sm'>Add to favorites</div>
             {% endif %}
         {% else %}
-            <i class='text-secondary'>Log yourself to add this service in your favorites</i>
+            <i class='text-danger'><i class="fas fa-exclamation-triangle mr-2"></i><a class='text-danger' href='{% url "account_login" %}'>Log yourself to add this service in your favorites</a></i>
         {% endif %}
     </div>
 
@@ -235,7 +235,7 @@
                     'specialty': specialty,     // add the country id to the GET parameters
                 },
                 success: function () {   // `data` is the return of the `load_cities` view function
-                    $("#add_to_fav").text('Added');
+                    $("#add_to_fav").text('Added in your profile');
                     $("#add_to_fav").removeClass('btn-primary');
                     $("#add_to_fav").addClass('btn-warning');
                     $('#add_to_fav').off('click');

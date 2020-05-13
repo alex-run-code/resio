@@ -39,17 +39,13 @@
                                 </div>
                                 <div class='row'>
                                     <div class='col'>
-                                        {% if paperwork_collected|length > 0 %}
-                                            <p>Collected: 
+                                            <p class='paperwork_collected'>Collected: 
                                                 {% for item in paperwork_collected %}
                                                     {% if item.pw_service.service == favorite.service %}
-                                                        <strong>{{ item.pw_service.paperwork }}, </strong>
+                                                        <strong class='a_document'>{{ item.pw_service.paperwork }}, </strong>
                                                     {% endif %}
                                                 {% endfor %}
                                             </p> 
-                                        {% else %}
-                                            <i>You didn't collect any paperwork for this service.</i>
-                                        {% endif %}
                                     </div>
                                 </div>
 
@@ -58,7 +54,7 @@
 
                         </ul>
                     {% else %}
-                    <i>You don't have any favorites yet.</i>
+                    <i>You don't have any favorites yet. Use the <a href='{% url "research" %}'>research page</a> to find a service in which you are interested.</i>
                     {% endif %}
 
                 </div>
@@ -95,6 +91,15 @@
             remove_from_fav(this.id);
         })
     }
+
+    var paperwork_collected = document.getElementsByClassName('paperwork_collected');
+    for (i=0 ; i < paperwork_collected.length ; i++) {
+        if (paperwork_collected[i].getElementsByTagName('strong').length == 0) {
+            paperwork_collected[i].textContent = "You didn't collect any document for this service.";
+        }
+
+    }
+
 </script>
 
 
