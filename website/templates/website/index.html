@@ -35,18 +35,18 @@
           <p class="lead">Resio is a system that provides you with all the informations regarding your orientation and your relocation when you pass the residana.</p>
         </div>
 
-        <div class='row mt-5 justify-content-center'>
-          <div class='col-lg-3 text-center bg-light mx-auto p-4 rounded-lg shadow '>
+        <div class='row mt-5 mr-2 ml-2 justify-content-center'>
+          <div class='col-lg-3 text-center bg-light mx-auto mt-2 p-4 rounded-lg shadow '>
             <img class='feature-icon mb-3' src='{% static "/website/img/medal.png" %}'>
             <p class="font-weight-bold">RANKINGS</p>
             <p class='text-justify'>We provide you with anonymized listings of the precedent years so that you can easily estimate the grade that you need to obtain a certain position.</p>
           </div>
-          <div class='col-lg-3 text-center bg-light mx-auto p-4 rounded-lg shadow '>
+          <div class='col-lg-3 text-center bg-light mx-auto mt-2 p-4 rounded-lg shadow '>
             <img class='feature-icon mb-3' src='{% static "/website/img/test-tube.png" %}'>
             <p class="font-weight-bold">ALGORITHM</p>
             <p class='text-justify'>Our easy to use algorithm allows you to estime where you can go based on your grade, or which grade you need to obtain to get what you want.</p>
           </div>
-          <div class='col-lg-3 text-center bg-light mx-auto p-4 rounded-lg shadow '>
+          <div class='col-lg-3 text-center bg-light mx-auto mt-2 p-4 rounded-lg shadow '>
             <img class='feature-icon mb-3' src='{% static "/website/img/medical-folder.png" %}'>
             <p class="font-weight-bold">PAPERWORK</p>
             <p class='text-justify'>Once you made your decision, we provide you with a clear and organized list of the paperwork that you need to prepare. We also introduce you to your future working environment.</p>
@@ -63,15 +63,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto mb-5">
-          <h1 class='display-2' style='text-align: center;'>GET STARTED</h1>
+          <h1 class='display-2' style='text-align: center;'>START HERE</h1>
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class='col-lg-4 text-center border border-warning rounded pt-3'>
+        <div class='col-lg-4 mt-2 mx-4 text-center border border-warning rounded pt-3'>
           <a href='/accounts/signup/' type="button" class="btn btn-outline-warning btn-lg"><i class="fas fa-user-circle"></i><strong> Create an account</strong></a>
           <p class='mt-4 text-center pl-4 pr-4 text-warning'>Creating an account allow you to add your favorite hospitals to a favorite list and to track the document that you've collected.</p>
         </div>
-        <div class='col-lg-4 offset-1 text-center border border-danger rounded pt-3'>
+        <div class='col-lg-4 mt-2 mx-4 text-center border border-danger rounded pt-3'>
           <a href='{% url "ranking" %}' type="button" class="btn btn-outline-danger btn-lg"><i class="fas fa-list-alt"></i><strong> Browse the data</strong></a>
           <p class='mt-4 text-center pl-4 pr-4 text-danger'>Just check out the ranking for precedent years and use our algorithm.</p>
         </div>
