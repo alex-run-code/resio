@@ -75,9 +75,12 @@ def service(request, hospital, specialty):  # pragma: no cover
         hospital__name=hospital,
         specialty__name=specialty).first()
     hospital_info = service.hospital
-    favorite = Favorite.objects.filter(
-        service=service,
-        user=request.user).first()
+    if request.user.is_authenticated:
+        favorite = Favorite.objects.filter(
+            service=service,
+            user=request.user).first()
+    else:
+        favorite = []
     documents = Paperwork_Service.objects.filter(service=service)
     context = {
         'service': service,

@@ -5,9 +5,8 @@
 
 <section>
   <div class='container'>
-
-    <h1 class='mb-5'>Algorithm</h1>
-
+    <h1 class='mb-2'>Algorithm</h1>
+    <p class='lead mb-5'>Our algorithm will tell you the minimum grade that you must obtain to get what you want, or what you can get based on the grade you think you will have. Careful though, these are only estimations based on precedent years' data. </p>
     <div id="accordion">
       <div class="card">
         <div class="card-header" id="headingOne">
@@ -49,11 +48,13 @@
               </form>
             </div>
             <div class='row mt-3'>
-              <div class='col-12'><i>Based on the precedent years, you must obtain a minimum of: </i></div>
-              <div class='col-12'>
-                <h2 id='grade' class='ml-0'></h2>
+                <div class='col-12'><i>Based on the precedent years, you must obtain a minimum of: </i></div>
+                <div class='col-12'>
+                  <h2 id='grade' class='ml-0' style='display:inline;'></i></h2>
+                  <a tabindex="0" id='grade_question_mark' type="button" style='display:none' data-trigger="focus" class="text-secondary ml-2 fas fa-question-circle fa-lg" data-toggle="popover" title="How is this calculated ?" data-content="This is the lowest grade obtained by a student who chose the same city and the same specialty that the one you've chosen during the precedent years."></a>
+                </div>
               </div>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -94,7 +95,10 @@
               </form>
             </div>
             <div class='row mt-3'>
-              <div class='col-12 mb-2'><i>Based on the precedent years, you will be able to work with: </i></div>
+              <div class='col-12 mb-2'>
+                <i>Based on the precedent years, you will be able to work with: </i>
+                <a tabindex="0" id='specialty_question_mark' type="button" style='display:none' data-trigger="focus" class="text-secondary ml-2 fas fa-question-circle fa-lg" data-toggle="popover" title="How is this calculated ?" data-content="Those are the specialties chosen by students who chose your city and obtained a grade equal or inferior than yours."></a>
+              </div>
               <div class='col-12'>
                 <div id='specialty' class='h5'></div>
               </div>
@@ -141,7 +145,10 @@
               </form>
             </div>
             <div class='row mt-3'>
-              <div class='col-12 mb-2'><i>Based on the precedent years, you will be able to work in: </i></div>
+              <div class='col-12 mb-2'>
+                <i>Based on the precedent years, you will be able to work in: </i>
+                <a tabindex="0" id='city_question_mark' type="button" style='display:none' data-trigger="focus" class="text-secondary ml-2 fas fa-question-circle fa-lg" data-toggle="popover" title="How is this calculated ?" data-content="Those are the cities chosen by students who chose your specialty and obtained a grade equal or inferior than yours."></a>
+              </div>
               <div class='col-12'>
                 <div id='city' class='h5'></div>
               </div>
@@ -155,8 +162,9 @@
 
     <hr class='mt-5'>
 
-    <h1 class='mb-5 mt-5'>Rankings</h1>
-    
+    <h1 class='mt-5'>Rankings</h1>
+    <p class='lead mb-5'>If you want to study the data more carefully, here are the results of the precedent years.</p>
+
     <div class="row justify-content-center">
 
       <form method='get' style='width:80%' class="form-inline mb-5">
@@ -233,6 +241,7 @@
       },
       success: function (result) {
         document.getElementById('grade').textContent = result;
+        document.getElementById('grade_question_mark').style = 'display:inline; vertical-align: super;';
         console.log(result)
       }
     });
@@ -252,6 +261,7 @@
       },
       success: function (result) {
         result = JSON.parse(result)
+        document.getElementById('specialty_question_mark').style='display:inline';
         for (i = 0; i < result.length; i++) {
           var specialty = document.createElement('li');
           specialty.textContent = result[i];
@@ -274,6 +284,7 @@
         'specialty': specialty,
       },
       success: function (result) {
+        document.getElementById('city_question_mark').style='display:inline';
         for (i = 0; i < result.length; i++) {
           var city = document.createElement('li');
           city.textContent = result[i];
@@ -296,6 +307,14 @@
   var year_filter = document.getElementById('id_year');
   year_filter.setAttribute('class', 'btn btn-secondary');
   year_filter.style = 'width:200px';
+
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+
+  $('.popover-dismiss').popover({
+  trigger: 'focus'
+})
 
 </script>
 

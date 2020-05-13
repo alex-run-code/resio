@@ -12,12 +12,15 @@
         <h1>{{ hospital_name }}</h1>
         <h5>{{ specialty }} </h5>
         <h5>{{ city }}</h5>
-        {% if favorite %}
-        <i>Already in your favorites</i>
+        {% if user.is_authenticated %}
+            {% if favorite %}
+                <i>Already in your favorites</i>
+            {% else %}
+                <div id='add_to_fav' class='btn btn-primary btn-sm'>Add to favorites</div>
+            {% endif %}
         {% else %}
-        <div id='add_to_fav' class='btn btn-primary btn-sm'>Add to favorites</div>
+            <i class='text-secondary'>Log yourself to add this service in your favorites</i>
         {% endif %}
-
     </div>
 
     <hr class='mb-3'>
@@ -44,16 +47,18 @@
                             <td>
                                 <div id='paperwork_check'>
                                     {% for document in documents %}
-                                    {% if user.is_authenticated %}
-                                    <div class="custom-control custom-checkbox mr-sm-2">
-                                        <input type="checkbox" class="custom-control-input pw_check"
-                                            id="{{ document.paperwork.name }}" value="{{ document.paperwork.name }}">
-                                        <label class="custom-control-label"
-                                            for="{{ document.paperwork.name }}">{{ document.paperwork.name }}</label>
-                                    </div>
-                                    {% else %}
-                                    {{ document.paperwork.name }}
-                                    {% endif %}
+                                        {% if user.is_authenticated %}
+                                            <div class="custom-control custom-checkbox mr-sm-2">
+                                                <input type="checkbox" class="custom-control-input pw_check"
+                                                    id="{{ document.paperwork.name }}" value="{{ document.paperwork.name }}">
+                                                <label class="custom-control-label"
+                                                    for="{{ document.paperwork.name }}">{{ document.paperwork.name }}</label>
+                                            </div>
+                                        {% else %}
+                                            
+                                                <li>{{ document.paperwork.name }}</li>
+                                            
+                                        {% endif %}
                                     {% endfor %}
                                 </div>
 
