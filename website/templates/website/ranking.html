@@ -195,12 +195,14 @@
 
       <form method='get' style='width:80%' class="form-inline mb-5">
         {% for field in myFilter.form %}
-        <div class='col-3'>
+        <div class='col-lg-3'>
           <div class='row justify-content-center'>{{field.name|upper}}</div>
           <div class='row justify-content-center'>{{field}}</div>
         </div>
         {% endfor %}
-        <button id='filterbutton' type="submit" class="btn btn-primary my-1 mt-4">Submit</button>
+        <div class='col-lg-3'>
+          <div class='row justify-content-center'><button id='filterbutton' type="submit" class="btn btn-primary mt-3">Submit</button></div>
+        </div>
       </form>
     </div>
 
