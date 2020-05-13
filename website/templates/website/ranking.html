@@ -149,19 +149,26 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
           <div class="card-body">
             <div class='row ml-0'>
-              <form style="display: flex;">
-                <p style='margin-top:15px'>I want to work with </p>
+              <!-- <form style="display: flex;"> -->
+                <div class='col-lg-2'>
+                  <p style='margin-top:15px'>I want to work with</p>
+                </div>
+                <div class='col-lg-3'>
                 <select class="btn btn-secondary mr-2 ml-2" style='width:200px' id='select_specialty2'>
                   <option>Choose a specialty</option>
                   {% for specialty in specialties %}
                   <option>{{ specialty.name }}</option>
                   {% endfor %}
                 </select>
-
+              </div>
+              <div class='col-lg-3'>
                 <p style='margin-top:15px'>and I think my grade will be around</p>
-                <input style='width:50px; text-align: center;' class='ml-3 mr-3' id='select_grade2'></input>
-                <button class="btn btn-danger mr-2 ml-2" id='getcity' type='submit'>OK</button>
-              </form>
+              </div>
+              <div class='col-lg-3'>
+                <input style='width:50px; text-align: center; height:100%' class='mb-3' id='select_grade2'></input>
+                <button class="btn btn-danger ml-3" style='vertical-align:baseline' id='getcity' type='submit'>OK</button>
+              </div>
+              <!-- </form> -->
             </div>
             <div class='row mt-3'>
               <div class='col-12 mb-2'>
