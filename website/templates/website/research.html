@@ -22,17 +22,20 @@
 
         <h3>Research by filter</h3>
         <hr>
-        <div class="card mt-3 mb-5" style="width: 48rem;">
+        <!-- <div class="card mt-3 mb-5" style="width: 48rem;"> -->
+        <div class="card mt-3 mb-5">
             <div class="card-body">
 
 
-                <div class='row'>
-                    <div class='col'>
+                
+                    
 
-                        <form class='d-inline-flex' id='myform'>
-
-                            <div style='width:200px' class=" mr-3">
-                                <select id='select_city' name='select_city' class="custom-select custom-select-lg mb-3">
+                        <!-- <form class='d-inline-flex' id='myform'> -->
+                        <form id='myform'>
+                            <div class='row'>
+                            <!-- <div style='width:200px' class="mr-3 col-3"> -->
+                                <div class="col-lg-3">
+                                <select style='width:200px' id='select_city' name='select_city' class="custom-select custom-select-lg mb-3">
                                     <option selected>Select City</option>
                                     <option value="Cluj-Napoca">Cluj-Napoca</option>
                                     <option value="Bucharest">Bucharest</option>
@@ -40,24 +43,25 @@
                                 </select>
                             </div>
 
-                            <div style='width:200px' class=" mr-3">
-                                <select id='select_hospital' class="custom-select custom-select-lg mb-3">
+                            <div class="col-lg-3">
+                                <select style='width:200px' id='select_hospital' class="custom-select custom-select-lg mb-3">
                                     <option selected>Select Hospital</option>
                                 </select>
                             </div>
 
-                            <div style='width:200px' class=" mr-3">
-                                <select id='select_specialty' class="custom-select custom-select-lg mb-3">
+                            <div class="col-lg-3">
+                                <select style='width:200px'id='select_specialty' class="custom-select custom-select-lg mb-3">
                                     <option selected>Select Specialty</option>
                                 </select>
                             </div>
 
-                            <div style='width:200px' class="mt-2 mr-3">
+                            <div class="mt-2 col-lg-3">
                                 <a id='gobutton' href='#' type="submit" class="btn btn-primary">GO</a>
                             </div>
+                        </div>
                         </form>
-                    </div>
-                </div>
+                    
+                
 
 
 
@@ -72,7 +76,7 @@
             </div>
         </div>
         <div class='row'>
-            <div class='col-4'>
+            <div class='col-lg-4'>
                 <h3 class='text-secondary'>Cluj-Napoca</h3>
                 {% for hospital in hospitals %}
                 {% if hospital.city.name == 'Cluj-Napoca' %}
