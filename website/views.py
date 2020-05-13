@@ -157,8 +157,12 @@ def get_grade(request):
         name=request.GET.get('specialty')).first()
     candidates = Candidate.objects.filter(
         choice=specialty, location=city).order_by('grade')
-    grade = candidates[0].grade
-    return HttpResponse(grade)
+    try:
+        grade = candidates[0].grade
+        return HttpResponse(grade)
+    except(IndexError):
+        return HttpResponse('empty')
+
 
 
 def get_specialty(request):
