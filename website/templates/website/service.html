@@ -7,7 +7,7 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<section id='profile' class='col-8 offset-2 mb-5'>
+<section id='profile' class='col-lg-8 offset-lg-2 mb-5'>
     <div class='container mb-5'>
         <h1>{{ hospital_name }}</h1>
         <h5>{{ specialty }} </h5>
@@ -32,7 +32,7 @@
                 <h3 class='d-inline align-middle'>General Informations</h3>
             </div>
             <div class='row mt-3'>
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover table-bordered table-responsive">
                     <thead class='thead-dark'>
                         <tr>
                             <th class='h5' scope="col"><i class="fas fa-paste mr-2"></i>Paperwork</th>
@@ -81,14 +81,14 @@
         </div>
 
         <div class='row'>
-            <div class='col-6' style='margin-bottom: 200px;'>
+            <div class='col-lg-6' style='margin-bottom: 350px;'>
                 <img class='service_icon d-inline align-middle mr-2 mb-2'
                     src='{% static "/website/img/location2.png" %}'>
                 <h3 class='d-inline align-middle'>Address</h3>
                 <p id='hospital_address'>{{ address }}</p>
                 <div id="map"></div>
             </div>
-            <div class='col-6'>
+            <div class='col-lg-6'>
                 <img class='service_icon d-inline align-middle mr-2 mb-2'
                     src='{% static "/website/img/description.png" %}'>
                 <h3 class='d-inline align-middle'>Description</h3>
