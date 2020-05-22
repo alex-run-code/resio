@@ -2,4 +2,4 @@ language: python
 install:
   - pip install -r requirements.txt
 script:
-  - py manage.py test
+  - python manage.py test
