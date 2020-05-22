@@ -1,5 +1,7 @@
 # RESIO
 
+[![Build Status](https://travis-ci.org/megalex97/resio.svg?branch=master)](https://travis-ci.org/megalex97/resio)
+
 Facilitating orientation and relocalisation of medical students in Romania.
 RESIO is a web platform allowing romanian students to estimate the grade they will need, or the options they will have after the final medecine exam, called the Residana.
 
@@ -35,6 +37,13 @@ py manage.py test
 To start the website from your computer, type :
 ```bash
 py manage.py runserver
+```
+
+## Launching coverage
+
+```bash
+coverage run --source='.' --omit='env*' manage.py test
+coverage report
 ```
 
 ## Heroku
