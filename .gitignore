@@ -1,5 +1,6 @@
 env/
 .pyc*
+htmlcov/
 website/__pycache__/
 resio/__pycache__/
 website/migrations/__pycache__/

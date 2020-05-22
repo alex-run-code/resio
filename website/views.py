@@ -164,7 +164,6 @@ def get_grade(request):
         return HttpResponse('empty')
 
 
-
 def get_specialty(request):
     '''
     Receive a grade and a city, then return the list of specialties
@@ -280,8 +279,6 @@ def add_100_random_candidates():  # pragma: no cover
         first_name = names.get_first_name()
         family_name = names.get_last_name()
         grade = random.randrange(0, 20)
-        choice = random.randrange(0, 20)
-        location = random.randrange(0, 8)
         year = random.randrange(2018, 2020)
         new_candidate = Candidate(
             first_name=first_name,
@@ -298,7 +295,7 @@ def add_100_random_candidates():  # pragma: no cover
             new_candidate.family_name, ' : added')
 
 
-def add_paperwork_for_each_service():
+def add_paperwork_for_each_service():  # pragma: no cover
     '''For testing only. Add 5 generic document to each service.'''
     services = Service.objects.all()
     paperworks = Paperwork.objects.all()

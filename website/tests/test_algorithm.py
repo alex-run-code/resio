@@ -8,16 +8,16 @@ class GetGradeTest(TestCase):
     fixtures = ["test_data", 'initial_data']
 
     def test_using_fake_city_return_error(self):
-        with self.assertRaises(IndexError):
-            self.client.get(reverse('get_grade'), {
-                'city': 'qdzqdsdqzdq',
-                'specialty': 'Anestezie şi Terapie Intensivă'})
+        response = self.client.get(reverse('get_grade'), {
+            'city': 'qdzqdsdqzdq',
+            'specialty': 'Anestezie şi Terapie Intensivă'})
+        self.assertEqual(response.content.decode('utf-8'), 'empty')
 
     def test_using_fake_city_specialty_return_error(self):
-        with self.assertRaises(IndexError):
-            self.client.get(reverse('get_grade'), {
-                'city': 'Cluj-Napoca',
-                'specialty': 'qdzqdsdqzdq'})
+        response = self.client.get(reverse('get_grade'), {
+            'city': 'Cluj-Napoca',
+            'specialty': 'qdzqdsdqzdq'})
+        self.assertEqual(response.content.decode('utf-8'), 'empty')
 
     def test_grade_is_the_lowest_for_selected_city_and_specialty(self):
         specialty = 'Anestezie şi Terapie Intensivă'
